@@ -14,15 +14,19 @@ class MovieTableViewController: UITableViewController {
     var moviesArray = Array<Array<String>>()
     var moviesTitleArray = ["iQiYi", "YouKu", "Letv"]
     
-    func GetMoviesArray(keyword:String) -> Array<Array<String>>
+    func GetMoviesArray() -> Array<Array<String>>
     {
-        moviesArray = [
-            ["Runing iQiYi!", "I'm coming", "Hurry up", "Wait a moment, traffic jam..."],
-            ["Running YouKu!", "Hi boss!", "Any idea to be as BAT?", "Hi this is MaYun, what did you say? "],
-            ["Running Letv!", "Letv movie...", "Letv cloudy...", "Letv sport...", "..."]
-        ]
+//        moviesArray = [
+//            ["Runing iQiYi!", "I'm coming", "Hurry up", "Wait a moment, traffic jam..."],
+//            ["Running YouKu!", "Hi boss!", "Any idea to be as BAT?", "Hi this is MaYun, what did you say? "],
+//            ["Running Letv!", "Letv movie...", "Letv cloudy...", "Letv sport...", "..."]
+//        ]
         
-        var iQiYi = iQiYiSite(source: keyword)
+        moviesArray = []
+        
+        var iQiYi = iQiYiSite(keyword: searchKey!)
+        let iQiYiTitles = iQiYi.FindAllMovies().map{ $0.title }
+        moviesArray.append(iQiYiTitles)
         
         return moviesArray
     }
@@ -46,8 +50,8 @@ class MovieTableViewController: UITableViewController {
     }
     
     override func viewDidLoad() {
-        GetMoviesArray("")
-        
+        GetMoviesArray()
+
         super.viewDidLoad()
     }
 
