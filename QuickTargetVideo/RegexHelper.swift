@@ -117,6 +117,8 @@ class RegexHelper
         return ""
     }
 }
+
+
     
 class iQiYiSite: RegexHelper
 {
@@ -131,19 +133,23 @@ class iQiYiSite: RegexHelper
         //var contentUrl = "http://www.baidu.com/"
         
         if let cUrl = NSURL(string: contentUrl) {
-            do {
-                let ss = try NSString(contentsOfURL: cUrl, encoding: NSISOLatin1StringEncoding )
-                source = ss as String
-                
-                print(ss.length)
-            }
-            catch {}
+//            do {
+//                let ss = try NSString(contentsOfURL: cUrl, encoding: NSISOLatin1StringEncoding )
+//                source = ss as String
+//                
+//                print(ss.length)
+//            }
+//            catch {}
+        
+            let request = NSURLRequest(URL: cUrl)
+            currentWebView.loadRequest(request)
+//            let htmlcontent = currentWebView.stringByEvaluatingJavaScriptFromString("document.documentElement.outerHTML")
+//            
             
-//            let request = NSURLRequest(URL: cUrl)
-//            currentWebView.loadRequest(request)
-//            let htmlcontent = currentWebView.stringByEvaluatingJavaScriptFromString("document.documentElement")
-//
-//            print(htmlcontent)
+            let htmlcontent = currentWebView.stringByEvaluatingJavaScriptFromString("document.body.textContent")
+            
+
+            print(htmlcontent)
         }
         
         let bodyPattern: String = "<h3 class=\"result_title\">{.|\\s}*?</h3>"
