@@ -132,7 +132,7 @@ class iQiYiSite: RegexHelper
         
         if let cUrl = NSURL(string: contentUrl) {
             do {
-                let ss = try NSString(contentsOfURL: cUrl, encoding: NSISOLatin1StringEncoding )
+                let ss = try NSString(contentsOfURL: cUrl, encoding: NSUTF8StringEncoding )
                 source = ss as String
                 
                 print(ss.length)
