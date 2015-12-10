@@ -8,7 +8,7 @@
 
 import UIKit
 
-class VideoSourceController: UIViewController, UISearchBarDelegate {
+class SearchController: UIViewController, UISearchBarDelegate {
 
     @IBOutlet weak var searchBar: UISearchBar!
     override func viewDidLoad() {
@@ -27,17 +27,9 @@ class VideoSourceController: UIViewController, UISearchBarDelegate {
         print(searchBar.text, terminator: "")
         searchBar.resignFirstResponder()
         
-        //let storyboard = UIStoryboard(name: "MainStoryboard", bundle: nil)
         let movieListController = storyboard?.instantiateViewControllerWithIdentifier("MovieList") as! MovieTableViewController
-        //controller.searchContent = searchBar.text!
-        //self.navigationController?.pushViewController(controller, animated: true)
-        
         movieListController.searchKey = searchBar.text
         presentViewController(movieListController, animated: true, completion: nil)
-        
-//        let controller = storyboard?.instantiateViewControllerWithIdentifier("VideoDetail") as VideoDetail
-//        controller.searchContent = searchBar.text!
-//        self.navigationController?.pushViewController(controller, animated: true)
     }
 }
 

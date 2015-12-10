@@ -215,11 +215,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "QuickTargetVideo/MovieTableViewController.swift"
-            timestampString = "471243529.63005"
+            timestampString = "471435305.713923"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "40"
-            endingLineNumber = "40"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
             landmarkName = "prepareForSegue(_:sender:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -231,11 +231,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "QuickTargetVideo/MovieTableViewController.swift"
-            timestampString = "471243529.63005"
+            timestampString = "471435305.713923"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "39"
-            endingLineNumber = "39"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
             landmarkName = "prepareForSegue(_:sender:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -247,13 +247,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "QuickTargetVideo/VideoDetail.swift"
-            timestampString = "469523911.14385"
+            timestampString = "471435020.975493"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "33"
-            endingLineNumber = "33"
-            landmarkName = "didReceiveMemoryWarning()"
-            landmarkType = "5">
+            startingLineNumber = "29"
+            endingLineNumber = "29"
+            landmarkName = "VideoDetail"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -284,8 +284,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "167"
             endingLineNumber = "167"
-            landmarkName = "GetSingleMovieItem(_:)"
-            landmarkType = "5">
+            landmarkName = "iQiYiSite"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -311,12 +311,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "QuickTargetVideo/MovieTableViewController.swift"
-            timestampString = "471243695.902614"
+            timestampString = "471435305.713923"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "18"
-            endingLineNumber = "18"
-            landmarkName = "GetMoviesArray()"
+            startingLineNumber = "19"
+            endingLineNumber = "19"
+            landmarkName = "ResetmoviesArray()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -348,8 +348,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "145"
             endingLineNumber = "145"
-            landmarkName = "iQiYiSite"
-            landmarkType = "3">
+            landmarkName = "FindAllMovies()"
+            landmarkType = "5">
             <Locations>
                <Location
                   shouldBeEnabled = "No"
@@ -396,8 +396,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "158"
             endingLineNumber = "158"
-            landmarkName = "init(keyword:)"
-            landmarkType = "5">
+            landmarkName = "iQiYiSite"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -412,8 +412,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "178"
             endingLineNumber = "178"
-            landmarkName = "GetSingleMovieItem(_:)"
-            landmarkType = "5">
+            landmarkName = "iQiYiSite"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -428,8 +428,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "164"
             endingLineNumber = "164"
-            landmarkName = "init(keyword:)"
-            landmarkType = "5">
+            landmarkName = "iQiYiSite"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -444,8 +444,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "168"
             endingLineNumber = "168"
-            landmarkName = "GetSingleMovieItem(_:)"
-            landmarkType = "5">
+            landmarkName = "iQiYiSite"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -460,7 +460,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "72"
             endingLineNumber = "72"
-            landmarkName = "GetBodyContent()"
+            landmarkName = "GetTargetContent(_:pText:isFilterQuote:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -476,7 +476,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "80"
             endingLineNumber = "80"
-            landmarkName = "GetBodyContent()"
+            landmarkName = "GetTargetContent(_:pText:isFilterQuote:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -492,7 +492,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "78"
             endingLineNumber = "78"
-            landmarkName = "GetBodyContent()"
+            landmarkName = "GetTargetContent(_:pText:isFilterQuote:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -508,7 +508,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "95"
             endingLineNumber = "95"
-            landmarkName = "GetTargetContent(_:pText:)"
+            landmarkName = "GetTargetContent(_:pText:isFilterQuote:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -524,7 +524,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "108"
             endingLineNumber = "108"
-            landmarkName = "GetTargetContent(_:pText:isFilterQuote:)"
+            landmarkName = "init(keyword:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -540,8 +540,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "181"
             endingLineNumber = "181"
-            landmarkName = "GetSingleMovieItem(_:)"
-            landmarkType = "5">
+            landmarkName = "iQiYiSite"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -556,8 +556,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "100"
             endingLineNumber = "100"
-            landmarkName = "GetTargetContent(_:pText:isFilterQuote:)"
-            landmarkType = "5">
+            landmarkName = "iQiYiSite"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -572,7 +572,71 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "103"
             endingLineNumber = "103"
-            landmarkName = "GetTargetContent(_:pText:isFilterQuote:)"
+            landmarkName = "init(keyword:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "QuickTargetVideo/RegexHelper.swift"
+            timestampString = "471433308.3928"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "135"
+            endingLineNumber = "135"
+            landmarkName = "GetSingleMovieItem(_:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "QuickTargetVideo/RegexHelper.swift"
+            timestampString = "471433309.891266"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "134"
+            endingLineNumber = "134"
+            landmarkName = "GetSingleMovieItem(_:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "QuickTargetVideo/VideoDetail.swift"
+            timestampString = "471435020.975493"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "16"
+            endingLineNumber = "16"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "QuickTargetVideo/VideoDetail.swift"
+            timestampString = "471435039.427309"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "19"
+            endingLineNumber = "19"
+            landmarkName = "viewDidLoad()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

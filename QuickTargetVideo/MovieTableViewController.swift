@@ -11,24 +11,20 @@ import UIKit
 class MovieTableViewController: UITableViewController {
 
     var searchKey: String?
-    var moviesArray = Array<Array<String>>()
-    var moviesTitleArray = ["iQiYi", "YouKu", "Letv"]
+    var movieTitlesArray = Array<Array<String>>()
+    var movieLinksArray = Array<Array<String>>()
+    var moviesGroupArray = ["iQiYi", "YouKu", "Letv"]
     
-    func GetMoviesArray() -> Array<Array<String>>
+    func ResetmoviesArray()
     {
-//        moviesArray = [
-//            ["Runing iQiYi!", "I'm coming", "Hurry up", "Wait a moment, traffic jam..."],
-//            ["Running YouKu!", "Hi boss!", "Any idea to be as BAT?", "Hi this is MaYun, what did you say? "],
-//            ["Running Letv!", "Letv movie...", "Letv cloudy...", "Letv sport...", "..."]
-//        ]
-        
-        moviesArray = []
+        movieTitlesArray = []
         
         var iQiYi = iQiYiSite(keyword: searchKey!)
         let iQiYiTitles = iQiYi.FindAllMovies().map{ $0.title }
-        moviesArray.append(iQiYiTitles)
+        movieTitlesArray.append(iQiYiTitles)
         
-        return moviesArray
+        let iQiYiLinks = iQiYi.FindAllMovies().map{ $0.link }
+        movieLinksArray.append(iQiYiLinks)
     }
     
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
@@ -39,18 +35,18 @@ class MovieTableViewController: UITableViewController {
         if(segue.identifier == "MovieGo")
         {
             var path:NSIndexPath = self.tableView.indexPathForSelectedRow!
-            let controller = segue.destinationViewController as! VideoDetail
-            controller.searchContent = moviesArray[path.section][path.row]
-            presentViewController(controller, animated: true, completion: nil)
+            let videoPage = segue.destinationViewController as! VideoDetail
+            videoPage.linkUrl = movieLinksArray[path.section][path.row]
+            presentViewController(videoPage, animated: true, completion: nil)
         }
     }
     
     override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return self.moviesTitleArray[section]
+        return self.moviesGroupArray[section]
     }
     
     override func viewDidLoad() {
-        GetMoviesArray()
+        ResetmoviesArray()
 
         super.viewDidLoad()
     }
@@ -65,13 +61,13 @@ class MovieTableViewController: UITableViewController {
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Potentially incomplete method implementation.
         // Return the number of sections.
-        return moviesArray.count
+        return movieTitlesArray.count
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        return moviesArray[section].count
+        return movieTitlesArray[section].count
     }
 
     
@@ -79,7 +75,7 @@ class MovieTableViewController: UITableViewController {
     {
         let cellIdentifyName: String = "MovieTableViewCell"
         var cell: MovieTableViewCell = tableView.dequeueReusableCellWithIdentifier(cellIdentifyName) as! MovieTableViewCell
-        cell.movieTitle?.text = moviesArray[indexPath.section][indexPath.row]
+        cell.movieTitle?.text = movieTitlesArray[indexPath.section][indexPath.row]
         
         return cell
     }
