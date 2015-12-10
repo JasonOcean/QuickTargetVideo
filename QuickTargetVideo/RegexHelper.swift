@@ -48,43 +48,14 @@ class RegexHelper
         self.bodyPattern = regPattern
     }
     
-//    func CollectBodyContent()
-//    {
-//        do
-//        {
-//            self.myRegex = try! NSRegularExpression(pattern: bodyPattern, options: NSRegularExpressionOptions.CaseInsensitive)
-//            
-//            let results = myRegex.matchesInString(sourceHtml as String,
-//                options: NSMatchingOptions.Anchored,
-//                range: NSMakeRange(0, sourceHtml.length))
-//            
-//            if(results.count>0)
-//            {
-//                self.bodyText = self.sourceHtml.substringWithRange(results[0].range)
-//            }
-//        }
-//        catch {}
-//    }
-    
     func GetBodyContent() -> [String]
     {
-        
-//        do { let regex = try NSRegularExpression(pattern: regex, options: [])
-//            let nsString = text as NSString
-//            let results = regex.matchesInString(text, options: [], range: NSMakeRange(0, nsString.length))
-//            return results.map { nsString.substringWithRange($0.range)} }
-//        catch let error as NSError
-//        {
-//            print("invalid regex: \(error.localizedDescription)")
-//            return []
-//        }
-        
         do
         {
             self.myRegex = try! NSRegularExpression(pattern: bodyPattern, options: NSRegularExpressionOptions.CaseInsensitive)
             
             let results = myRegex.matchesInString(sourceHtml as String,
-                options: NSMatchingOptions.Anchored,
+                options: NSMatchingOptions.WithTransparentBounds,
                 range: NSMakeRange(0, sourceHtml.length))
             
             if(results.count>0)
@@ -97,19 +68,25 @@ class RegexHelper
         return []
     }
     
-    func GetTargetContent(myPattern: String, pText: String) -> String
+    func GetTargetContent(myPattern: String, pText: String, isFilterQuote: Bool) -> String
     {
         do
         {
             self.myRegex = try! NSRegularExpression(pattern: myPattern, options: NSRegularExpressionOptions.CaseInsensitive)
         
             let results = myRegex.matchesInString(pText,
-                options: NSMatchingOptions.Anchored,
+                options: NSMatchingOptions.WithoutAnchoringBounds,
                 range: NSMakeRange(0, (pText as NSString).length))
-        
+            
             if(results.count>0)
             {
-                return (pText as NSString).substringWithRange(results[0].range)
+                //Filter both the beginning and end "
+                if  isFilterQuote {
+                    return (pText as NSString).substringWithRange(NSMakeRange(results[0].range.location+1, results[0].range.length-2))
+                }
+                else {
+                    return (pText as NSString).substringWithRange(results[0].range)
+                }
             }
         }
         catch{}
@@ -117,12 +94,9 @@ class RegexHelper
         return ""
     }
 }
-
-
     
 class iQiYiSite: RegexHelper
 {
-    let currentWebView: UIWebView = UIWebView()
     var iQiYiMovies: [String]?
     
     init(keyword: String)
@@ -130,43 +104,32 @@ class iQiYiSite: RegexHelper
         var source = ""
         var contentUrl: String = "http://so.iqiyi.com/so/q_" + keyword
         contentUrl = contentUrl.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)!
-        //var contentUrl = "http://www.baidu.com/"
         
         if let cUrl = NSURL(string: contentUrl) {
-//            do {
-//                let ss = try NSString(contentsOfURL: cUrl, encoding: NSISOLatin1StringEncoding )
-//                source = ss as String
-//                
-//                print(ss.length)
-//            }
-//            catch {}
-        
-            let request = NSURLRequest(URL: cUrl)
-            currentWebView.loadRequest(request)
-//            let htmlcontent = currentWebView.stringByEvaluatingJavaScriptFromString("document.documentElement.outerHTML")
-//            
-            
-            let htmlcontent = currentWebView.stringByEvaluatingJavaScriptFromString("document.body.textContent")
-            
-
-            print(htmlcontent)
+            do {
+                let abc = try NSString(contentsOfURL: cUrl, encoding:NSUTF8StringEncoding)
+                source = abc.stringByReplacingOccurrencesOfString("\\", withString: "")
+            }
+            catch {}
         }
         
-        let bodyPattern: String = "<h3 class=\"result_title\">{.|\\s}*?</h3>"
+        let bodyPattern: String = "<h3 class=\"result_title\">[\\s\\S]*?</h3>"
         super.init(source: source, patternStr: bodyPattern)
-
-        
     }
     
+    //Following is the steps to catch:
+    //1. Get [title="***"]
+    //2. Get [""] from above string,
     func GetSingleMovieItem(parentText: String) -> MovieItem
     {
-        self.titlePattern = "<a [\\s\\S]*? title=\"{.|\\s}*?\"[^>]*?>[\\s\\S]*?</a>"
-        self.linkPattern = "<a [\\s\\S]*? href=\"{.|\\s}*?\"[^>]*?>[\\s\\S]*?</a>"
+        self.titlePattern = "title=\"(.+?)\""
+        self.linkPattern = "href=\"(.|\\s)*?\""
         
-        
-        let t:String = self.GetTargetContent(self.titlePattern, pText:parentText)
-        let l:String = self.GetTargetContent(self.linkPattern, pText:parentText )
-        let item: MovieItem = MovieItem(tiltleContent: t, linkContent: l)
+        let t:String = self.GetTargetContent(self.titlePattern, pText:parentText, isFilterQuote: false)
+        let l:String = self.GetTargetContent(self.linkPattern, pText:parentText,isFilterQuote: false)
+        let item: MovieItem = MovieItem(
+            tiltleContent: self.GetTargetContent("\"(.+?)\"", pText:t, isFilterQuote: true),
+            linkContent: self.GetTargetContent("\"(.+?)\"", pText:l, isFilterQuote: true))
         
         return item
     }

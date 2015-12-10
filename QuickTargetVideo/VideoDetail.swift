@@ -13,11 +13,6 @@ class VideoDetail : UIViewController
     var searchContent : String = ""
     @IBOutlet weak var currentWebView: UIWebView!
     override func viewDidLoad() {
-        
-//        var alert = UIAlertView()
-//        alert.message = searchContent
-//        alert.show()
-
         super.viewDidLoad()
 //         Do any additional setup after loading the view, typically from a nib.
         var content: String = "http://so.iqiyi.com/so/q_" + searchContent
