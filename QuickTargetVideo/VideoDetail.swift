@@ -10,18 +10,14 @@ import Foundation
 import UIKit
 class VideoDetail : UIViewController
 {
-    var searchContent : String = ""
+    var linkUrl : String = ""
     @IBOutlet weak var currentWebView: UIWebView!
     override func viewDidLoad() {
         super.viewDidLoad()
-//         Do any additional setup after loading the view, typically from a nib.
-        var content: String = "http://so.iqiyi.com/so/q_" + searchContent
-        content = content.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)!
-       
-        let url = NSURL(string: content)
+
+        let url = NSURL(string: linkUrl)
         let request = NSURLRequest(URL: url!)
         currentWebView.loadRequest(request)
-        // Do any additional setup after loading the view, typically from a nib.
     }
     
     override func didReceiveMemoryWarning() {
