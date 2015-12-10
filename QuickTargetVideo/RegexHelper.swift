@@ -117,6 +117,8 @@ class RegexHelper
         return ""
     }
 }
+
+
     
 class iQiYiSite: RegexHelper
 {
@@ -139,11 +141,10 @@ class iQiYiSite: RegexHelper
             }
             catch {}
             
-//            let request = NSURLRequest(URL: cUrl)
-//            currentWebView.loadRequest(request)
-//            let htmlcontent = currentWebView.stringByEvaluatingJavaScriptFromString("document.documentElement")
-//
-//            print(htmlcontent)
+            let htmlcontent = currentWebView.stringByEvaluatingJavaScriptFromString("document.body.textContent")
+            
+
+            print(htmlcontent)
         }
         
         let bodyPattern: String = "<h3 class=\"result_title\">{.|\\s}*?</h3>"
