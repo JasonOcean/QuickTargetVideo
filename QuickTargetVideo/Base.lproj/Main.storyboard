@@ -69,7 +69,7 @@
                                 <rect key="frame" x="0.0" y="22" width="600" height="55"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="GtT-zr-ZE1" id="xxX-B0-YBy">
-                                    <rect key="frame" x="0.0" y="0.0" width="567" height="54.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="567" height="54"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pt2-f8-fKu">
@@ -118,10 +118,35 @@
                                 <rect key="frame" x="-24" y="-79" width="630" height="687"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="0.0" y="25" width="630" height="687"/>
+                                </variation>
                             </webView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="mX7-Qp-Z7C" firstAttribute="top" secondItem="ONq-Gs-9nc" secondAttribute="bottom" id="66f-C3-s0q"/>
+                            <constraint firstItem="ONq-Gs-9nc" firstAttribute="leading" secondItem="dgj-CC-Hyv" secondAttribute="leading" id="7ZY-58-npg"/>
+                            <constraint firstAttribute="trailing" secondItem="ONq-Gs-9nc" secondAttribute="trailing" id="uSf-K5-Hxs"/>
+                            <constraint firstItem="ONq-Gs-9nc" firstAttribute="top" secondItem="Bcp-1O-nLY" secondAttribute="bottom" id="vdq-fp-RNz"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="7ZY-58-npg"/>
+                                <exclude reference="uSf-K5-Hxs"/>
+                                <exclude reference="vdq-fp-RNz"/>
+                                <exclude reference="66f-C3-s0q"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="constraints">
+                                <include reference="7ZY-58-npg"/>
+                                <include reference="uSf-K5-Hxs"/>
+                                <include reference="vdq-fp-RNz"/>
+                                <include reference="66f-C3-s0q"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="vG6-xc-RDH"/>
                     <connections>
