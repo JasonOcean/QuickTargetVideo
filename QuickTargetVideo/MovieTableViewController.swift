@@ -13,7 +13,7 @@ class MovieTableViewController: UITableViewController {
     var searchKey: String?
     var movieTitlesArray = Array<Array<String>>()
     var movieLinksArray = Array<Array<String>>()
-    var moviesGroupArray = ["iQiYi", "YouKu", "Letv"]
+    var moviesGroupArray = ["iQiYi", "Letv", "YouKu"]
     
     func ResetmoviesArray()
     {
@@ -25,6 +25,13 @@ class MovieTableViewController: UITableViewController {
         
         let iQiYiLinks = iQiYi.FindAllMovies().map{ $0.link }
         movieLinksArray.append(iQiYiLinks)
+        
+        var letv = LetvSite(keyword: searchKey!)
+        let letvTitles = letv.FindAllMovies().map{ $0.title }
+        movieTitlesArray.append(letvTitles)
+        
+        let letvLinks = letv.FindAllMovies().map{ $0.link }
+        movieLinksArray.append(letvLinks)
     }
     
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
