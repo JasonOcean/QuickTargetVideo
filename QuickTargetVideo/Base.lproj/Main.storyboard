@@ -78,6 +78,9 @@
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
+                                            <variation key="heightClass=regular" fixedFrame="YES">
+                                                <rect key="frame" x="24" y="0.0" width="535" height="50"/>
+                                            </variation>
                                         </label>
                                     </subviews>
                                     <animations/>
@@ -100,7 +103,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4EE-9A-9y5" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationItem title="Title" id="ltD-wC-2yE"/>
             </objects>
-            <point key="canvasLocation" x="1852" y="-280"/>
+            <point key="canvasLocation" x="1852" y="-280.5"/>
         </scene>
         <!--Video Detail-->
         <scene sceneID="wFT-P3-fff">

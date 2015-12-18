@@ -18,20 +18,35 @@ class MovieTableViewController: UITableViewController {
     func ResetmoviesArray()
     {
         movieTitlesArray = []
+        let maxNum : Int = 3
+        
         
         var iQiYi = iQiYiSite(keyword: searchKey!)
         let iQiYiTitles = iQiYi.FindAllMovies().map{ $0.title }
-        movieTitlesArray.append(iQiYiTitles)
+        movieTitlesArray.append(
+            iQiYiTitles.count>maxNum ? Array(iQiYiTitles[0..<maxNum]) : iQiYiTitles
+        )
         
         let iQiYiLinks = iQiYi.FindAllMovies().map{ $0.link }
-        movieLinksArray.append(iQiYiLinks)
+        movieLinksArray.append(
+            iQiYiLinks.count>maxNum ? Array(iQiYiLinks[0..<maxNum]) : iQiYiLinks
+        )
         
         var letv = LetvSite(keyword: searchKey!)
         let letvTitles = letv.FindAllMovies().map{ $0.title }
-        movieTitlesArray.append(letvTitles)
+        movieTitlesArray.append(
+            letvTitles.count>maxNum ? Array(letvTitles[0..<maxNum]) : letvTitles
+        )
         
         let letvLinks = letv.FindAllMovies().map{ $0.link }
-        movieLinksArray.append(letvLinks)
+        movieLinksArray.append(Array(
+            letvLinks.count>maxNum ? Array(letvLinks[0..<maxNum]) : letvLinks
+            )
+        )
+    }
+    
+    override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 50
     }
     
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
