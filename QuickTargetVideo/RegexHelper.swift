@@ -154,19 +154,22 @@ class iQiYiSite: RegexHelper
     
     init(keyword: String)
     {
-        var source = ""
-        var contentUrl: String = "http://so.iqiyi.com/so/q_" + keyword
-        contentUrl = contentUrl.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)!
-        
-        if let cUrl = NSURL(string: contentUrl) {
-            do {
-                let abc = try NSString(contentsOfURL: cUrl, encoding:NSUTF8StringEncoding)
-                source = abc.stringByReplacingOccurrencesOfString("\\", withString: "")
-            }
-            catch {}
-        }
+//        var source = ""
+//        var contentUrl: String = "http://so.iqiyi.com/so/q_" + keyword
+//        contentUrl = contentUrl.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)!
+//        
+//        if let cUrl = NSURL(string: contentUrl) {
+//            do {
+//                let abc = try NSString(contentsOfURL: cUrl, encoding:NSUTF8StringEncoding)
+//                source = abc.stringByReplacingOccurrencesOfString("\\", withString: "")
+//            }
+//            catch {}
+//        }
+//        
+//        let bodyPattern: String = "<h3 class=\"result_title\">[\\s\\S]*?</h3>"
+//        super.init(source: source, patternStr: bodyPattern)
         
         let bodyPattern: String = "<h3 class=\"result_title\">[\\s\\S]*?</h3>"
-        super.init(source: source, patternStr: bodyPattern)
+        super.init(source: keyword, patternStr: bodyPattern)
     }
 }
