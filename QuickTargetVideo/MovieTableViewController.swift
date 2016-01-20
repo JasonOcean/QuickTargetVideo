@@ -15,10 +15,15 @@ class MovieTableViewController: UITableViewController {
     var moviesGroupArray = ["iQiYi", "Letv", "YouKu"]
     
     @IBOutlet var CurrentTableView: UITableView!
-    @IBOutlet weak var lblLoading: UILabel!
    
     func ResetmoviesArray()
     {
+        ///Show loading animation
+        let para: NSDictionary = [KVNProgressViewParameterStatus: "Loading...",
+            KVNProgressViewParameterBackgroundType: 1,
+            KVNProgressViewParameterFullScreen: true]
+        KVNProgress.showWithParameters(para as [NSObject : AnyObject])
+        
         movieTitlesArray = []
         let maxNum : Int = 3
     
@@ -27,7 +32,6 @@ class MovieTableViewController: UITableViewController {
         
         let task = NSURLSession.sharedSession().dataTaskWithURL(url!) {(data, response, error) in
             var sourceContent:String = NSString(data:data!, encoding:NSUTF8StringEncoding)! as String
-                sleep(3)
             var iQiYi = iQiYiSite(keyword: sourceContent)
                         let iQiYiTitles = iQiYi.FindAllMovies().map{ $0.title }
                         self.movieTitlesArray.append(
@@ -39,8 +43,8 @@ class MovieTableViewController: UITableViewController {
                             iQiYiLinks.count>maxNum ? Array(iQiYiLinks[0..<maxNum]) : iQiYiLinks
                         )
             
-            
             dispatch_async(dispatch_get_main_queue(), {
+                KVNProgress.dismiss()
                self.CurrentTableView.reloadData()
                 });
 
@@ -58,8 +62,6 @@ class MovieTableViewController: UITableViewController {
 //            letvLinks.count>maxNum ? Array(letvLinks[0..<maxNum]) : letvLinks
 //            )
 //        )
-        
-        //self.lblLoading.hidden = true
     }
     
     override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -85,16 +87,7 @@ class MovieTableViewController: UITableViewController {
     }
     
     override func viewDidLoad() {
-//        dispatch_async(dispatch_get_main_queue()){
-//            self.ResetmoviesArray()
-//            
-//            self.lblLoading.hidden = true
-//        }
-        
         self.ResetmoviesArray()
-
-        //self.lblLoading.hidden = true
-        
         super.viewDidLoad()
     }
 
@@ -123,8 +116,6 @@ class MovieTableViewController: UITableViewController {
         let cellIdentifyName: String = "MovieTableViewCell"
         var cell: MovieTableViewCell = tableView.dequeueReusableCellWithIdentifier(cellIdentifyName) as! MovieTableViewCell
         cell.movieTitle?.text = movieTitlesArray[indexPath.section][indexPath.row]
-        
-    
         
         return cell
     }

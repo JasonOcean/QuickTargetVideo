@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		965814891C4FD79E0094AE36 /* KVNProgressView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 965814881C4FD79E0094AE36 /* KVNProgressView.xib */; };
+		9658148C1C4FD7AD0094AE36 /* KVNProgress.m in Sources */ = {isa = PBXBuildFile; fileRef = 9658148B1C4FD7AD0094AE36 /* KVNProgress.m */; };
+		965814911C4FD7BD0094AE36 /* UIImage+KVNEmpty.m in Sources */ = {isa = PBXBuildFile; fileRef = 9658148E1C4FD7BD0094AE36 /* UIImage+KVNEmpty.m */; };
+		965814921C4FD7BD0094AE36 /* UIImage+KVNImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = 965814901C4FD7BD0094AE36 /* UIImage+KVNImageEffects.m */; };
 		965AD7181BF3338A00D9D9E6 /* MovieTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965AD7171BF3338A00D9D9E6 /* MovieTableViewCell.swift */; };
 		965AD71A1C054C5C00D9D9E6 /* RegexHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965AD7191C054C5C00D9D9E6 /* RegexHelper.swift */; };
 		9661BFB51C1984470004B65A /* VideoDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9661BFB41C1984470004B65A /* VideoDetail.swift */; };
@@ -30,6 +34,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		963E5F871C4F7F39004A2DB5 /* QuickTargetVideo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "QuickTargetVideo-Bridging-Header.h"; sourceTree = "<group>"; };
+		965814881C4FD79E0094AE36 /* KVNProgressView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = KVNProgressView.xib; path = KVNProgress/Resources/KVNProgressView.xib; sourceTree = "<group>"; };
+		9658148A1C4FD7AD0094AE36 /* KVNProgress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KVNProgress.h; path = KVNProgress/Classes/KVNProgress.h; sourceTree = "<group>"; };
+		9658148B1C4FD7AD0094AE36 /* KVNProgress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KVNProgress.m; path = KVNProgress/Classes/KVNProgress.m; sourceTree = "<group>"; };
+		9658148D1C4FD7BD0094AE36 /* UIImage+KVNEmpty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+KVNEmpty.h"; path = "KVNProgress/Categories/UIImage+KVNEmpty.h"; sourceTree = "<group>"; };
+		9658148E1C4FD7BD0094AE36 /* UIImage+KVNEmpty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+KVNEmpty.m"; path = "KVNProgress/Categories/UIImage+KVNEmpty.m"; sourceTree = "<group>"; };
+		9658148F1C4FD7BD0094AE36 /* UIImage+KVNImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+KVNImageEffects.h"; path = "KVNProgress/Categories/UIImage+KVNImageEffects.h"; sourceTree = "<group>"; };
+		965814901C4FD7BD0094AE36 /* UIImage+KVNImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+KVNImageEffects.m"; path = "KVNProgress/Categories/UIImage+KVNImageEffects.m"; sourceTree = "<group>"; };
 		965AD7171BF3338A00D9D9E6 /* MovieTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieTableViewCell.swift; sourceTree = "<group>"; };
 		965AD7191C054C5C00D9D9E6 /* RegexHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegexHelper.swift; sourceTree = "<group>"; };
 		9661BFB41C1984470004B65A /* VideoDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoDetail.swift; sourceTree = "<group>"; };
@@ -64,6 +76,44 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		965814841C4FD7320094AE36 /* KVNProgress */ = {
+			isa = PBXGroup;
+			children = (
+				965814871C4FD7630094AE36 /* Resources */,
+				965814861C4FD7550094AE36 /* Classes */,
+				965814851C4FD7470094AE36 /* Categories */,
+			);
+			name = KVNProgress;
+			sourceTree = "<group>";
+		};
+		965814851C4FD7470094AE36 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				9658148D1C4FD7BD0094AE36 /* UIImage+KVNEmpty.h */,
+				9658148E1C4FD7BD0094AE36 /* UIImage+KVNEmpty.m */,
+				9658148F1C4FD7BD0094AE36 /* UIImage+KVNImageEffects.h */,
+				965814901C4FD7BD0094AE36 /* UIImage+KVNImageEffects.m */,
+			);
+			name = Categories;
+			sourceTree = "<group>";
+		};
+		965814861C4FD7550094AE36 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				9658148A1C4FD7AD0094AE36 /* KVNProgress.h */,
+				9658148B1C4FD7AD0094AE36 /* KVNProgress.m */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		965814871C4FD7630094AE36 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				965814881C4FD79E0094AE36 /* KVNProgressView.xib */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 		96D5D88E1BE8974E00781EC9 = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +135,8 @@
 		96D5D8991BE8974E00781EC9 /* QuickTargetVideo */ = {
 			isa = PBXGroup;
 			children = (
+				963E5F871C4F7F39004A2DB5 /* QuickTargetVideo-Bridging-Header.h */,
+				965814841C4FD7320094AE36 /* KVNProgress */,
 				9661BFB41C1984470004B65A /* VideoDetail.swift */,
 				96D5D89C1BE8974E00781EC9 /* AppDelegate.swift */,
 				96D5D8A01BE8974E00781EC9 /* SearchController.swift */,
@@ -169,7 +221,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftMigration = 0710;
-				LastSwiftUpdateCheck = 0710;
+				LastSwiftUpdateCheck = 0720;
 				LastUpgradeCheck = 0610;
 				ORGANIZATIONNAME = Jason;
 				TargetAttributes = {
@@ -207,6 +259,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				965814891C4FD79E0094AE36 /* KVNProgressView.xib in Resources */,
 				96D5D8A61BE8974E00781EC9 /* Main.storyboard in Resources */,
 				96D5D8AB1BE8974F00781EC9 /* LaunchScreen.xib in Resources */,
 				96D5D8A81BE8974E00781EC9 /* Images.xcassets in Resources */,
@@ -230,7 +283,10 @@
 				965AD7181BF3338A00D9D9E6 /* MovieTableViewCell.swift in Sources */,
 				96CF67871BF1E8C5009B4BB4 /* MovieTableViewController.swift in Sources */,
 				96D5D8A11BE8974E00781EC9 /* SearchController.swift in Sources */,
+				965814921C4FD7BD0094AE36 /* UIImage+KVNImageEffects.m in Sources */,
+				9658148C1C4FD7AD0094AE36 /* KVNProgress.m in Sources */,
 				96D5D89D1BE8974E00781EC9 /* AppDelegate.swift in Sources */,
+				965814911C4FD7BD0094AE36 /* UIImage+KVNEmpty.m in Sources */,
 				9661BFB51C1984470004B65A /* VideoDetail.swift in Sources */,
 				965AD71A1C054C5C00D9D9E6 /* RegexHelper.swift in Sources */,
 			);
@@ -362,7 +418,7 @@
 				INFOPLIST_FILE = QuickTargetVideo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "QuickTargetVideo/QuickTargetVideo-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -376,7 +432,7 @@
 				INFOPLIST_FILE = QuickTargetVideo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "QuickTargetVideo/QuickTargetVideo-Bridging-Header.h";
 			};
 			name = Release;
 		};
