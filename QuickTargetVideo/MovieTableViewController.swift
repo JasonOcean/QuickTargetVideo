@@ -12,12 +12,9 @@ class MovieTableViewController: UITableViewController {
     var searchKey: String?
     var movieTitlesArray = Array<Array<String>>()
     var movieLinksArray = Array<Array<String>>()
-    var moviesGroupArray = ["iQiYi", "TuDou", "YouKu"]
+    var moviesGroupArray = ["iQiYi", "TuDou", "Sohu"]
     
     @IBOutlet var CurrentTableView: UITableView!
-    var isiQiYiLoaded : Bool = false
-    var isTuDouLoaded: Bool = false
-    var isSouHuLoaded: Bool = false
    
     func ResetmoviesArray()
     {
@@ -47,7 +44,6 @@ class MovieTableViewController: UITableViewController {
                         )
             
             dispatch_async(dispatch_get_main_queue(), {
-                    self.isiQiYiLoaded = true
                     self.RefreshTableView()
                 });
         }
@@ -68,21 +64,36 @@ class MovieTableViewController: UITableViewController {
             )
             
             dispatch_async(dispatch_get_main_queue(), {
-                self.isTuDouLoaded = true
                 self.RefreshTableView()
             });
         }
         taskTuDou.resume()
+        
+        var urlSohu = NSURL(string: "http://so.tv.sohu.com/mts?wd=" + searchKey!)
+        let taskSohu = session.dataTaskWithURL(urlSohu!) {(data, response, error) in
+            var sourceContent:String = NSString(data:data!, encoding:NSUTF8StringEncoding)! as String
+            var sohu = SohuSite(source: sourceContent)
+            let sohuTitles = sohu.FindAllMovies().map{ $0.title }
+            self.movieTitlesArray.append(
+                sohuTitles.count>maxNum ? Array(sohuTitles[0..<maxNum]) : sohuTitles
+            )
+            
+            let sohuLinks = sohu.FindAllMovies().map{ $0.link }
+            self.movieLinksArray.append(
+                sohuLinks.count>maxNum ? Array(sohuLinks[0..<maxNum]) : sohuLinks
+            )
+            
+            dispatch_async(dispatch_get_main_queue(), {
+                self.RefreshTableView()
+            });
+        }
+        taskSohu.resume()
 
     }
     
     func RefreshTableView() {
         self.CurrentTableView.reloadData()
-        
-        //if(isiQiYiLoaded && isTuDouLoaded) {
-//        if (isiQiYiLoaded) {
-            KVNProgress.dismiss()
-//        }
+        KVNProgress.dismiss()
     }
     
     override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {

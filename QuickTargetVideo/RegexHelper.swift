@@ -191,6 +191,23 @@ class TuDouSite: RegexHelper
     }
 }
 
+class SohuSite: RegexHelper
+{
+    var sohuMovies: [String]?
+    
+    init(source: String)
+    {
+        let bodyPattern: String = "<div class=\"ssItem cfix\">(.|\\s)*?</div>"
+        super.init(source: source, patternStr: bodyPattern)
+    }
+    
+//    override func GetSingleMovieItem(parentText: String, titleP: String?, linkP: String?) -> MovieItem {
+//        let titlePattern : String = "_log_title='(.+?)'"
+//        let linkPattern: String = "href=[\\s]*?\"(.|\\s)*?\""
+//        return super.GetSingleMovieItem(parentText, titleP: titlePattern, linkP: linkPattern)
+//    }
+}
+
 class HotVideosPage: RegexHelper
 {
     var HotVideos: [String]?
