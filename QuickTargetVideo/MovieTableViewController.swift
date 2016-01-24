@@ -12,9 +12,12 @@ class MovieTableViewController: UITableViewController {
     var searchKey: String?
     var movieTitlesArray = Array<Array<String>>()
     var movieLinksArray = Array<Array<String>>()
-    var moviesGroupArray = ["iQiYi", "Letv", "YouKu"]
+    var moviesGroupArray = ["iQiYi", "TuDou", "YouKu"]
     
     @IBOutlet var CurrentTableView: UITableView!
+    var isiQiYiLoaded : Bool = false
+    var isTuDouLoaded: Bool = false
+    var isSouHuLoaded: Bool = false
    
     func ResetmoviesArray()
     {
@@ -28,9 +31,9 @@ class MovieTableViewController: UITableViewController {
         let maxNum : Int = 3
     
         var session = NSURLSession.sharedSession()
-        var url = NSURL(string: "http://so.iqiyi.com/so/q_" + searchKey!)
         
-        let task = session.dataTaskWithURL(url!) {(data, response, error) in
+        var urliQiYi = NSURL(string: "http://so.iqiyi.com/so/q_" + searchKey!)
+        let taskiQiYi = session.dataTaskWithURL(urliQiYi!) {(data, response, error) in
             var sourceContent:String = NSString(data:data!, encoding:NSUTF8StringEncoding)! as String
             var iQiYi = iQiYiSite(source: sourceContent)
                         let iQiYiTitles = iQiYi.FindAllMovies().map{ $0.title }
@@ -44,24 +47,42 @@ class MovieTableViewController: UITableViewController {
                         )
             
             dispatch_async(dispatch_get_main_queue(), {
-                KVNProgress.dismiss()
-               self.CurrentTableView.reloadData()
+                    self.isiQiYiLoaded = true
+                    self.RefreshTableView()
                 });
-
         }
+        taskiQiYi.resume()
         
-        task.resume()
-//        var letv = LetvSite(keyword: searchKey!)
-//        let letvTitles = letv.FindAllMovies().map{ $0.title }
-//        movieTitlesArray.append(
-//            letvTitles.count>maxNum ? Array(letvTitles[0..<maxNum]) : letvTitles
-//        )
-//        
-//        let letvLinks = letv.FindAllMovies().map{ $0.link }
-//        movieLinksArray.append(Array(
-//            letvLinks.count>maxNum ? Array(letvLinks[0..<maxNum]) : letvLinks
-//            )
-//        )
+        var urlTuDou = NSURL(string: "http://www.soku.com/t/nisearch.do?kw=" + searchKey!)
+        let taskTuDou = session.dataTaskWithURL(urlTuDou!) {(data, response, error) in
+            var sourceContent:String = NSString(data:data!, encoding:NSUTF8StringEncoding)! as String
+            var tuDou = TuDouSite(source: sourceContent)
+            let tuDouTitles = tuDou.FindAllMovies().map{ $0.title }
+            self.movieTitlesArray.append(
+                tuDouTitles.count>maxNum ? Array(tuDouTitles[0..<maxNum]) : tuDouTitles
+            )
+            
+            let tuDouLinks = tuDou.FindAllMovies().map{ $0.link }
+            self.movieLinksArray.append(
+                tuDouLinks.count>maxNum ? Array(tuDouLinks[0..<maxNum]) : tuDouLinks
+            )
+            
+            dispatch_async(dispatch_get_main_queue(), {
+                self.isTuDouLoaded = true
+                self.RefreshTableView()
+            });
+        }
+        taskTuDou.resume()
+
+    }
+    
+    func RefreshTableView() {
+        self.CurrentTableView.reloadData()
+        
+        //if(isiQiYiLoaded && isTuDouLoaded) {
+//        if (isiQiYiLoaded) {
+            KVNProgress.dismiss()
+//        }
     }
     
     override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
