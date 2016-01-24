@@ -97,10 +97,10 @@ class RegexHelper
     //Following is the steps to catch:
     //1. Get [title="***"]
     //2. Get [""] from above string,
-    func GetSingleMovieItem(parentText: String) -> MovieItem
+    func GetSingleMovieItem(parentText: String, titleP: String?, linkP: String?) -> MovieItem
     {
-        self.titlePattern = "title=\"(.+?)\""
-        self.linkPattern = "href=[\\s]*?\"(.|\\s)*?\""
+        self.titlePattern = titleP==nil ? "title=\"(.+?)\"": titleP!
+        self.linkPattern = linkP==nil ? "href=[\\s]*?\"(.|\\s)*?\"" : linkP!
         
         let t:String = self.GetTargetContent(self.titlePattern, pText:parentText, isFilterQuote: false)
         let l:String = self.GetTargetContent(self.linkPattern, pText:parentText,isFilterQuote: false)
@@ -118,7 +118,7 @@ class RegexHelper
         var movies: [MovieItem] = []
         self.bodyTexts = self.GetBodyContent()
         for c in self.bodyTexts{
-            movies.append(self.GetSingleMovieItem(c))
+            movies.append(self.GetSingleMovieItem(c, titleP: nil, linkP: nil))
         }
         
         return movies
@@ -152,7 +152,7 @@ class iQiYiSite: RegexHelper
 {
     var iQiYiMovies: [String]?
     
-    init(keyword: String)
+    init(source: String)
     {
 //        var source = ""
 //        var contentUrl: String = "http://so.iqiyi.com/so/q_" + keyword
@@ -170,6 +170,23 @@ class iQiYiSite: RegexHelper
 //        super.init(source: source, patternStr: bodyPattern)
         
         let bodyPattern: String = "<h3 class=\"result_title\">[\\s\\S]*?</h3>"
-        super.init(source: keyword, patternStr: bodyPattern)
+        super.init(source: source, patternStr: bodyPattern)
+    }
+}
+
+class HotVideosPage: RegexHelper
+{
+    var HotVideos: [String]?
+    
+    init(source: String)
+    {
+        let bodyPattern: String = "<a rseat=\"(.+?)\" class=\"mod_focus-index_item\" (.+?)></a>"
+        super.init(source: source, patternStr: bodyPattern)
+    }
+    
+    override func GetSingleMovieItem(parentText: String, titleP: String?, linkP: String?) -> MovieItem {
+        let titlePattern : String = "alt=\"(.+?)\""
+        let linkPattern: String = "href=[\\s]*?\"(.|\\s)*?\""
+        return super.GetSingleMovieItem(parentText, titleP: titlePattern, linkP: linkPattern)
     }
 }

@@ -30,9 +30,9 @@ class MovieTableViewController: UITableViewController {
         var session = NSURLSession.sharedSession()
         var url = NSURL(string: "http://so.iqiyi.com/so/q_" + searchKey!)
         
-        let task = NSURLSession.sharedSession().dataTaskWithURL(url!) {(data, response, error) in
+        let task = session.dataTaskWithURL(url!) {(data, response, error) in
             var sourceContent:String = NSString(data:data!, encoding:NSUTF8StringEncoding)! as String
-            var iQiYi = iQiYiSite(keyword: sourceContent)
+            var iQiYi = iQiYiSite(source: sourceContent)
                         let iQiYiTitles = iQiYi.FindAllMovies().map{ $0.title }
                         self.movieTitlesArray.append(
                             iQiYiTitles.count>maxNum ? Array(iQiYiTitles[0..<maxNum]) : iQiYiTitles

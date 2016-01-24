@@ -247,44 +247,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "QuickTargetVideo/RegexHelper.swift"
-            timestampString = "471954955.152495"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "191"
-            endingLineNumber = "191"
-            landmarkName = "iQiYiSite"
-            landmarkType = "3">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "QuickTargetVideo/RegexHelper.swift"
-            timestampString = "471954955.152495"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "192"
-            endingLineNumber = "192"
-            landmarkName = "iQiYiSite"
-            landmarkType = "3">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "QuickTargetVideo/RegexHelper.swift"
-            timestampString = "471954955.152495"
+            timestampString = "475146229.332631"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "208"
             endingLineNumber = "208"
-            landmarkName = "iQiYiSite"
+            landmarkName = "HotVideosPage"
             landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
@@ -295,12 +263,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "QuickTargetVideo/RegexHelper.swift"
-            timestampString = "471954955.152495"
+            timestampString = "475146229.332631"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "183"
-            endingLineNumber = "183"
-            landmarkName = "iQiYiSite"
+            startingLineNumber = "209"
+            endingLineNumber = "209"
+            landmarkName = "HotVideosPage"
             landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
@@ -311,12 +279,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "QuickTargetVideo/RegexHelper.swift"
-            timestampString = "471954955.152495"
+            timestampString = "475146229.332631"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "203"
-            endingLineNumber = "203"
-            landmarkName = "iQiYiSite"
+            startingLineNumber = "225"
+            endingLineNumber = "225"
+            landmarkName = "HotVideosPage"
             landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
@@ -327,12 +295,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "QuickTargetVideo/RegexHelper.swift"
-            timestampString = "471954955.152495"
+            timestampString = "475146229.332631"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "189"
-            endingLineNumber = "189"
-            landmarkName = "iQiYiSite"
+            startingLineNumber = "200"
+            endingLineNumber = "200"
+            landmarkName = "HotVideosPage"
             landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
@@ -343,12 +311,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "QuickTargetVideo/RegexHelper.swift"
-            timestampString = "471954955.152495"
+            timestampString = "475146229.332631"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "193"
-            endingLineNumber = "193"
-            landmarkName = "iQiYiSite"
+            startingLineNumber = "220"
+            endingLineNumber = "220"
+            landmarkName = "HotVideosPage"
             landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
@@ -359,76 +327,44 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "QuickTargetVideo/RegexHelper.swift"
-            timestampString = "471422650.476014"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "72"
-            endingLineNumber = "72"
-            landmarkName = "GetTargetContent(_:pText:isFilterQuote:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "QuickTargetVideo/RegexHelper.swift"
-            timestampString = "471422769.884587"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "80"
-            endingLineNumber = "80"
-            landmarkName = "GetTargetContent(_:pText:isFilterQuote:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "QuickTargetVideo/RegexHelper.swift"
-            timestampString = "471422769.884587"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "78"
-            endingLineNumber = "78"
-            landmarkName = "GetTargetContent(_:pText:isFilterQuote:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "QuickTargetVideo/RegexHelper.swift"
-            timestampString = "471942057.508297"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "96"
-            endingLineNumber = "96"
-            landmarkName = "RegexHelper"
-            landmarkType = "3">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "QuickTargetVideo/RegexHelper.swift"
-            timestampString = "471954955.152495"
+            timestampString = "475146229.332631"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "206"
             endingLineNumber = "206"
-            landmarkName = "iQiYiSite"
+            landmarkName = "HotVideosPage"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "QuickTargetVideo/RegexHelper.swift"
+            timestampString = "475146229.332631"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "210"
+            endingLineNumber = "210"
+            landmarkName = "HotVideosPage"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "QuickTargetVideo/RegexHelper.swift"
+            timestampString = "475146229.332631"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "223"
+            endingLineNumber = "223"
+            landmarkName = "HotVideosPage"
             landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
@@ -470,13 +406,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "QuickTargetVideo/RegexHelper.swift"
-            timestampString = "471952719.147011"
+            filePath = "QuickTargetVideo/SearchController.swift"
+            timestampString = "475331120.73317"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "101"
-            endingLineNumber = "101"
-            landmarkName = "GetSingleMovieItem(_:)"
+            startingLineNumber = "93"
+            endingLineNumber = "93"
+            landmarkName = "viewDidLayoutSubviews()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -486,13 +422,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "QuickTargetVideo/RegexHelper.swift"
-            timestampString = "471954955.152495"
+            filePath = "QuickTargetVideo/SearchController.swift"
+            timestampString = "475331120.73317"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "113"
-            endingLineNumber = "113"
-            landmarkName = "GetSingleMovieItem(_:)"
+            startingLineNumber = "94"
+            endingLineNumber = "94"
+            landmarkName = "viewDidLayoutSubviews()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -502,13 +438,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "QuickTargetVideo/RegexHelper.swift"
-            timestampString = "471954955.152495"
+            filePath = "QuickTargetVideo/SearchController.swift"
+            timestampString = "475331120.73317"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "110"
-            endingLineNumber = "110"
-            landmarkName = "GetSingleMovieItem(_:)"
+            startingLineNumber = "66"
+            endingLineNumber = "66"
+            landmarkName = "BindingHotVideos()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -518,13 +454,29 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "QuickTargetVideo/RegexHelper.swift"
-            timestampString = "471954355.304261"
+            filePath = "QuickTargetVideo/SearchController.swift"
+            timestampString = "475331120.73317"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "81"
-            endingLineNumber = "81"
-            landmarkName = "GetTargetContent(_:pText:isFilterQuote:)"
+            startingLineNumber = "89"
+            endingLineNumber = "89"
+            landmarkName = "BindingHotVideos()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "QuickTargetVideo/SearchController.swift"
+            timestampString = "475331120.73317"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "71"
+            endingLineNumber = "71"
+            landmarkName = "BindingHotVideos()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
