@@ -205,7 +205,6 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
-                                <color key="backgroundColor" red="0.60000002384185791" green="0.40000000596046448" blue="0.20000000298023224" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <outlet property="movieTitle" destination="Pt2-f8-fKu" id="7l4-Cc-KLr"/>
                                     <segue destination="OAP-u4-xuO" kind="push" identifier="MovieGo" id="fL3-sR-nMA"/>
@@ -242,6 +241,9 @@
                             <webView contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ONq-Gs-9nc">
                                 <rect key="frame" x="-24" y="-79" width="630" height="687"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <variation key="heightClass=regular" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="800"/>
+                                </variation>
                                 <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
                                     <rect key="frame" x="0.0" y="25" width="630" height="687"/>
                                 </variation>
@@ -249,17 +251,27 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="mX7-Qp-Z7C" firstAttribute="top" secondItem="ONq-Gs-9nc" secondAttribute="bottom" id="5Yu-bl-MEu"/>
                             <constraint firstItem="mX7-Qp-Z7C" firstAttribute="top" secondItem="ONq-Gs-9nc" secondAttribute="bottom" id="66f-C3-s0q"/>
                             <constraint firstItem="ONq-Gs-9nc" firstAttribute="leading" secondItem="dgj-CC-Hyv" secondAttribute="leading" id="7ZY-58-npg"/>
+                            <constraint firstItem="ONq-Gs-9nc" firstAttribute="top" secondItem="dgj-CC-Hyv" secondAttribute="topMargin" id="onU-cF-pBD"/>
                             <constraint firstAttribute="trailing" secondItem="ONq-Gs-9nc" secondAttribute="trailing" id="uSf-K5-Hxs"/>
                             <constraint firstItem="ONq-Gs-9nc" firstAttribute="top" secondItem="Bcp-1O-nLY" secondAttribute="bottom" id="vdq-fp-RNz"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
                                 <exclude reference="7ZY-58-npg"/>
+                                <exclude reference="onU-cF-pBD"/>
                                 <exclude reference="uSf-K5-Hxs"/>
                                 <exclude reference="vdq-fp-RNz"/>
+                                <exclude reference="5Yu-bl-MEu"/>
                                 <exclude reference="66f-C3-s0q"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular">
+                            <mask key="constraints">
+                                <include reference="onU-cF-pBD"/>
+                                <include reference="5Yu-bl-MEu"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -278,7 +290,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ibW-F4-c3v" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2597" y="-280"/>
+            <point key="canvasLocation" x="2597" y="-280.5"/>
         </scene>
     </scenes>
 </document>
