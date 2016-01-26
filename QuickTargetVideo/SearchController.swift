@@ -11,7 +11,6 @@ import UIKit
 class SearchController: UIViewController, UISearchBarDelegate {
 
     @IBOutlet weak var searchBar: UISearchBar!
-    @IBOutlet var CurrentView: UIView!
     var HotVideoItems : [MovieItem] = []
     
     override func viewDidLoad() {
@@ -49,7 +48,7 @@ class SearchController: UIViewController, UISearchBarDelegate {
     func BindingHotVideos() {
         var colorArray = [UIColor.greenColor(),UIColor.blueColor(), UIColor.purpleColor(),UIColor.redColor(),UIColor.grayColor(),UIColor.magentaColor(),UIColor.brownColor()]
 
-        var frameArray = ["{{54, 92}, {120, 70}}","{{26, 228}, {120, 120}}","{{192, 124}, {200, 30}}","{{34, 146}, {160, 30}}","{{280, 175}, {90, 30}}","{{54, 190}, {150, 30}}","{{262, 238}, {120, 30}}","{{170, 269}, {120, 30}}","{{190, 220}, {120, 30}}"]
+        var frameArray = ["{{54, 92}, {120, 70}}","{{26, 228}, {120, 120}}","{{192, 124}, {200, 30}}","{{34, 146}, {160, 30}}","{{280, 175}, {90, 30}}","{{54, 190}, {150, 30}}","{{262, 238}, {120, 30}}","{{170, 269}, {120, 30}}","{{40, 220}, {200, 250}}","{{170, 220}, {400, 300}}"]
         
         if(!self.HotVideoItems.isEmpty) {
             let labels = getLabelsInView(self.view)
@@ -89,6 +88,11 @@ class SearchController: UIViewController, UISearchBarDelegate {
         super.viewDidLayoutSubviews()
         
         self.LoadHotVedios()
+    }
+    
+    override func loadView() {
+        super.loadView()
+        //self.LoadHotVedios()
     }
     
     override func didReceiveMemoryWarning() {
