@@ -10,8 +10,6 @@ import UIKit
 
 class MovieTableViewController: UITableViewController {
     var searchKey: String?
-    var movieTitlesArray = Array<Array<String>>()
-    var movieLinksArray = Array<Array<String>>()
     var moviesGroupArray = ["iQiYi", "TuDou", "Sohu"]
     var movieTitles = Dictionary<String, Array<String>>()
     var movieLinks = Dictionary<String, Array<String>>()
@@ -26,7 +24,6 @@ class MovieTableViewController: UITableViewController {
             KVNProgressViewParameterFullScreen: true]
         KVNProgress.showWithParameters(para as [NSObject : AnyObject])
         
-        movieTitlesArray = []
         let maxNum : Int = 3
     
         var session = NSURLSession.sharedSession()
@@ -36,17 +33,9 @@ class MovieTableViewController: UITableViewController {
             var sourceContent:String = NSString(data:data!, encoding:NSUTF8StringEncoding)! as String
             var iQiYi = iQiYiSite(source: sourceContent)
                         let iQiYiTitles = iQiYi.FindAllMovies().map{ $0.title }
-                        self.movieTitlesArray.append(
-                            iQiYiTitles.count>maxNum ? Array(iQiYiTitles[0..<maxNum]) : iQiYiTitles
-                        )
-            
                         self.movieTitles["iQiYi"] = iQiYiTitles.count>maxNum ? Array(iQiYiTitles[0..<maxNum]) : iQiYiTitles
         
                         let iQiYiLinks = iQiYi.FindAllMovies().map{ $0.link }
-                        self.movieLinksArray.append(
-                            iQiYiLinks.count>maxNum ? Array(iQiYiLinks[0..<maxNum]) : iQiYiLinks
-                        )
-            
                         self.movieLinks["iQiYi"] = iQiYiLinks.count>maxNum ? Array(iQiYiLinks[0..<maxNum]) : iQiYiLinks
             
             dispatch_async(dispatch_get_main_queue(), {
@@ -60,15 +49,9 @@ class MovieTableViewController: UITableViewController {
             var sourceContent:String = NSString(data:data!, encoding:NSUTF8StringEncoding)! as String
             var tuDou = TuDouSite(source: sourceContent)
             let tuDouTitles = tuDou.FindAllMovies().map{ $0.title }
-            self.movieTitlesArray.append(
-                tuDouTitles.count>maxNum ? Array(tuDouTitles[0..<maxNum]) : tuDouTitles
-            )
             self.movieTitles["TuDou"] = tuDouTitles.count>maxNum ? Array(tuDouTitles[0..<maxNum]) : tuDouTitles
             
             let tuDouLinks = tuDou.FindAllMovies().map{ $0.link }
-            self.movieLinksArray.append(
-                tuDouLinks.count>maxNum ? Array(tuDouLinks[0..<maxNum]) : tuDouLinks
-            )
             self.movieLinks["TuDou"] = tuDouLinks.count>maxNum ? Array(tuDouLinks[0..<maxNum]) : tuDouLinks
             
             dispatch_async(dispatch_get_main_queue(), {
@@ -82,16 +65,9 @@ class MovieTableViewController: UITableViewController {
             var sourceContent:String = NSString(data:data!, encoding:NSUTF8StringEncoding)! as String
             var sohu = SohuSite(source: sourceContent)
             let sohuTitles = sohu.FindAllMovies().map{ $0.title }
-            self.movieTitlesArray.append(
-                sohuTitles.count>maxNum ? Array(sohuTitles[0..<maxNum]) : sohuTitles
-            )
             self.movieTitles["SoHu"] = sohuTitles.count>maxNum ? Array(sohuTitles[0..<maxNum]) : sohuTitles
             
             let sohuLinks = sohu.FindAllMovies().map{ $0.link }
-            self.movieLinksArray.append(
-                sohuLinks.count>maxNum ? Array(sohuLinks[0..<maxNum]) : sohuLinks
-            )
-            
             self.movieLinks["SoHu"] = sohuLinks.count>maxNum ? Array(sohuLinks[0..<maxNum]) : sohuLinks
             
             dispatch_async(dispatch_get_main_queue(), {
@@ -144,16 +120,10 @@ class MovieTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Potentially incomplete method implementation.
-        // Return the number of sections.
-        return movieTitlesArray.count
+        return movieTitles.count
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete method implementation.
-        // Return the number of rows in the section.
-//        return movieTitlesArray[section].count
-        
         let targetArray = self.GetTargetArray(section, type: "title")
         return targetArray.count
     }

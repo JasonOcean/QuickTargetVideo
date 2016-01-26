@@ -199,11 +199,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "QuickTargetVideo/MovieTableViewController.swift"
-            timestampString = "475469410.686507"
+            timestampString = "475475553.092317"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "122"
-            endingLineNumber = "122"
+            startingLineNumber = "98"
+            endingLineNumber = "98"
             landmarkName = "prepareForSegue(_:sender:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -215,11 +215,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "QuickTargetVideo/MovieTableViewController.swift"
-            timestampString = "475469410.686507"
+            timestampString = "475475553.092317"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "121"
-            endingLineNumber = "121"
+            startingLineNumber = "97"
+            endingLineNumber = "97"
             landmarkName = "prepareForSegue(_:sender:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -439,11 +439,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "QuickTargetVideo/MovieTableViewController.swift"
-            timestampString = "475469410.686507"
+            timestampString = "475475553.092317"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "63"
-            endingLineNumber = "63"
+            startingLineNumber = "51"
+            endingLineNumber = "51"
             landmarkName = "ResetmoviesArray()"
             landmarkType = "5">
          </BreakpointContent>
