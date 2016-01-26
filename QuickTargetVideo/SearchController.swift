@@ -21,20 +21,6 @@ class SearchController: UIViewController, UISearchBarDelegate {
     }
     
     func LoadHotVedios() {
-//        let url = NSURL(string: "http://www.iqiyi.com/")
-//        let task = NSURLSession.sharedSession().dataTaskWithURL(url!) {(data, response, error) in
-//            let sourceContent:String = NSString(data:data!, encoding:NSUTF8StringEncoding)! as String
-//            var hotVideos = HotVideosPage(source: sourceContent)
-//            self.HotVideoTitles = hotVideos.FindAllMovies().map{ $0.title }
-//            
-//            dispatch_async(dispatch_get_main_queue(),{
-//                self.BindingHotVideos()
-////                self.CurrentView.reloadInputViews()
-//            })
-//        }
-//        
-//        task.resume()
-        
         var source: String!
         let url = NSURL(string: "http://www.iqiyi.com/")
         do {
@@ -43,7 +29,6 @@ class SearchController: UIViewController, UISearchBarDelegate {
         }
         catch {}
         
-        //self.HotVideoItems = HotVideosPage(source: source).FindAllMovies()
         self.HotVideoItems = self.UpgradeToShortTitle(HotVideosPage(source: source).FindAllMovies())
         
         self.BindingHotVideos()
@@ -92,11 +77,9 @@ class SearchController: UIViewController, UISearchBarDelegate {
     }
     
     @IBAction func labelTap(sender: AnyObject){
-        print(sender.view)
-        
         let label = sender.view as! UILabel
-        print(label.text)
         var items = HotVideoItems.filter({$0.title == label.text})
+        
         let videoDetailController = storyboard?.instantiateViewControllerWithIdentifier("VideoDetail") as! VideoDetail
         videoDetailController.linkUrl = items[0].link
         self.navigationController?.pushViewController(videoDetailController, animated: true)

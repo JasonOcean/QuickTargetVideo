@@ -26,12 +26,12 @@ class MovieTableViewController: UITableViewController {
         
         let maxNum : Int = 3
     
-        var session = NSURLSession.sharedSession()
+        let session = NSURLSession.sharedSession()
         
-        var urliQiYi = NSURL(string: "http://so.iqiyi.com/so/q_" + searchKey!)
+        let urliQiYi = NSURL(string: "http://so.iqiyi.com/so/q_" + searchKey!)
         let taskiQiYi = session.dataTaskWithURL(urliQiYi!) {(data, response, error) in
-            var sourceContent:String = NSString(data:data!, encoding:NSUTF8StringEncoding)! as String
-            var iQiYi = iQiYiSite(source: sourceContent)
+            let sourceContent:String = NSString(data:data!, encoding:NSUTF8StringEncoding)! as String
+            let iQiYi = iQiYiSite(source: sourceContent)
                         let iQiYiTitles = iQiYi.FindAllMovies().map{ $0.title }
                         self.movieTitles["iQiYi"] = iQiYiTitles.count>maxNum ? Array(iQiYiTitles[0..<maxNum]) : iQiYiTitles
         
@@ -44,10 +44,10 @@ class MovieTableViewController: UITableViewController {
         }
         taskiQiYi.resume()
         
-        var urlTuDou = NSURL(string: "http://www.soku.com/t/nisearch.do?kw=" + searchKey!)
+        let urlTuDou = NSURL(string: "http://www.soku.com/t/nisearch.do?kw=" + searchKey!)
         let taskTuDou = session.dataTaskWithURL(urlTuDou!) {(data, response, error) in
-            var sourceContent:String = NSString(data:data!, encoding:NSUTF8StringEncoding)! as String
-            var tuDou = TuDouSite(source: sourceContent)
+            let sourceContent:String = NSString(data:data!, encoding:NSUTF8StringEncoding)! as String
+            let tuDou = TuDouSite(source: sourceContent)
             let tuDouTitles = tuDou.FindAllMovies().map{ $0.title }
             self.movieTitles["TuDou"] = tuDouTitles.count>maxNum ? Array(tuDouTitles[0..<maxNum]) : tuDouTitles
             
@@ -60,10 +60,10 @@ class MovieTableViewController: UITableViewController {
         }
         taskTuDou.resume()
         
-        var urlSohu = NSURL(string: "http://so.tv.sohu.com/mts?wd=" + searchKey!)
+        let urlSohu = NSURL(string: "http://so.tv.sohu.com/mts?wd=" + searchKey!)
         let taskSohu = session.dataTaskWithURL(urlSohu!) {(data, response, error) in
-            var sourceContent:String = NSString(data:data!, encoding:NSUTF8StringEncoding)! as String
-            var sohu = SohuSite(source: sourceContent)
+            let sourceContent:String = NSString(data:data!, encoding:NSUTF8StringEncoding)! as String
+            let sohu = SohuSite(source: sourceContent)
             let sohuTitles = sohu.FindAllMovies().map{ $0.title }
             self.movieTitles["SoHu"] = sohuTitles.count>maxNum ? Array(sohuTitles[0..<maxNum]) : sohuTitles
             
@@ -94,7 +94,7 @@ class MovieTableViewController: UITableViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if(segue.identifier == "MovieGo")
         {
-            var path:NSIndexPath = self.tableView.indexPathForSelectedRow!
+            let path:NSIndexPath = self.tableView.indexPathForSelectedRow!
             let videoPage = segue.destinationViewController as! VideoDetail
             let targetLinkArray = self.GetTargetArray(path.section, type: "link")
             videoPage.linkUrl = targetLinkArray[path.row]
@@ -133,8 +133,7 @@ class MovieTableViewController: UITableViewController {
         let targetArray = self.GetTargetArray(indexPath.section, type: "title")
         
         let cellIdentifyName: String = "MovieTableViewCell"
-        var cell: MovieTableViewCell = tableView.dequeueReusableCellWithIdentifier(cellIdentifyName) as! MovieTableViewCell
-//        cell.movieTitle?.text = movieTitlesArray[indexPath.section][indexPath.row]
+        let cell: MovieTableViewCell = tableView.dequeueReusableCellWithIdentifier(cellIdentifyName) as! MovieTableViewCell
         cell.movieTitle?.text = targetArray[indexPath.row]
 
         return cell
