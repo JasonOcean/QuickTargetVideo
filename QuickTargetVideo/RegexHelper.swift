@@ -125,29 +125,6 @@ class RegexHelper
     }
 }
 
-class LetvSite: RegexHelper
-{
-    var letvMovies: [String]?
-    
-    init(keyword: String)
-    {
-        var source = ""
-        var contentUrl: String = "http://so.letv.com/s?wd=" + keyword
-        contentUrl = contentUrl.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)!
-        
-        if let cUrl = NSURL(string: contentUrl) {
-            do {
-                let abc = try NSString(contentsOfURL: cUrl, encoding:NSUTF8StringEncoding)
-                source = abc.stringByReplacingOccurrencesOfString("\\", withString: "")
-            }
-            catch {}
-        }
-        
-        let bodyPattern: String = "<div class=\"So-detail (?!(super_temp|Ent-so))[\\s\\S]*?\">[\\s\\S]*?</div>"
-        super.init(source: source, patternStr: bodyPattern)
-    }
-}
-
 class iQiYiSite: RegexHelper
 {
     var iQiYiMovies: [String]?
