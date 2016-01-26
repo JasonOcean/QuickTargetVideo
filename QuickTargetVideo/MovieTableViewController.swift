@@ -97,9 +97,8 @@ class MovieTableViewController: UITableViewController {
             var path:NSIndexPath = self.tableView.indexPathForSelectedRow!
             let videoPage = segue.destinationViewController as! VideoDetail
             let targetLinkArray = self.GetTargetArray(path.section, type: "link")
-//            videoPage.linkUrl = movieLinksArray[path.section][path.row]
             videoPage.linkUrl = targetLinkArray[path.row]
-            presentViewController(videoPage, animated: true, completion: nil)
+
         }
     }
     
