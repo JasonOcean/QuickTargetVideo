@@ -104,7 +104,7 @@ class SearchController: UIViewController, UISearchBarDelegate {
         searchBar.resignFirstResponder()
         
         let movieListController = storyboard?.instantiateViewControllerWithIdentifier("MovieList") as! MovieTableViewController
-        movieListController.searchKey = searchBar.text
+        movieListController.searchKey = searchBar.text?.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)
         presentViewController(movieListController, animated: true, completion: nil)
     }
 }
