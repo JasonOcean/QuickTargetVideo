@@ -90,11 +90,6 @@ class SearchController: UIViewController, UISearchBarDelegate {
         self.LoadHotVedios()
     }
     
-    override func loadView() {
-        super.loadView()
-        //self.LoadHotVedios()
-    }
-    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

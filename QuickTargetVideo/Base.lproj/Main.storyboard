@@ -34,8 +34,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" ambiguous="YES" misplaced="YES" placeholder="Please input key words" showsSearchResultsButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EvD-gb-sul">
-                                <rect key="frame" x="0.0" y="72" width="600" height="44"/>
+                            <searchBar contentMode="redraw" placeholder="Please input key words" showsSearchResultsButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EvD-gb-sul">
+                                <rect key="frame" x="0.0" y="65" width="600" height="44"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
                                     <outlet property="delegate" destination="S4R-Ja-viH" id="mmC-zk-dnl"/>
@@ -104,35 +104,10 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="EvD-gb-sul" firstAttribute="leading" secondItem="ZwX-cT-FIQ" secondAttribute="leadingMargin" constant="-20" id="Oeh-nC-Uj4">
-                                <variation key="heightClass=regular" constant="-15"/>
-                            </constraint>
-                            <constraint firstAttribute="trailingMargin" secondItem="EvD-gb-sul" secondAttribute="trailing" constant="-20" id="kr7-oo-teT">
-                                <variation key="heightClass=regular" constant="-15"/>
-                            </constraint>
-                            <constraint firstItem="EvD-gb-sul" firstAttribute="top" secondItem="fXf-Jd-eTc" secondAttribute="bottom" constant="8" id="lyl-3o-ka7">
-                                <variation key="heightClass=regular" constant="0.0"/>
-                            </constraint>
-                            <constraint firstItem="EvD-gb-sul" firstAttribute="centerX" secondItem="ZwX-cT-FIQ" secondAttribute="centerX" id="oU1-V7-E51">
-                                <variation key="heightClass=regular" constant="0.0"/>
-                            </constraint>
+                            <constraint firstItem="EvD-gb-sul" firstAttribute="leading" secondItem="ZwX-cT-FIQ" secondAttribute="leadingMargin" constant="-20" id="6Xp-Hd-ppY"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="EvD-gb-sul" secondAttribute="trailing" constant="-20" id="WhB-9Q-tkw"/>
+                            <constraint firstItem="EvD-gb-sul" firstAttribute="top" secondItem="fXf-Jd-eTc" secondAttribute="bottom" constant="1" id="bsa-H0-JL1"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="Oeh-nC-Uj4"/>
-                                <exclude reference="kr7-oo-teT"/>
-                                <exclude reference="lyl-3o-ka7"/>
-                                <exclude reference="oU1-V7-E51"/>
-                            </mask>
-                        </variation>
-                        <variation key="heightClass=regular">
-                            <mask key="constraints">
-                                <include reference="Oeh-nC-Uj4"/>
-                                <include reference="kr7-oo-teT"/>
-                                <include reference="lyl-3o-ka7"/>
-                                <include reference="oU1-V7-E51"/>
-                            </mask>
-                        </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Home" id="bSc-xU-kxe"/>
                     <connections>
