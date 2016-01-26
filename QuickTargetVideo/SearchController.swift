@@ -12,7 +12,7 @@ class SearchController: UIViewController, UISearchBarDelegate {
 
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet var CurrentView: UIView!
-    var HotVideoTitles : [String]!
+    var HotVideoItems : [MovieItem] = []
     
     override func viewDidLoad() {
         
@@ -43,9 +43,7 @@ class SearchController: UIViewController, UISearchBarDelegate {
         }
         catch {}
         
-        var hotVideos = HotVideosPage(source: source)
-        self.HotVideoTitles = hotVideos.FindAllMovies().map{ $0.title }
-//        self.HotVideoTitles = hotVideos.FindAllMovies().map{ $0.link }
+        self.HotVideoItems = HotVideosPage(source: source).FindAllMovies()
         
         self.BindingHotVideos()
     }
@@ -67,11 +65,15 @@ class SearchController: UIViewController, UISearchBarDelegate {
         //var titlesArray = ["甄嬛传","琅琊榜","中国式结婚","雪豹","蜡笔小新","麻辣父子","GTO","芈月传","一起结婚吧"]
         var frameArray = ["{{54, 292}, {320, 250}}","{{26, 228}, {320, 30}}","{{132, 254}, {320, 160}}","{{64, 146}, {320, 30}}","{{180, 225}, {320, 80}}","{{54, 320}, {320, 160}}","{{132, 538}, {320, 330}}","{{170, 469}, {320, 230}}","{{47, 390}, {320, 130}}"]
         
-        if(!self.HotVideoTitles.isEmpty) {
+        if(!self.HotVideoItems.isEmpty) {
             let labels = getLabelsInView(self.view)
             var i = 0
             for label in labels {
-                label.text = HotVideoTitles[i++]
+                label.userInteractionEnabled = true
+                let tapGesture = UITapGestureRecognizer.init(target: self, action:"labelTap:")
+                label.addGestureRecognizer(tapGesture)
+                
+                label.text = HotVideoItems[i++].title
                 label.textColor = colorArray[random()%colorArray.count];
                 label.font = UIFont.systemFontOfSize(CGFloat(random() % 15) + 20.0);
                 label.center = self.view.center;
@@ -86,6 +88,17 @@ class SearchController: UIViewController, UISearchBarDelegate {
                 
             }
         }
+    }
+    
+    @IBAction func labelTap(sender: AnyObject){
+        print(sender.view)
+        
+        let label = sender.view as! UILabel
+        print(label.text)
+        var items = HotVideoItems.filter({$0.title == label.text})
+        let videoDetailController = storyboard?.instantiateViewControllerWithIdentifier("VideoDetail") as! VideoDetail
+        videoDetailController.linkUrl = items[0].link
+        self.navigationController?.pushViewController(videoDetailController, animated: true)
     }
     
     override func viewDidLayoutSubviews() {
