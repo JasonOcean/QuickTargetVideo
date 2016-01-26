@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="bvx-iG-PPL">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="bvx-iG-PPL">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
@@ -22,7 +22,7 @@
             </objects>
             <point key="canvasLocation" x="-345" y="-261"/>
         </scene>
-        <!--主页-->
+        <!--Home-->
         <scene sceneID="snT-py-3hH">
             <objects>
                 <viewController storyboardIdentifier="DataViewController" id="S4R-Ja-viH" customClass="SearchController" customModule="QuickTargetVideo" customModuleProvider="target" sceneMemberID="viewController">
@@ -168,7 +168,7 @@
                             </mask>
                         </variation>
                     </view>
-                    <navigationItem key="navigationItem" title="主页" id="bSc-xU-kxe"/>
+                    <navigationItem key="navigationItem" title="Home" id="bSc-xU-kxe"/>
                     <connections>
                         <outlet property="CurrentView" destination="ZwX-cT-FIQ" id="Jyp-ed-DLJ"/>
                         <outlet property="searchBar" destination="EvD-gb-sul" id="RW8-Oy-9KK"/>
@@ -178,7 +178,7 @@
             </objects>
             <point key="canvasLocation" x="534" y="-261"/>
         </scene>
-        <!--Title-->
+        <!--All Videos-->
         <scene sceneID="WPu-CD-FXy">
             <objects>
                 <tableViewController storyboardIdentifier="MovieList" id="7PP-xG-RAY" customClass="MovieTableViewController" customModule="QuickTargetVideo" customModuleProvider="target" sceneMemberID="viewController">
@@ -191,7 +191,7 @@
                                 <rect key="frame" x="0.0" y="22" width="600" height="55"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="GtT-zr-ZE1" id="xxX-B0-YBy">
-                                    <rect key="frame" x="0.0" y="0.0" width="567" height="54"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="567" height="54.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pt2-f8-fKu">
@@ -217,13 +217,13 @@
                             <outlet property="delegate" destination="7PP-xG-RAY" id="9aQ-MO-ug1"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Title" id="bSC-Fr-GUT"/>
+                    <navigationItem key="navigationItem" title="All Videos" id="bSC-Fr-GUT"/>
                     <connections>
                         <outlet property="CurrentTableView" destination="Ntg-bO-Whi" id="RGS-8h-NIK"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4EE-9A-9y5" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <navigationItem title="Title" id="ltD-wC-2yE"/>
+                <navigationItem title="All Videos" id="ltD-wC-2yE"/>
             </objects>
             <point key="canvasLocation" x="1920" y="-280.5"/>
         </scene>
