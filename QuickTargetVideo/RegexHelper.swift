@@ -162,7 +162,7 @@ class TuDouSite: RegexHelper
     }
     
     override func GetSingleMovieItem(parentText: String, titleP: String?, linkP: String?) -> MovieItem {
-        let titlePattern : String = "_log_title='(.+?)'"
+        let titlePattern : String = "( title=\"(.+?)\")|( _log_title='(.+?)')"
         let linkPattern: String = "href=[\\s]*?\"(.|\\s)*?\""
         return super.GetSingleMovieItem(parentText, titleP: titlePattern, linkP: linkPattern)
     }
