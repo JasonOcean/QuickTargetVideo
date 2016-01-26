@@ -34,7 +34,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" placeholder="Please input key words" showsSearchResultsButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EvD-gb-sul">
+                            <searchBar contentMode="redraw" text="" placeholder="Please input video name" showsSearchResultsButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EvD-gb-sul">
                                 <rect key="frame" x="0.0" y="65" width="600" height="44"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
