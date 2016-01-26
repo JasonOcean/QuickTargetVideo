@@ -43,7 +43,8 @@ class SearchController: UIViewController, UISearchBarDelegate {
         }
         catch {}
         
-        self.HotVideoItems = HotVideosPage(source: source).FindAllMovies()
+        //self.HotVideoItems = HotVideosPage(source: source).FindAllMovies()
+        self.HotVideoItems = self.UpgradeToShortTitle(HotVideosPage(source: source).FindAllMovies())
         
         self.BindingHotVideos()
     }
@@ -119,6 +120,32 @@ class SearchController: UIViewController, UISearchBarDelegate {
         let movieListController = storyboard?.instantiateViewControllerWithIdentifier("MovieList") as! MovieTableViewController
         movieListController.searchKey = searchBar.text?.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)
         self.navigationController?.pushViewController(movieListController, animated: true)
+    }
+    
+    
+    ///Splite title by comma, then use the head part as the wanted short title
+    func UpgradeToShortTitle(longTitles: [MovieItem])-> [MovieItem]{
+        var shortTitles:[MovieItem] = []
+        
+        for(var i=0; i<longTitles.count; i++) {
+            shortTitles.append(longTitles[i])
+            let nTitle:NSString = longTitles[i].title as NSString
+            let tArray = Array(longTitles[i].title.characters)
+            var loc : Int = -1
+            for (var k=0; k<tArray.count; k++) {
+                if(tArray[k]=="：" || tArray[k]=="，") {
+                    if(loc<0) {
+                        loc = k
+                    }
+                }
+            }
+            
+            if(loc>=0) {
+                shortTitles[i].title = (nTitle.substringToIndex(loc)) as String
+            }
+        }
+        
+        return shortTitles
     }
 }
 
