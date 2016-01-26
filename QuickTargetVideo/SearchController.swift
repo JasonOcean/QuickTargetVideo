@@ -63,8 +63,8 @@ class SearchController: UIViewController, UISearchBarDelegate {
     
     func BindingHotVideos() {
         var colorArray = [UIColor.greenColor(),UIColor.blueColor(), UIColor.purpleColor(),UIColor.redColor(),UIColor.grayColor(),UIColor.magentaColor(),UIColor.brownColor()]
-        //var titlesArray = ["甄嬛传","琅琊榜","中国式结婚","雪豹","蜡笔小新","麻辣父子","GTO","芈月传","一起结婚吧"]
-        var frameArray = ["{{54, 292}, {320, 250}}","{{26, 228}, {320, 30}}","{{132, 254}, {320, 160}}","{{64, 146}, {320, 30}}","{{180, 225}, {320, 80}}","{{54, 320}, {320, 160}}","{{132, 538}, {320, 330}}","{{170, 469}, {320, 230}}","{{47, 390}, {320, 130}}"]
+
+        var frameArray = ["{{54, 92}, {120, 70}}","{{26, 228}, {120, 120}}","{{192, 124}, {200, 30}}","{{34, 146}, {160, 30}}","{{280, 175}, {90, 30}}","{{54, 190}, {150, 30}}","{{262, 238}, {120, 30}}","{{170, 269}, {120, 30}}","{{190, 220}, {120, 30}}"]
         
         if(!self.HotVideoItems.isEmpty) {
             let labels = getLabelsInView(self.view)
@@ -76,7 +76,7 @@ class SearchController: UIViewController, UISearchBarDelegate {
                 
                 label.text = HotVideoItems[i++].title
                 label.textColor = colorArray[random()%colorArray.count];
-                label.font = UIFont.systemFontOfSize(CGFloat(random() % 15) + 20.0);
+                label.font = UIFont.systemFontOfSize(CGFloat(random() % 5) + 20.0);
                 label.center = self.view.center;
                 label.numberOfLines = 1
             }
