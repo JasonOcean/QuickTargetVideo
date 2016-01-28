@@ -97,8 +97,11 @@ class MovieTableViewController: UITableViewController {
             let path:NSIndexPath = self.tableView.indexPathForSelectedRow!
             let videoPage = segue.destinationViewController as! VideoDetail
             let targetLinkArray = self.GetTargetArray(path.section, type: "link")
-            videoPage.linkUrl = targetLinkArray[path.row]
-
+            
+            //tudou, to add its prefix "www.soku.com"
+            if(path.section == 1 && (targetLinkArray[path.row] as NSString).substringToIndex(1)=="/") {
+                videoPage.linkUrl = "http://soku.com/" + targetLinkArray[path.row]
+            }
         }
     }
     
@@ -141,8 +144,6 @@ class MovieTableViewController: UITableViewController {
     
     func GetTargetArray(site: Int, type: String) -> Array<String> {
         var target = Array<String>()
-        
-        movieTitles.indexForKey("")
         
         switch site {
         case 0:

@@ -13,11 +13,13 @@ class MovieItem
 {
     var title = ""
     var link = ""
+    var img = ""
     
-    init(tiltleContent: String, linkContent: String)
+    init(tiltleContent: String, linkContent: String, imgContent: String)
     {
         self.title = tiltleContent
         self.link = linkContent
+        self.img = imgContent
     }
 }
 
@@ -27,6 +29,7 @@ class RegexHelper
     var bodyPattern = ""
     var titlePattern = ""
     var linkPattern = ""
+    var imgPattern = ""
     var bodyTexts:[String] = []
     var myRegex: NSRegularExpression
     
@@ -101,13 +104,16 @@ class RegexHelper
     {
         self.titlePattern = titleP==nil ? "title=\"(.+?)\"": titleP!
         self.linkPattern = linkP==nil ? "href=[\\s]*?\"(.|\\s)*?\"" : linkP!
+        self.imgPattern = "src=\"(.+?)\""
         
         let t:String = self.GetTargetContent(self.titlePattern, pText:parentText, isFilterQuote: false)
         let l:String = self.GetTargetContent(self.linkPattern, pText:parentText,isFilterQuote: false)
+        let img:String = self.GetTargetContent(self.imgPattern, pText:parentText,isFilterQuote: false)
         let ll:String = self.GetTargetContent("\"(.|\\s)*?\"", pText:l, isFilterQuote: true).stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())
         let item: MovieItem = MovieItem(
             tiltleContent: self.GetTargetContent("[\"'](.+?)[\"']", pText:t, isFilterQuote: true),
-            linkContent: ll
+            linkContent: ll,
+            imgContent: self.GetTargetContent("[\"'](.+?)[\"']", pText:img, isFilterQuote: true)
         )
         
         return item
@@ -131,7 +137,8 @@ class iQiYiSite: RegexHelper
     
     init(source: String)
     {
-        let bodyPattern: String = "<h3 class=\"result_title\">[\\s\\S]*?</h3>"
+//        let bodyPattern: String = "<h3 class=\"result_title\">[\\s\\S]*?</h3>"
+        let bodyPattern: String = "<div class=\"site-piclist_pic\">[\\s\\S]*?</div>"
         super.init(source: source, patternStr: bodyPattern)
     }
 }
@@ -142,13 +149,15 @@ class TuDouSite: RegexHelper
     
     init(source: String)
     {
-        let bodyPattern: String = "<div class=\"s_link\">[\\s\\S]*?</div>"
+        //let bodyPattern: String = "<div class=\"s_link\">[\\s\\S]*?</div>"
+//        let bodyPattern: String = "<div class=\"s_poster\">[\\s\\S]*?</div>"
+        let bodyPattern: String = "<div class=\"s_poster\">[\\s\\S]*?<div class=\"s_link\">[\\s\\S]*?</div>"
         super.init(source: source, patternStr: bodyPattern)
     }
     
     override func GetSingleMovieItem(parentText: String, titleP: String?, linkP: String?) -> MovieItem {
-        let titlePattern : String = "( title=\"(.+?)\")|( _log_title='(.+?)')"
-        let linkPattern: String = "href=[\\s]*?\"(.|\\s)*?\""
+        let titlePattern : String = "( title=\"(.+?)\")|( _log_title='(.+?)')|( _log_title=\"(.+?)\")"
+        let linkPattern: String = "(href=[\\s]*?\"(.|\\s)*?\")|(href=\"(.|\\s)*?\")"
         return super.GetSingleMovieItem(parentText, titleP: titlePattern, linkP: linkPattern)
     }
 }
