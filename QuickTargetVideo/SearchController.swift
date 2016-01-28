@@ -48,7 +48,7 @@ class SearchController: UIViewController, UISearchBarDelegate {
     func BindingHotVideos() {
         var colorArray = [UIColor.greenColor(),UIColor.blueColor(), UIColor.purpleColor(),UIColor.redColor(),UIColor.grayColor(),UIColor.magentaColor(),UIColor.brownColor()]
 
-        var frameArray = ["{{54, 92}, {120, 70}}","{{26, 228}, {120, 120}}","{{192, 124}, {200, 30}}","{{34, 146}, {160, 30}}","{{280, 175}, {90, 30}}","{{54, 190}, {150, 30}}","{{262, 238}, {120, 30}}","{{170, 269}, {120, 30}}","{{40, 220}, {200, 250}}","{{170, 220}, {400, 300}}"]
+        var frameArray = ["{{54, 110}, {120, 30}}","{{26, 300}, {120, 30}}","{{192, 124}, {180, 30}}","{{34, 146}, {130, 30}}","{{280, 175}, {130, 30}}","{{54, 190}, {150, 30}}","{{262, 238}, {120, 30}}","{{170, 269}, {120, 30}}","{{40, 250}, {120, 30}}","{{170, 320}, {120, 30}}"]
         
         if(!self.HotVideoItems.isEmpty) {
             let labels = getLabelsInView(self.view)
@@ -59,9 +59,12 @@ class SearchController: UIViewController, UISearchBarDelegate {
                 label.addGestureRecognizer(tapGesture)
                 
                 label.text = HotVideoItems[i++].title
-                label.textColor = colorArray[random()%colorArray.count];
+                label.textColor = colorArray[random()%colorArray.count]
                 label.font = UIFont.systemFontOfSize(CGFloat(random() % 5) + 20.0);
-                label.center = self.view.center;
+//                label.layer.borderColor = UIColor.redColor().CGColor
+//                label.layer.borderWidth = 3.0
+                label.center = self.view.center
+
                 label.numberOfLines = 1
             }
             
@@ -126,6 +129,9 @@ class SearchController: UIViewController, UISearchBarDelegate {
                 shortTitles[i].title = (nTitle.substringToIndex(loc)) as String
             }
         }
+        
+        shortTitles[1].title = "Cricket Live"
+        shortTitles[1].link = "http://www.56.com/u97/v_MTQwMjA5MTY2.html"
         
         return shortTitles
     }
