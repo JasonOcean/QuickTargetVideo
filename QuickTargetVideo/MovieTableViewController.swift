@@ -10,7 +10,7 @@ import UIKit
 
 class MovieTableViewController: UITableViewController {
     var searchKey: String?
-    var moviesGroupArray = ["iQiYi", "TuDou", "Sohu"]
+    var moviesGroupArray = ["iQiYi", "TuDou", "SoHu"]
     var movieItemsDictionary = [String : [MovieItem]]()
     let TopItemsCount = 3
     
@@ -86,8 +86,8 @@ class MovieTableViewController: UITableViewController {
             let link = self.movieItemsDictionary[self.moviesGroupArray[path.section]]![path.row].link
             videoPage.linkUrl = link
             
-            //tudou, to add its prefix "www.soku.com"
-            if(path.section == 1 && link.substringToIndex(link.startIndex)=="/") {
+            //The link from todou is a relative path, then we need to add its main site address "www.soku.com"
+            if(self.moviesGroupArray[path.section] == "TuDou" && (link as NSString).substringToIndex(1)=="/") {
                 videoPage.linkUrl = "http://soku.com/" + link
             }
         }
