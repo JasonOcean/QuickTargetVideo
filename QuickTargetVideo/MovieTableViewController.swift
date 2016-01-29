@@ -10,7 +10,7 @@ import UIKit
 
 class MovieTableViewController: UITableViewController {
     var searchKey: String?
-    var moviesGroupArray = ["iQiYi", "TuDou", "SoHu"]
+    var moviesGroupArray: [String] = []
     var movieItemsDictionary = [String : [MovieItem]]()
     let TopItemsCount = 3
     
@@ -30,6 +30,7 @@ class MovieTableViewController: UITableViewController {
         let taskiQiYi = session.dataTaskWithURL(urliQiYi!) {(data, response, error) in
             let sourceContent:String = NSString(data:data!, encoding:NSUTF8StringEncoding)! as String
             let iQiYi = iQiYiSite(source: sourceContent)
+            self.moviesGroupArray.append("iQiYi")
             self.movieItemsDictionary["iQiYi"] = Array(iQiYi.FindAllMovies().prefix(self.TopItemsCount))
             
             dispatch_async(dispatch_get_main_queue(), {
@@ -42,6 +43,7 @@ class MovieTableViewController: UITableViewController {
         let taskTuDou = session.dataTaskWithURL(urlTuDou!) {(data, response, error) in
             let sourceContent:String = NSString(data:data!, encoding:NSUTF8StringEncoding)! as String
             let tuDou = TuDouSite(source: sourceContent)
+            self.moviesGroupArray.append("TuDou")
             self.movieItemsDictionary["TuDou"] = Array(tuDou.FindAllMovies().prefix(self.TopItemsCount))
             
             dispatch_async(dispatch_get_main_queue(), {
@@ -54,6 +56,7 @@ class MovieTableViewController: UITableViewController {
         let taskSohu = session.dataTaskWithURL(urlSohu!) {(data, response, error) in
             let sourceContent:String = NSString(data:data!, encoding:NSUTF8StringEncoding)! as String
             let sohu = SohuSite(source: sourceContent)
+            self.moviesGroupArray.append("SoHu")
             self.movieItemsDictionary["SoHu"] = Array(sohu.FindAllMovies().prefix(self.TopItemsCount))
             
             dispatch_async(dispatch_get_main_queue(), {
