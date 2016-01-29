@@ -11,8 +11,8 @@ import UIKit
 class MovieTableViewController: UITableViewController {
     var searchKey: String?
     var moviesGroupArray = ["iQiYi", "TuDou", "Sohu"]
-    var movieTitles = Dictionary<String, Array<String>>()
-    var movieLinks = Dictionary<String, Array<String>>()
+    var movieItemsDictionary = [String : [MovieItem]]()
+    let TopItemsCount = 3
     
     @IBOutlet var CurrentTableView: UITableView!
    
@@ -23,8 +23,6 @@ class MovieTableViewController: UITableViewController {
             KVNProgressViewParameterBackgroundType: 1,
             KVNProgressViewParameterFullScreen: true]
         KVNProgress.showWithParameters(para as [NSObject : AnyObject])
-        
-        let maxNum : Int = 3
     
         let session = NSURLSession.sharedSession()
         
@@ -32,11 +30,7 @@ class MovieTableViewController: UITableViewController {
         let taskiQiYi = session.dataTaskWithURL(urliQiYi!) {(data, response, error) in
             let sourceContent:String = NSString(data:data!, encoding:NSUTF8StringEncoding)! as String
             let iQiYi = iQiYiSite(source: sourceContent)
-                        let iQiYiTitles = iQiYi.FindAllMovies().map{ $0.title }
-                        self.movieTitles["iQiYi"] = iQiYiTitles.count>maxNum ? Array(iQiYiTitles[0..<maxNum]) : iQiYiTitles
-        
-                        let iQiYiLinks = iQiYi.FindAllMovies().map{ $0.link }
-                        self.movieLinks["iQiYi"] = iQiYiLinks.count>maxNum ? Array(iQiYiLinks[0..<maxNum]) : iQiYiLinks
+            self.movieItemsDictionary["iQiYi"] = Array(iQiYi.FindAllMovies().prefix(self.TopItemsCount))
             
             dispatch_async(dispatch_get_main_queue(), {
                     self.RefreshTableView()
@@ -48,11 +42,7 @@ class MovieTableViewController: UITableViewController {
         let taskTuDou = session.dataTaskWithURL(urlTuDou!) {(data, response, error) in
             let sourceContent:String = NSString(data:data!, encoding:NSUTF8StringEncoding)! as String
             let tuDou = TuDouSite(source: sourceContent)
-            let tuDouTitles = tuDou.FindAllMovies().map{ $0.title }
-            self.movieTitles["TuDou"] = tuDouTitles.count>maxNum ? Array(tuDouTitles[0..<maxNum]) : tuDouTitles
-            
-            let tuDouLinks = tuDou.FindAllMovies().map{ $0.link }
-            self.movieLinks["TuDou"] = tuDouLinks.count>maxNum ? Array(tuDouLinks[0..<maxNum]) : tuDouLinks
+            self.movieItemsDictionary["TuDou"] = Array(tuDou.FindAllMovies().prefix(self.TopItemsCount))
             
             dispatch_async(dispatch_get_main_queue(), {
                 self.RefreshTableView()
@@ -64,11 +54,7 @@ class MovieTableViewController: UITableViewController {
         let taskSohu = session.dataTaskWithURL(urlSohu!) {(data, response, error) in
             let sourceContent:String = NSString(data:data!, encoding:NSUTF8StringEncoding)! as String
             let sohu = SohuSite(source: sourceContent)
-            let sohuTitles = sohu.FindAllMovies().map{ $0.title }
-            self.movieTitles["SoHu"] = sohuTitles.count>maxNum ? Array(sohuTitles[0..<maxNum]) : sohuTitles
-            
-            let sohuLinks = sohu.FindAllMovies().map{ $0.link }
-            self.movieLinks["SoHu"] = sohuLinks.count>maxNum ? Array(sohuLinks[0..<maxNum]) : sohuLinks
+            self.movieItemsDictionary["SoHu"] = Array(sohu.FindAllMovies().prefix(self.TopItemsCount))
             
             dispatch_async(dispatch_get_main_queue(), {
                 self.RefreshTableView()
@@ -88,7 +74,7 @@ class MovieTableViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 50
+        return 100
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -96,11 +82,13 @@ class MovieTableViewController: UITableViewController {
         {
             let path:NSIndexPath = self.tableView.indexPathForSelectedRow!
             let videoPage = segue.destinationViewController as! VideoDetail
-            let targetLinkArray = self.GetTargetArray(path.section, type: "link")
+            
+            let link = self.movieItemsDictionary[self.moviesGroupArray[path.section]]![path.row].link
+            videoPage.linkUrl = link
             
             //tudou, to add its prefix "www.soku.com"
-            if(path.section == 1 && (targetLinkArray[path.row] as NSString).substringToIndex(1)=="/") {
-                videoPage.linkUrl = "http://soku.com/" + targetLinkArray[path.row]
+            if(path.section == 1 && link.substringToIndex(link.startIndex)=="/") {
+                videoPage.linkUrl = "http://soku.com/" + link
             }
         }
     }
@@ -122,46 +110,54 @@ class MovieTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return movieTitles.count
+        return self.moviesGroupArray.count
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let targetArray = self.GetTargetArray(section, type: "title")
-        return targetArray.count
+        let sectionName = self.moviesGroupArray[section]
+        if(self.movieItemsDictionary[sectionName] == nil)
+        {
+            return 0;
+        }else
+        {
+            return self.movieItemsDictionary[sectionName]!.count
+        }
     }
 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
     {
-        let targetArray = self.GetTargetArray(indexPath.section, type: "title")
-        
         let cellIdentifyName: String = "MovieTableViewCell"
         let cell: MovieTableViewCell = tableView.dequeueReusableCellWithIdentifier(cellIdentifyName) as! MovieTableViewCell
-        cell.movieTitle?.text = targetArray[indexPath.row]
-
+        
+        let sectionName = self.moviesGroupArray[indexPath.section]
+        let movieItem = self.movieItemsDictionary[sectionName]?[indexPath.row]
+        cell.movieTitle?.text = movieItem?.title
+        
+        cell.movieImageView.contentMode = .ScaleAspectFit
+        downloadImage(NSURL(string:(movieItem?.img)!)!, imageView: cell.movieImageView!)
+        //print(movieItem?.title,movieItem?.img)
         return cell
     }
     
-    func GetTargetArray(site: Int, type: String) -> Array<String> {
-        var target = Array<String>()
-        
-        switch site {
-        case 0:
-            if(movieTitles.indexForKey("iQiYi") != nil && movieLinks.indexForKey("iQiYi") != nil) {
-                target = ((type == "title") ? movieTitles["iQiYi"] : movieLinks["iQiYi"])!
-            }
-        case 1:
-            if(movieTitles.indexForKey("TuDou") != nil && movieLinks.indexForKey("TuDou") != nil) {
-                target = ((type == "title") ? movieTitles["TuDou"] : movieLinks["TuDou"])!
-            }
-        case 2:
-            if(movieTitles.indexForKey("SoHu") != nil && movieLinks.indexForKey("SoHu") != nil) {
-                target = ((type == "title") ? movieTitles["SoHu"] : movieLinks["SoHu"])!
-            }
-        default:
-            break
-        }
-        
-        return target
+    
+    func getDataFromUrl(url:NSURL, completion: ((data: NSData?, response: NSURLResponse?, error: NSError? ) -> Void)) {
+        NSURLSession.sharedSession().dataTaskWithURL(url) { (data, response, error) in
+            completion(data: data, response: response, error: error)
+            }.resume()
     }
+    
+    func downloadImage(url: NSURL, imageView view:UIImageView){
+        //print("Download Started")
+        //print("lastPathComponent: " + (url.lastPathComponent ?? ""))
+        getDataFromUrl(url) { (data, response, error)  in
+            dispatch_async(dispatch_get_main_queue()) { () -> Void in
+                guard let data = data where error == nil else { return }
+                //print(response?.suggestedFilename ?? "")
+                //print("Download Finished")
+                view.image = UIImage(data: data)
+            }
+        }
+    }
+    
 }
