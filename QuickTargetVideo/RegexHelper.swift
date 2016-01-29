@@ -137,8 +137,7 @@ class iQiYiSite: RegexHelper
     
     init(source: String)
     {
-//        let bodyPattern: String = "<h3 class=\"result_title\">[\\s\\S]*?</h3>"
-        let bodyPattern: String = "<div class=\"site-piclist_pic\">[\\s\\S]*?</div>"
+        let bodyPattern: String = "(<div class=\"site-piclist_pic\">[\\s\\S]*?</div>)|(<li class=\"list_item\" [\\s\\S]*?>[\\s\\S]*?</li>)"
         super.init(source: source, patternStr: bodyPattern)
     }
 }
@@ -149,8 +148,6 @@ class TuDouSite: RegexHelper
     
     init(source: String)
     {
-        //let bodyPattern: String = "<div class=\"s_link\">[\\s\\S]*?</div>"
-//        let bodyPattern: String = "<div class=\"s_poster\">[\\s\\S]*?</div>"
         let bodyPattern: String = "(<div class=\"s_poster\">[\\s\\S]*?<div class=\"s_link\">[\\s\\S]*?</div>)|(<div class=\"v\" data-type=\"tipHandle\">(.|\\s)*?<div class=\"v-link\" (.|\\s)*?>(.|\\s)*?</div>)"
         super.init(source: source, patternStr: bodyPattern)
     }
@@ -171,12 +168,6 @@ class SohuSite: RegexHelper
         let bodyPattern: String = "(<div class=\"(ssItem cfix)\">(.|\\s)*?</div>)|(<div class=\"pic170\" >(.|\\s)*?</div>)"
         super.init(source: source, patternStr: bodyPattern)
     }
-    
-//    override func GetSingleMovieItem(parentText: String, titleP: String?, linkP: String?) -> MovieItem {
-//        let titlePattern : String = "_log_title='(.+?)'"
-//        let linkPattern: String = "href=[\\s]*?\"(.|\\s)*?\""
-//        return super.GetSingleMovieItem(parentText, titleP: titlePattern, linkP: linkPattern)
-//    }
 }
 
 class HotVideosPage: RegexHelper
