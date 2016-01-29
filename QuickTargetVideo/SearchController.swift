@@ -90,7 +90,7 @@ class SearchController: UIViewController, UISearchBarDelegate {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
-        self.LoadHotVedios()
+        //self.LoadHotVedios()
     }
     
     override func didReceiveMemoryWarning() {
