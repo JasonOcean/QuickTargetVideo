@@ -151,7 +151,7 @@ class TuDouSite: RegexHelper
     {
         //let bodyPattern: String = "<div class=\"s_link\">[\\s\\S]*?</div>"
 //        let bodyPattern: String = "<div class=\"s_poster\">[\\s\\S]*?</div>"
-        let bodyPattern: String = "<div class=\"s_poster\">[\\s\\S]*?<div class=\"s_link\">[\\s\\S]*?</div>"
+        let bodyPattern: String = "(<div class=\"s_poster\">[\\s\\S]*?<div class=\"s_link\">[\\s\\S]*?</div>)|(<div class=\"v\" data-type=\"tipHandle\">(.|\\s)*?<div class=\"v-link\" (.|\\s)*?>(.|\\s)*?</div>)"
         super.init(source: source, patternStr: bodyPattern)
     }
     
@@ -168,7 +168,7 @@ class SohuSite: RegexHelper
     
     init(source: String)
     {
-        let bodyPattern: String = "<div class=\"ssItem cfix\">(.|\\s)*?</div>"
+        let bodyPattern: String = "(<div class=\"(ssItem cfix)\">(.|\\s)*?</div>)|(<div class=\"pic170\" >(.|\\s)*?</div>)"
         super.init(source: source, patternStr: bodyPattern)
     }
     
