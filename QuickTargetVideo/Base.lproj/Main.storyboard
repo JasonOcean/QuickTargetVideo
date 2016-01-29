@@ -22,7 +22,7 @@
             </objects>
             <point key="canvasLocation" x="-345" y="-261"/>
         </scene>
-        <!--Home-->
+        <!--OneVideo-->
         <scene sceneID="snT-py-3hH">
             <objects>
                 <viewController storyboardIdentifier="DataViewController" id="S4R-Ja-viH" customClass="SearchController" customModule="QuickTargetVideo" customModuleProvider="target" sceneMemberID="viewController">
@@ -49,7 +49,7 @@
                             <constraint firstItem="EvD-gb-sul" firstAttribute="top" secondItem="fXf-Jd-eTc" secondAttribute="bottom" constant="1" id="bsa-H0-JL1"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Home" id="bSc-xU-kxe"/>
+                    <navigationItem key="navigationItem" title="OneVideo" id="bSc-xU-kxe"/>
                     <connections>
                         <outlet property="searchBar" destination="EvD-gb-sul" id="RW8-Oy-9KK"/>
                     </connections>
