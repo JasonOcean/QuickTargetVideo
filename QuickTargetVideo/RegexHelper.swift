@@ -133,8 +133,6 @@ class RegexHelper
 
 class iQiYiSite: RegexHelper
 {
-    var iQiYiMovies: [String]?
-    
     init(source: String)
     {
         let bodyPattern: String = "(<div class=\"site-piclist_pic\">[\\s\\S]*?</div>)|(<li class=\"list_item\" [\\s\\S]*?>[\\s\\S]*?</li>)"
@@ -144,8 +142,6 @@ class iQiYiSite: RegexHelper
 
 class TuDouSite: RegexHelper
 {
-    var tuDouMovies: [String]?
-    
     init(source: String)
     {
         let bodyPattern: String = "(<div class=\"s_poster\">[\\s\\S]*?<div class=\"s_link\">[\\s\\S]*?</div>)|(<div class=\"v\" data-type=\"tipHandle\">(.|\\s)*?<div class=\"v-link\" (.|\\s)*?>(.|\\s)*?</div>)"
@@ -159,10 +155,23 @@ class TuDouSite: RegexHelper
     }
 }
 
+class YouKuSite: RegexHelper
+{
+    init(source: String)
+    {
+        let bodyPattern: String = "(<div class=\"s_poster\">[\\s\\S]*?<div class=\"s_link\">[\\s\\S]*?</div>)"
+        super.init(source: source, patternStr: bodyPattern)
+    }
+    
+    override func GetSingleMovieItem(parentText: String, titleP: String?, linkP: String?) -> MovieItem {
+        let titlePattern : String = "( title=\"(.+?)\")|( _log_title='(.+?)')|( _log_title=\"(.+?)\")"
+        let linkPattern: String = "(href=[\\s]*?\"(.|\\s)*?\")|(href=\"(.|\\s)*?\")"
+        return super.GetSingleMovieItem(parentText, titleP: titlePattern, linkP: linkPattern)
+    }
+}
+
 class SohuSite: RegexHelper
 {
-    var sohuMovies: [String]?
-    
     init(source: String)
     {
         let bodyPattern: String = "(<div class=\"(ssItem cfix)\">(.|\\s)*?</div>)|(<div class=\"pic170\" >(.|\\s)*?</div>)"

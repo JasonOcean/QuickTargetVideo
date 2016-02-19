@@ -64,7 +64,19 @@ class MovieTableViewController: UITableViewController {
             });
         }
         taskSohu.resume()
-
+        
+        let urlYouKu = NSURL(string: "http://www.soku.com/search_video/q_" + searchKey!)
+        let taskYouKu = session.dataTaskWithURL(urlYouKu!) {(data, response, error) in
+            let sourceContent:String = NSString(data:data!, encoding:NSUTF8StringEncoding)! as String
+            let youku = YouKuSite(source: sourceContent)
+            self.moviesGroupArray.append("YouKu")
+            self.movieItemsDictionary["YouKu"] = Array(youku.FindAllMovies().prefix(self.TopItemsCount))
+            
+            dispatch_async(dispatch_get_main_queue(), {
+                self.RefreshTableView()
+            });
+        }
+        taskYouKu.resume()
     }
     
     func RefreshTableView() {
@@ -90,7 +102,8 @@ class MovieTableViewController: UITableViewController {
             videoPage.linkUrl = link
             
             //The link from todou is a relative path, then we need to add its main site address "www.soku.com"
-            if(self.moviesGroupArray[path.section] == "TuDou" && (link as NSString).substringToIndex(1)=="/") {
+            if((self.moviesGroupArray[path.section] == "TuDou" || self.moviesGroupArray[path.section] == "YouKu")
+                && (link as NSString).substringToIndex(1)=="/") {
                 videoPage.linkUrl = "http://soku.com/" + link
             }
         }
