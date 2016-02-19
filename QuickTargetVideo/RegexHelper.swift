@@ -159,7 +159,8 @@ class YouKuSite: RegexHelper
 {
     init(source: String)
     {
-        let bodyPattern: String = "(<div class=\"s_poster\">[\\s\\S]*?<div class=\"s_link\">[\\s\\S]*?</div>)"
+//        let bodyPattern: String = "(<div class=\"s_poster\">[\\s\\S]*?<div class=\"s_link\">[\\s\\S]*?</div>)"
+        let bodyPattern: String = "(<div class=\"s_poster\">[\\s\\S]*?<div class=\"s_link\">[\\s\\S]*?</div>)|(<div class=\"((v)|(v on))\" data-type=\"tipHandle\">[\\s\\S]*?<div class=\"v-link\">[\\s\\S]*?</div>)"
         super.init(source: source, patternStr: bodyPattern)
     }
     
