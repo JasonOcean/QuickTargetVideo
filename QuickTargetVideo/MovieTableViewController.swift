@@ -77,6 +77,19 @@ class MovieTableViewController: UITableViewController {
             });
         }
         taskYouKu.resume()
+        
+        let urlLetv = NSURL(string: "http://so.letv.com/s?wd=" + searchKey!)
+        let taskLetv = session.dataTaskWithURL(urlLetv!) {(data, response, error) in
+            let sourceContent:String = NSString(data:data!, encoding:NSUTF8StringEncoding)! as String
+            let letv = LetvSite(source: sourceContent)
+            self.moviesGroupArray.append("Letv")
+            self.movieItemsDictionary["Letv"] = Array(letv.FindAllMovies().prefix(self.TopItemsCount))
+            
+            dispatch_async(dispatch_get_main_queue(), {
+                self.RefreshTableView()
+            });
+        }
+        taskLetv.resume()
     }
     
     func RefreshTableView() {
@@ -105,6 +118,10 @@ class MovieTableViewController: UITableViewController {
             if((self.moviesGroupArray[path.section] == "TuDou" || self.moviesGroupArray[path.section] == "YouKu")
                 && (link as NSString).substringToIndex(1)=="/") {
                 videoPage.linkUrl = "http://soku.com/" + link
+            }
+            
+            if(self.moviesGroupArray[path.section] == "YouKu" && (link as NSString).substringToIndex(1)=="/") {
+                    videoPage.linkUrl = "http://soku.com/" + link
             }
         }
     }

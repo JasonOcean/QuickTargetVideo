@@ -179,6 +179,24 @@ class SohuSite: RegexHelper
     }
 }
 
+class LetvSite: RegexHelper
+{
+    init(source: String)
+    {
+        let bodyPattern: String = "(<div class=\"So-detail Comic-so\" (.|\\s)*?>[\\s\\S]*?<div class=\"so-cont\">[\\s\\S]*?<div>[\\s\\S]*?</div>)|(<div class=\"So-detail Movie-so\" (.|\\s)*?>[\\s\\S]*?<div class=\"so-cont\">[\\s\\S]*?<div>[\\s\\S]*?</div>)"
+        
+//        let bodyPattern: String = "<div class=\"(So-detail Comic-so)|(So-detail Movie-so)\" (.|\\s)*?>[\\s\\S]*?<div class=\"so-cont\">[\\s\\S]*?<div>[\\s\\S]*?</div>"
+        
+        super.init(source: source, patternStr: bodyPattern)
+    }
+    
+    override func GetSingleMovieItem(parentText: String, titleP: String?, linkP: String?) -> MovieItem {
+        let titlePattern : String = "( title=\"(.+?)\")|( _log_title='(.+?)')|( _log_title=\"(.+?)\")"
+        let linkPattern: String = "(href=[\\s]*?\"(.|\\s)*?\")|(href=\"(.|\\s)*?\")"
+        return super.GetSingleMovieItem(parentText, titleP: titlePattern, linkP: linkPattern)
+    }
+}
+
 class HotVideosPage: RegexHelper
 {
     var HotVideos: [String]?
