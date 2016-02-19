@@ -184,7 +184,7 @@ class LetvSite: RegexHelper
 {
     init(source: String)
     {
-        let bodyPattern: String = "(<div class=\"So-detail Comic-so\" (.|\\s)*?>[\\s\\S]*?<div class=\"so-cont\">[\\s\\S]*?<div>[\\s\\S]*?</div>)|(<div class=\"So-detail Movie-so\" (.|\\s)*?>[\\s\\S]*?<div class=\"so-cont\">[\\s\\S]*?<div>[\\s\\S]*?</div>)"
+        let bodyPattern: String = "(<div class=\"So-detail Comic-so\" (.|\\s)*?>[\\s\\S]*?<div class=\"so-cont\">[\\s\\S]*?<div>[\\s\\S]*?</div>)|(<div class=\"So-detail Movie-so\" (.|\\s)*?>[\\s\\S]*?<div class=\"so-cont\">[\\s\\S]*?<div>[\\s\\S]*?</div>)|(<div class=\"So-detail Tv-so\" (.|\\s)*?>[\\s\\S]*?<div class=\"so-cont\">[\\s\\S]*?<div>[\\s\\S]*?</div>)"
         
 //        let bodyPattern: String = "<div class=\"(So-detail Comic-so)|(So-detail Movie-so)\" (.|\\s)*?>[\\s\\S]*?<div class=\"so-cont\">[\\s\\S]*?<div>[\\s\\S]*?</div>"
         
