@@ -90,6 +90,32 @@ class MovieTableViewController: UITableViewController {
             });
         }
         taskLetv.resume()
+        
+        let urlPPTV = NSURL(string: "http://search.pptv.com/s_video?kw=" + searchKey!)
+        let taskPPTV = session.dataTaskWithURL(urlPPTV!) {(data, response, error) in
+            let sourceContent:String = NSString(data:data!, encoding:NSUTF8StringEncoding)! as String
+            let pptv = PPTVSite(source: sourceContent)
+            self.moviesGroupArray.append("PPTV")
+            self.movieItemsDictionary["PPTV"] = Array(pptv.FindAllMovies().prefix(self.TopItemsCount))
+            
+            dispatch_async(dispatch_get_main_queue(), {
+                self.RefreshTableView()
+            });
+        }
+        taskPPTV.resume()
+        
+        let url56 = NSURL(string: "http://so.56.com/all/" + searchKey! + "/")
+        let task56 = session.dataTaskWithURL(url56!) {(data, response, error) in
+            let sourceContent:String = NSString(data:data!, encoding:NSUTF8StringEncoding)! as String
+            let fivesix = FiveSixSite(source: sourceContent)
+            self.moviesGroupArray.append("56")
+            self.movieItemsDictionary["56"] = Array(fivesix.FindAllMovies().prefix(self.TopItemsCount))
+            
+            dispatch_async(dispatch_get_main_queue(), {
+                self.RefreshTableView()
+            });
+        }
+        task56.resume()
     }
     
     func RefreshTableView() {

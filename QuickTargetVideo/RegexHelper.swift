@@ -102,7 +102,7 @@ class RegexHelper
     //2. Get [""] from above string,
     func GetSingleMovieItem(parentText: String, titleP: String?, linkP: String?) -> MovieItem
     {
-        self.titlePattern = titleP==nil ? "title=\"(.+?)\"": titleP!
+        self.titlePattern = titleP==nil ? "(title=\"(.+?)\")|(title=\"\")": titleP!
         self.linkPattern = linkP==nil ? "href=[\\s]*?\"(.|\\s)*?\"" : linkP!
         self.imgPattern = "src=\"(.+?)\""
         
@@ -124,7 +124,11 @@ class RegexHelper
         var movies: [MovieItem] = []
         self.bodyTexts = self.GetBodyContent()
         for c in self.bodyTexts{
-            movies.append(self.GetSingleMovieItem(c, titleP: nil, linkP: nil))
+            var item:MovieItem = self.GetSingleMovieItem(c, titleP: nil, linkP: nil)
+            
+            if(item.link != "" && item.link != "###" && item.img != "" && item.title != "") {
+                movies.append(item)
+            }
         }
         
         return movies
@@ -195,6 +199,26 @@ class LetvSite: RegexHelper
         let titlePattern : String = "( title=\"(.+?)\")|( _log_title='(.+?)')|( _log_title=\"(.+?)\")"
         let linkPattern: String = "(href=[\\s]*?\"(.|\\s)*?\")|(href=\"(.|\\s)*?\")"
         return super.GetSingleMovieItem(parentText, titleP: titlePattern, linkP: linkPattern)
+    }
+}
+
+class PPTVSite: RegexHelper
+{
+    init(source: String)
+    {
+        let bodyPattern: String = "(<li class=\"\">[\\s\\S]*? <p class=\"cf\"> [\\s\\S]*?</li>)|(<li class=\"hidden \">[\\s\\S]*?</li>)|(<div class=\"bpic fl\">[\\s\\S]*?</div>)"
+        
+        super.init(source: source, patternStr: bodyPattern)
+    }
+}
+
+class FiveSixSite: RegexHelper
+{
+    init(source: String)
+    {
+        let bodyPattern: String = "(<div class=\"ssItem cfix\">[\\s\\S]*?<div class=\"pic\">[\\s\\S]*?</div>)|(<div class=\"pic170\" >[\\s\\S]*?</div>)|(<div class=\"star-pic\">[\\s\\S]*?</div>)|(<div class=\"show-pic\">[\\s\\S]*?</div>)"
+        
+        super.init(source: source, patternStr: bodyPattern)
     }
 }
 
