@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="bvx-iG-PPL">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="bvx-iG-PPL">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -41,16 +41,53 @@
                                     <outlet property="delegate" destination="S4R-Ja-viH" id="mmC-zk-dnl"/>
                                 </connections>
                             </searchBar>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lW2-Zx-ThE" customClass="PhotosContainerView" customModule="QuickTargetVideo" customModuleProvider="target">
+                                <rect key="frame" x="10" y="121" width="584" height="479"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="EvD-gb-sul" firstAttribute="leading" secondItem="ZwX-cT-FIQ" secondAttribute="leadingMargin" constant="-20" id="6Xp-Hd-ppY"/>
+                            <constraint firstItem="lW2-Zx-ThE" firstAttribute="top" secondItem="EvD-gb-sul" secondAttribute="bottom" constant="20" id="7C1-cU-zXj"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="lW2-Zx-ThE" secondAttribute="trailing" constant="-14" id="8Au-cA-Tno"/>
+                            <constraint firstItem="lW2-Zx-ThE" firstAttribute="leading" secondItem="ZwX-cT-FIQ" secondAttribute="leadingMargin" constant="-10" id="KQw-xU-DUh"/>
+                            <constraint firstItem="EPS-s9-h4K" firstAttribute="top" secondItem="lW2-Zx-ThE" secondAttribute="bottom" constant="20" id="TZz-h2-twE"/>
                             <constraint firstAttribute="trailingMargin" secondItem="EvD-gb-sul" secondAttribute="trailing" constant="-20" id="WhB-9Q-tkw"/>
                             <constraint firstItem="EvD-gb-sul" firstAttribute="top" secondItem="fXf-Jd-eTc" secondAttribute="bottom" constant="1" id="bsa-H0-JL1"/>
+                            <constraint firstItem="EPS-s9-h4K" firstAttribute="top" secondItem="lW2-Zx-ThE" secondAttribute="bottom" constant="20" id="iGt-cF-n9z"/>
+                            <constraint firstItem="lW2-Zx-ThE" firstAttribute="leading" secondItem="ZwX-cT-FIQ" secondAttribute="leadingMargin" constant="20" id="iwb-Z9-gXm"/>
+                            <constraint firstItem="lW2-Zx-ThE" firstAttribute="top" secondItem="EvD-gb-sul" secondAttribute="bottom" constant="12" id="kfj-fg-BFD"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="lW2-Zx-ThE" secondAttribute="trailing" constant="20" id="mEw-zK-yUF"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="7C1-cU-zXj"/>
+                                <exclude reference="8Au-cA-Tno"/>
+                                <exclude reference="KQw-xU-DUh"/>
+                                <exclude reference="iwb-Z9-gXm"/>
+                                <exclude reference="kfj-fg-BFD"/>
+                                <exclude reference="mEw-zK-yUF"/>
+                                <exclude reference="TZz-h2-twE"/>
+                                <exclude reference="iGt-cF-n9z"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular">
+                            <mask key="constraints">
+                                <include reference="7C1-cU-zXj"/>
+                                <include reference="8Au-cA-Tno"/>
+                                <include reference="KQw-xU-DUh"/>
+                                <include reference="iwb-Z9-gXm"/>
+                                <include reference="kfj-fg-BFD"/>
+                                <include reference="mEw-zK-yUF"/>
+                                <include reference="TZz-h2-twE"/>
+                                <include reference="iGt-cF-n9z"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" title="OneVideo" id="bSc-xU-kxe"/>
                     <connections>
+                        <outlet property="hotVideoView" destination="lW2-Zx-ThE" id="DRI-Fr-LZY"/>
                         <outlet property="searchBar" destination="EvD-gb-sul" id="RW8-Oy-9KK"/>
                     </connections>
                 </viewController>

@@ -11,12 +11,20 @@ import UIKit
 class SearchController: UIViewController, UISearchBarDelegate {
 
     @IBOutlet weak var searchBar: UISearchBar!
+//    @IBOutlet var contentView: PhotoCotentView
+    
+    @IBOutlet weak var hotVideoView: PhotosContainerView!
+    
     var HotVideoItems : [MovieItem] = []
     
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        searchBar.becomeFirstResponder()
+        //searchBar.becomeFirstResponder()
+    }
+    
+    override func viewWillLayoutSubviews() {
+        hotVideoView.photos = self.GetHotVideoPhotos()
     }
     
     func LoadHotVedios() {
@@ -73,7 +81,6 @@ class SearchController: UIViewController, UISearchBarDelegate {
                 UIView.animateWithDuration(2, animations: {
                     label.frame = CGRectFromString(frameArray[i++])
                     }, completion:nil)
-                
             }
         }
     }
@@ -130,10 +137,20 @@ class SearchController: UIViewController, UISearchBarDelegate {
             }
         }
         
-        shortTitles[1].title = "Cricket Live"
-        shortTitles[1].link = "http://www.56.com/u97/v_MTQwMjA5MTY2.html"
-        
         return shortTitles
+    }
+    
+    func GetHotVideoPhotos() -> [UIImage] {
+        var photos : NSMutableArray = []
+        
+        for(var i:Int = 1; i<10; i++) {
+            let photoName : String = NSString(format: "%d", i) as String
+            let photo:UIImage = UIImage(named: photoName)!
+            
+            photos.addObject(photo)
+        }
+        
+        return photos.mutableCopy() as! [UIImage]
     }
 }
 
