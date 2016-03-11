@@ -11,8 +11,6 @@ import UIKit
 class SearchController: UIViewController, UISearchBarDelegate {
 
     @IBOutlet weak var searchBar: UISearchBar!
-//    @IBOutlet var contentView: PhotoCotentView
-    
     @IBOutlet weak var hotVideoView: PhotosContainerView!
     
     var HotVideoItems : [MovieItem] = []
@@ -21,6 +19,11 @@ class SearchController: UIViewController, UISearchBarDelegate {
         
         super.viewDidLoad()
         //searchBar.becomeFirstResponder()
+        
+        let singleTapGesture = UITapGestureRecognizer.init(target: self, action:"singleTagFromSearchVC:")
+        singleTapGesture.numberOfTapsRequired = 1
+        singleTapGesture.numberOfTouchesRequired = 1
+        hotVideoView.singleTap = singleTapGesture
     }
     
     override func viewWillLayoutSubviews() {
@@ -143,7 +146,7 @@ class SearchController: UIViewController, UISearchBarDelegate {
     func GetHotVideoPhotos() -> [UIImage] {
         var photos : NSMutableArray = []
         
-        for(var i:Int = 1; i<10; i++) {
+        for(var i:Int = 1; i<5; i++) {
             let photoName : String = NSString(format: "%d", i) as String
             let photo:UIImage = UIImage(named: photoName)!
             
@@ -151,6 +154,12 @@ class SearchController: UIViewController, UISearchBarDelegate {
         }
         
         return photos.mutableCopy() as! [UIImage]
+    }
+    
+    @IBAction func singleTagFromSearchVC(sender: AnyObject){
+        let videoDetailController = storyboard?.instantiateViewControllerWithIdentifier("VideoDetail") as! VideoDetail
+        videoDetailController.linkUrl = "http://www.baidu.com"
+        self.navigationController?.pushViewController(videoDetailController, animated: true)
     }
 }
 
