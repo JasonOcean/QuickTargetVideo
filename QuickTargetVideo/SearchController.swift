@@ -27,7 +27,8 @@ class SearchController: UIViewController, UISearchBarDelegate {
     }
     
     override func viewWillLayoutSubviews() {
-        hotVideoView.photos = self.GetHotVideoPhotos()
+//        hotVideoView.photos = self.GetHotVideoPhotos()
+        self.BindSubView()
     }
     
     func LoadHotVedios() {
@@ -160,6 +161,33 @@ class SearchController: UIViewController, UISearchBarDelegate {
         let videoDetailController = storyboard?.instantiateViewControllerWithIdentifier("VideoDetail") as! VideoDetail
         videoDetailController.linkUrl = "http://www.baidu.com"
         self.navigationController?.pushViewController(videoDetailController, animated: true)
+    }
+    
+    func BindSubView() {
+        
+        for oldView in self.hotVideoView.subviews {
+            oldView.removeFromSuperview()
+        }
+    
+        var index : Int = 0
+        var photos : [UIImage] = self.GetHotVideoPhotos()
+        for photo in photos {
+            let myGesture : UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "singleTagFromSearchVC:")
+            let photoV : UIImageView = UIImageView(image: photo)
+            photoV.userInteractionEnabled = true
+            photoV.contentMode = UIViewContentMode.ScaleAspectFill
+            photoV.clipsToBounds = true
+            photoV.tag = index
+            photoV.userInteractionEnabled = true
+            photoV.addGestureRecognizer(myGesture)
+            self.hotVideoView.addSubview(photoV)
+            
+            var title : UILabel = UILabel()
+            title.text = NSString(format: "%d@", index) as String
+            self.hotVideoView.addSubview(title)
+            
+            index++
+        }
     }
 }
 

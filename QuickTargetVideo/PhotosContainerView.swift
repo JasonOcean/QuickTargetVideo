@@ -10,48 +10,7 @@ import Foundation
 
 class PhotosContainerView : UIView {
     
-//    @property (nonatomic,strong) NSArray *images;
-//    
-   
     var singleTap : UITapGestureRecognizer!
-    @IBAction func mytest(sender: AnyObject) {}
-    
-    var _photos : [UIImage] = []
-    var photos : [UIImage] {
-        
-        get {
-            return _photos
-        }
-        
-        set {
-            _photos = newValue
-            
-            for oldView in self.subviews {
-                oldView.removeFromSuperview()
-            }
-            
-//            UITapGestureRecognizer.init(target: self, action:"singleTagFromSearchVC:")
-            
-            var index : Int = 0
-            for photo in _photos {
-//                var myGesture : UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: SearchController("singleTagFromSearchVC:"))
-                var myGesture : UITapGestureRecognizer = singleTap
-                let photoV : UIImageView = UIImageView(image: photo)
-                photoV.userInteractionEnabled = true
-                photoV.contentMode = UIViewContentMode.ScaleAspectFill
-                photoV.clipsToBounds = true
-                photoV.tag = index
-                photoV.userInteractionEnabled = true
-                    //NSString(format: "www.baidu.com/s?wd=%d", index)
-
-                photoV.addGestureRecognizer(myGesture)
-                
-                self.addSubview(photoV)
-
-                index++
-            }
-        }
-    }
     
     override func layoutSubviews() {
         super.layoutSubviews()
@@ -68,15 +27,39 @@ class PhotosContainerView : UIView {
         var y : CGFloat
         var index : Int32 = 0
         for subview in self.subviews {
-            row = index % maxRow
-            col = index / maxCol
+            let r = index / 2
+            row = r % maxRow
+            col = r / maxCol
             x = width * CGFloat(row)
             y = height * CGFloat(col)
             
-            let frame : CGRect = CGRectMake(x, y, width, height)
-            subview.frame = frame
+            if(subview is UIImageView) {
+                subview.frame = CGRectMake(x, y, width-15, height-25)
+            }
+            else if(subview is UILabel) {
+                subview.frame = CGRectMake(x, y + height - 20, width - 15, 20)
+            }
             
             index++
         }
+    }
+}
+
+class SingleHotVideoView : UIView {
+    @IBOutlet weak var hotVideoTitle : UILabel?
+    @IBOutlet weak var hotVideoImage : UIImageView?
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        let f : CGRect = self.bounds
+        let lableFrame : CGRect = CGRectMake(f.origin.x + 2, f.origin.y + 2, f.size.width - 5, 10)
+        let imageViewFrame : CGRect = CGRectMake(f.origin.x + 2, f.origin.y + 15, f.size.width - 5, f.size.height - 15)
+        
+        hotVideoTitle?.frame = lableFrame
+        hotVideoImage?.frame = imageViewFrame
+        
+        self.addSubview(hotVideoTitle!)
+        self.addSubview(hotVideoImage!)
     }
 }
