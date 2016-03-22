@@ -34,10 +34,10 @@ class PhotosContainerView : UIView {
             y = height * CGFloat(col)
             
             if(subview is UIImageView) {
-                subview.frame = CGRectMake(x, y, width-15, height-25)
+                subview.frame = CGRectMake(x+10, y, width-15, height-40)
             }
             else if(subview is UILabel) {
-                subview.frame = CGRectMake(x, y + height - 20, width - 15, 20)
+                subview.frame = CGRectMake(x+10, y + height - 30, width - 15, 20)
             }
             
             index++

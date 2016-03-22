@@ -13,6 +13,8 @@ class SearchController: UIViewController, UISearchBarDelegate {
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var hotVideoView: PhotosContainerView!
     
+    @IBOutlet weak var hotVideoTag: UILabel!
+    
     var HotVideoItems56 : [MovieItem] = []
     
     override func viewDidLoad() {
@@ -38,6 +40,7 @@ class SearchController: UIViewController, UISearchBarDelegate {
             
             dispatch_async(dispatch_get_main_queue(), {
                 self.Bind56HotVideosSubView()
+                self.hotVideoTag.hidden = false
             });
         }
         task56.resume()

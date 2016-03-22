@@ -45,40 +45,52 @@
                                 <rect key="frame" x="10" y="121" width="584" height="479"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="热点视频（来自56视频）" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1h0-cO-nf3">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="21" y="130" width="265" height="21"/>
+                                </variation>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="EvD-gb-sul" firstAttribute="leading" secondItem="ZwX-cT-FIQ" secondAttribute="leadingMargin" constant="-20" id="6Xp-Hd-ppY"/>
-                            <constraint firstItem="lW2-Zx-ThE" firstAttribute="top" secondItem="EvD-gb-sul" secondAttribute="bottom" constant="20" id="7C1-cU-zXj"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="lW2-Zx-ThE" secondAttribute="trailing" constant="-14" id="8Au-cA-Tno"/>
-                            <constraint firstItem="lW2-Zx-ThE" firstAttribute="leading" secondItem="ZwX-cT-FIQ" secondAttribute="leadingMargin" constant="-10" id="KQw-xU-DUh"/>
+                            <constraint firstItem="lW2-Zx-ThE" firstAttribute="top" secondItem="EvD-gb-sul" secondAttribute="bottom" constant="20" id="7C1-cU-zXj">
+                                <variation key="heightClass=regular" constant="60"/>
+                            </constraint>
+                            <constraint firstItem="lW2-Zx-ThE" firstAttribute="leading" secondItem="ZwX-cT-FIQ" secondAttribute="leadingMargin" constant="-10" id="KQw-xU-DUh">
+                                <variation key="heightClass=regular" constant="10"/>
+                            </constraint>
                             <constraint firstItem="EPS-s9-h4K" firstAttribute="top" secondItem="lW2-Zx-ThE" secondAttribute="bottom" constant="20" id="TZz-h2-twE"/>
                             <constraint firstAttribute="trailingMargin" secondItem="EvD-gb-sul" secondAttribute="trailing" constant="-20" id="WhB-9Q-tkw"/>
                             <constraint firstItem="EvD-gb-sul" firstAttribute="top" secondItem="fXf-Jd-eTc" secondAttribute="bottom" constant="1" id="bsa-H0-JL1"/>
                             <constraint firstItem="EPS-s9-h4K" firstAttribute="top" secondItem="lW2-Zx-ThE" secondAttribute="bottom" constant="20" id="iGt-cF-n9z"/>
-                            <constraint firstItem="lW2-Zx-ThE" firstAttribute="leading" secondItem="ZwX-cT-FIQ" secondAttribute="leadingMargin" constant="20" id="iwb-Z9-gXm"/>
-                            <constraint firstItem="lW2-Zx-ThE" firstAttribute="top" secondItem="EvD-gb-sul" secondAttribute="bottom" constant="12" id="kfj-fg-BFD"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="lW2-Zx-ThE" secondAttribute="trailing" constant="20" id="mEw-zK-yUF"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="lW2-Zx-ThE" secondAttribute="trailing" constant="-10" id="mEw-zK-yUF">
+                                <variation key="heightClass=regular" constant="10"/>
+                            </constraint>
                         </constraints>
                         <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="1h0-cO-nf3"/>
+                            </mask>
                             <mask key="constraints">
                                 <exclude reference="7C1-cU-zXj"/>
-                                <exclude reference="8Au-cA-Tno"/>
                                 <exclude reference="KQw-xU-DUh"/>
-                                <exclude reference="iwb-Z9-gXm"/>
-                                <exclude reference="kfj-fg-BFD"/>
                                 <exclude reference="mEw-zK-yUF"/>
                                 <exclude reference="TZz-h2-twE"/>
                                 <exclude reference="iGt-cF-n9z"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular">
+                            <mask key="subviews">
+                                <include reference="1h0-cO-nf3"/>
+                            </mask>
                             <mask key="constraints">
                                 <include reference="7C1-cU-zXj"/>
-                                <include reference="8Au-cA-Tno"/>
                                 <include reference="KQw-xU-DUh"/>
-                                <include reference="iwb-Z9-gXm"/>
-                                <include reference="kfj-fg-BFD"/>
                                 <include reference="mEw-zK-yUF"/>
                                 <include reference="TZz-h2-twE"/>
                                 <include reference="iGt-cF-n9z"/>
@@ -87,6 +99,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="OneVideo" id="bSc-xU-kxe"/>
                     <connections>
+                        <outlet property="hotVideoTag" destination="1h0-cO-nf3" id="pAT-st-B2p"/>
                         <outlet property="hotVideoView" destination="lW2-Zx-ThE" id="DRI-Fr-LZY"/>
                         <outlet property="searchBar" destination="EvD-gb-sul" id="RW8-Oy-9KK"/>
                     </connections>
