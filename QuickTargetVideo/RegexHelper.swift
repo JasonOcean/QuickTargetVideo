@@ -81,14 +81,16 @@ class RegexHelper
                 options: NSMatchingOptions.WithoutAnchoringBounds,
                 range: NSMakeRange(0, (pText as NSString).length))
             
-            if(results.count>0)
-            {                
+            if(results.count>0) {
+                let p : String = NSString(CString: pText as! String, encoding: NSUTF8StringEncoding) as! String
+                
+//                let p : String = NSString(CString: pText as! String, encoding: NSMacOSRomanStringEncoding) as! String
                 //Filter both the beginning and end "
                 if  isFilterQuote {
-                    return (pText as NSString).substringWithRange(NSMakeRange(results[0].range.location+1, results[0].range.length-2))
+                    return (p as NSString).substringWithRange(NSMakeRange(results[0].range.location+1, results[0].range.length-2))
                 }
                 else {
-                    return (pText as NSString).substringWithRange(results[0].range)
+                    return (p as NSString).substringWithRange(results[0].range)
                 }
             }
         }
@@ -232,6 +234,23 @@ class HotVideosPage: RegexHelper
     init(source: String)
     {
         let bodyPattern: String = "<a rseat=\"(.+?)\" class=\"mod_focus-index_item\" (.+?)></a>"
+        super.init(source: source, patternStr: bodyPattern)
+    }
+    
+    override func GetSingleMovieItem(parentText: String, titleP: String?, linkP: String?) -> MovieItem {
+        let titlePattern : String = "alt=\"(.+?)\""
+        let linkPattern: String = "href=[\\s]*?\"(.|\\s)*?\""
+        return super.GetSingleMovieItem(parentText, titleP: titlePattern, linkP: linkPattern)
+    }
+}
+
+class HotVideosPage56: RegexHelper
+{
+    var HotVideos: [String]?
+    
+    init(source: String)
+    {
+        let bodyPattern: String = "<li [\\s\\S]*? fragtype=\"1\">(.|\\s)*?</li>"
         super.init(source: source, patternStr: bodyPattern)
     }
     

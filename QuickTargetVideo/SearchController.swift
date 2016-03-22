@@ -14,6 +14,7 @@ class SearchController: UIViewController, UISearchBarDelegate {
     @IBOutlet weak var hotVideoView: PhotosContainerView!
     
     var HotVideoItems : [MovieItem] = []
+    var HotVideoItems56 : [MovieItem] = []
     
     override func viewDidLoad() {
         
@@ -24,11 +25,13 @@ class SearchController: UIViewController, UISearchBarDelegate {
         singleTapGesture.numberOfTapsRequired = 1
         singleTapGesture.numberOfTouchesRequired = 1
         hotVideoView.singleTap = singleTapGesture
+        
+        self.Load56HotVedios()
     }
     
     override func viewWillLayoutSubviews() {
 //        hotVideoView.photos = self.GetHotVideoPhotos()
-        self.BindSubView()
+        //self.BindSubView()
     }
     
     func LoadHotVedios() {
@@ -43,6 +46,22 @@ class SearchController: UIViewController, UISearchBarDelegate {
         self.HotVideoItems = self.UpgradeToShortTitle(HotVideosPage(source: source).FindAllMovies())
         
         self.BindingHotVideos()
+    }
+    
+    func Load56HotVedios() {
+        let session = NSURLSession.sharedSession()
+        let urlSohu = NSURL(string: "http://www.56.com/")
+        let task56 = session.dataTaskWithURL(urlSohu!) {(data, response, error) in
+            let encode : UInt = NSUTF8StringEncoding
+            let sourceContent:String = NSString(data:data!, encoding:encode)! as String
+            let hot56 = HotVideosPage56(source: sourceContent)
+            self.HotVideoItems56 = hot56.FindAllMovies()
+            
+            dispatch_async(dispatch_get_main_queue(), {
+                self.BindSubView()
+            });
+        }
+        task56.resume()
     }
     
     func getLabelsInView(view: UIView) -> [UILabel] {
@@ -99,9 +118,11 @@ class SearchController: UIViewController, UISearchBarDelegate {
     }
     
     override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
+//        super.viewDidLayoutSubviews()
         
         //self.LoadHotVedios()
+//        self.LoadSohuHotVedios()
+//        self.Load56HotVedios()
     }
     
     override func didReceiveMemoryWarning() {
@@ -157,34 +178,65 @@ class SearchController: UIViewController, UISearchBarDelegate {
         return photos.mutableCopy() as! [UIImage]
     }
     
-    @IBAction func singleTagFromSearchVC(sender: AnyObject){
+    @IBAction func singleTagFromSearchVC(sender: UIGestureRecognizer){
         let videoDetailController = storyboard?.instantiateViewControllerWithIdentifier("VideoDetail") as! VideoDetail
-        videoDetailController.linkUrl = "http://www.baidu.com"
+        
+//        let i = sender as! UIImageView
+        videoDetailController.linkUrl = self.HotVideoItems56[sender.view!.tag].link
         self.navigationController?.pushViewController(videoDetailController, animated: true)
     }
     
-    func BindSubView() {
+    func GetImageViewBasedOnLinkImg(imgUrl : String) -> UIImage {
+        let url = NSURL(string: imgUrl)
+        let data : NSData = NSData(contentsOfURL: url!)!
+        let image : UIImage = UIImage(data: data)!
         
+        return image
+    }
+    
+    func BindSubView() {
         for oldView in self.hotVideoView.subviews {
             oldView.removeFromSuperview()
         }
     
+//        var index : Int = 0
+//        var photos : [UIImage] = self.GetHotVideoPhotos()
+//        for photo in photos {
+//            let myGesture : UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "singleTagFromSearchVC:")
+//            let photoV : UIImageView = UIImageView(image: photo)
+//            photoV.userInteractionEnabled = true
+//            photoV.contentMode = UIViewContentMode.ScaleAspectFill
+//            photoV.clipsToBounds = true
+//            photoV.tag = index
+//            photoV.userInteractionEnabled = true
+//            photoV.addGestureRecognizer(myGesture)
+//            self.hotVideoView.addSubview(photoV)
+//            
+//            var title : UILabel = UILabel()
+//            title.text = NSString(format: "%d@", index) as String
+//            self.hotVideoView.addSubview(title)
+//            
+//            index++
+//        }
+        
         var index : Int = 0
-        var photos : [UIImage] = self.GetHotVideoPhotos()
-        for photo in photos {
-            let myGesture : UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "singleTagFromSearchVC:")
-            let photoV : UIImageView = UIImageView(image: photo)
-            photoV.userInteractionEnabled = true
-            photoV.contentMode = UIViewContentMode.ScaleAspectFill
-            photoV.clipsToBounds = true
-            photoV.tag = index
-            photoV.userInteractionEnabled = true
-            photoV.addGestureRecognizer(myGesture)
-            self.hotVideoView.addSubview(photoV)
-            
-            var title : UILabel = UILabel()
-            title.text = NSString(format: "%d@", index) as String
-            self.hotVideoView.addSubview(title)
+        for item in self.HotVideoItems56 {
+            if(index < 4) {
+                let myGesture : UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "singleTagFromSearchVC:")
+                let img = GetImageViewBasedOnLinkImg(item.img)
+                let photoV : UIImageView = UIImageView(image: img)
+                photoV.userInteractionEnabled = true
+                photoV.contentMode = UIViewContentMode.ScaleAspectFill
+                photoV.clipsToBounds = true
+                photoV.tag = index
+                photoV.userInteractionEnabled = true
+                photoV.addGestureRecognizer(myGesture)
+                self.hotVideoView.addSubview(photoV)
+                
+                var title : UILabel = UILabel()
+                title.text = item.title
+                self.hotVideoView.addSubview(title)
+            }
             
             index++
         }
