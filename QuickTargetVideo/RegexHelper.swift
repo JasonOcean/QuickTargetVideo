@@ -84,7 +84,6 @@ class RegexHelper
             if(results.count>0) {
                 let p : String = NSString(CString: pText as! String, encoding: NSUTF8StringEncoding) as! String
                 
-//                let p : String = NSString(CString: pText as! String, encoding: NSMacOSRomanStringEncoding) as! String
                 //Filter both the beginning and end "
                 if  isFilterQuote {
                     return (p as NSString).substringWithRange(NSMakeRange(results[0].range.location+1, results[0].range.length-2))
