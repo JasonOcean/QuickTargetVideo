@@ -8,25 +8,28 @@
 
 import UIKit
 
-class SearchController: UIViewController, UISearchBarDelegate {
+class SearchController: UITableViewController, UISearchBarDelegate {
 
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var hotVideoView: PhotosContainerView!
     
+    @IBOutlet weak var myTableView : UITableView?
+    
     @IBOutlet weak var hotVideoTag: UILabel!
     
+    var HotVideoItems : [MovieItem] = []
     var HotVideoItems56 : [MovieItem] = []
     
     override func viewDidLoad() {
-        
         super.viewDidLoad()
         
-        let singleTapGesture = UITapGestureRecognizer.init(target: self, action:"singleTagFromSearchVC:")
-        singleTapGesture.numberOfTapsRequired = 1
-        singleTapGesture.numberOfTouchesRequired = 1
-        hotVideoView.singleTap = singleTapGesture
+//        let singleTapGesture = UITapGestureRecognizer.init(target: self, action:"singleTagFromSearchVC:")
+//        singleTapGesture.numberOfTapsRequired = 1
+//        singleTapGesture.numberOfTouchesRequired = 1
+//        hotVideoView.singleTap = singleTapGesture
         
-        self.Load56HotVedios()
+//        self.Load56HotVedios()
+        self.LoadHotVedios()
     }
     
     func Load56HotVedios() {
@@ -63,11 +66,10 @@ class SearchController: UIViewController, UISearchBarDelegate {
     @IBAction func singleTagFromSearchVC(sender: UIGestureRecognizer){
         let videoDetailController = storyboard?.instantiateViewControllerWithIdentifier("VideoDetail") as! VideoDetail
         
-        videoDetailController.linkUrl = self.HotVideoItems56[sender.view!.tag].link
+//        videoDetailController.linkUrl = self.HotVideoItems56[sender.view!.tag].link
+        videoDetailController.linkUrl = self.HotVideoItems[sender.view!.tag].link
         self.navigationController?.pushViewController(videoDetailController, animated: true)
     }
-    
-
     
     func Bind56HotVideosSubView() {
         for oldView in self.hotVideoView.subviews {
@@ -130,5 +132,39 @@ class SearchController: UIViewController, UISearchBarDelegate {
         return image
     }
     
+    
+    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.HotVideoItems.count
+    }
+    
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let hotCell:HotVideoTabCell = self.myTableView!.dequeueReusableCellWithIdentifier("HotVideoCell") as! HotVideoTabCell
+        hotCell.hotVideoIndex.text = String(indexPath.row + 1)
+        hotCell.hotVideoTitle.text = self.HotVideoItems[indexPath.row].title
+        
+        let singleTapGesture = UITapGestureRecognizer.init(target: self, action:"singleTagFromSearchVC:")
+        singleTapGesture.numberOfTapsRequired = 1
+        singleTapGesture.numberOfTouchesRequired = 1
+        hotCell.tag = indexPath.row
+        hotCell.addGestureRecognizer(singleTapGesture)
+        
+        return hotCell
+    }
+    
+    func LoadHotVedios() {
+        var source: String!
+        let url = NSURL(string: "http://www.iqiyi.com/")
+        do {
+            let abc = try NSString(contentsOfURL: url!, encoding:NSUTF8StringEncoding)
+            source = abc.stringByReplacingOccurrencesOfString("\\", withString: "")
+        }
+        catch {}
+        
+        self.HotVideoItems = self.UpgradeToShortTitle(HotVideosPage(source: source).FindAllMovies())
+    }
 }
 

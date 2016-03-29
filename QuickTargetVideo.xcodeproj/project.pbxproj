@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		960CD2831CA9916400EF02DB /* HotVideoTabCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960CD2821CA9916400EF02DB /* HotVideoTabCell.swift */; };
 		965814891C4FD79E0094AE36 /* KVNProgressView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 965814881C4FD79E0094AE36 /* KVNProgressView.xib */; };
 		9658148C1C4FD7AD0094AE36 /* KVNProgress.m in Sources */ = {isa = PBXBuildFile; fileRef = 9658148B1C4FD7AD0094AE36 /* KVNProgress.m */; };
 		965814911C4FD7BD0094AE36 /* UIImage+KVNEmpty.m in Sources */ = {isa = PBXBuildFile; fileRef = 9658148E1C4FD7BD0094AE36 /* UIImage+KVNEmpty.m */; };
@@ -44,6 +45,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		960CD2821CA9916400EF02DB /* HotVideoTabCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HotVideoTabCell.swift; sourceTree = "<group>"; };
 		963E5F871C4F7F39004A2DB5 /* QuickTargetVideo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "QuickTargetVideo-Bridging-Header.h"; sourceTree = "<group>"; };
 		965814881C4FD79E0094AE36 /* KVNProgressView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = KVNProgressView.xib; path = KVNProgress/Resources/KVNProgressView.xib; sourceTree = "<group>"; };
 		9658148A1C4FD7AD0094AE36 /* KVNProgress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KVNProgress.h; path = KVNProgress/Classes/KVNProgress.h; sourceTree = "<group>"; };
@@ -185,6 +187,7 @@
 				965AD7171BF3338A00D9D9E6 /* MovieTableViewCell.swift */,
 				965AD7191C054C5C00D9D9E6 /* RegexHelper.swift */,
 				96902F711C8F2B1F00D0CA47 /* PhotosContainerView.swift */,
+				960CD2821CA9916400EF02DB /* HotVideoTabCell.swift */,
 			);
 			path = QuickTargetVideo;
 			sourceTree = "<group>";
@@ -335,6 +338,7 @@
 				96D5D89D1BE8974E00781EC9 /* AppDelegate.swift in Sources */,
 				965814911C4FD7BD0094AE36 /* UIImage+KVNEmpty.m in Sources */,
 				9661BFB51C1984470004B65A /* VideoDetail.swift in Sources */,
+				960CD2831CA9916400EF02DB /* HotVideoTabCell.swift in Sources */,
 				96902F721C8F2B1F00D0CA47 /* PhotosContainerView.swift in Sources */,
 				965AD71A1C054C5C00D9D9E6 /* RegexHelper.swift in Sources */,
 			);

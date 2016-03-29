@@ -127,7 +127,8 @@ class RegexHelper
         for c in self.bodyTexts{
             var item:MovieItem = self.GetSingleMovieItem(c, titleP: nil, linkP: nil)
             
-            if(item.link != "" && item.link != "###" && item.img != "" && item.title != "") {
+//            if(item.link != "" && item.link != "###" && item.img != "" && item.title != "") {
+            if(item.link != "" && item.link != "###" && item.title != "") {
                 movies.append(item)
             }
         }
