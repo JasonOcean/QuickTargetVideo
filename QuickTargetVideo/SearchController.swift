@@ -8,45 +8,18 @@
 
 import UIKit
 
-class SearchController: UITableViewController, UISearchBarDelegate {
 
+class SearchController: UIViewController, UITableViewDataSource, UISearchBarDelegate{
     @IBOutlet weak var searchBar: UISearchBar!
-    @IBOutlet weak var hotVideoView: PhotosContainerView!
-    
-    @IBOutlet weak var myTableView : UITableView?
-    
     @IBOutlet weak var hotVideoTag: UILabel!
     
+    @IBOutlet weak var myTableView: UITableView!
     var HotVideoItems : [MovieItem] = []
-    var HotVideoItems56 : [MovieItem] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        let singleTapGesture = UITapGestureRecognizer.init(target: self, action:"singleTagFromSearchVC:")
-//        singleTapGesture.numberOfTapsRequired = 1
-//        singleTapGesture.numberOfTouchesRequired = 1
-//        hotVideoView.singleTap = singleTapGesture
-        
-//        self.Load56HotVedios()
         self.LoadHotVedios()
-    }
-    
-    func Load56HotVedios() {
-        let session = NSURLSession.sharedSession()
-        let urlSohu = NSURL(string: "http://www.56.com/")
-        let task56 = session.dataTaskWithURL(urlSohu!) {(data, response, error) in
-            let encode : UInt = NSUTF8StringEncoding
-            let sourceContent:String = NSString(data:data!, encoding:encode)! as String
-            let hot56 = HotVideosPage56(source: sourceContent)
-            self.HotVideoItems56 = hot56.FindAllMovies()
-            
-            dispatch_async(dispatch_get_main_queue(), {
-                self.Bind56HotVideosSubView()
-                self.hotVideoTag.hidden = false
-            });
-        }
-        task56.resume()
     }
     
     override func didReceiveMemoryWarning() {
@@ -65,38 +38,8 @@ class SearchController: UITableViewController, UISearchBarDelegate {
     
     @IBAction func singleTagFromSearchVC(sender: UIGestureRecognizer){
         let videoDetailController = storyboard?.instantiateViewControllerWithIdentifier("VideoDetail") as! VideoDetail
-        
-//        videoDetailController.linkUrl = self.HotVideoItems56[sender.view!.tag].link
         videoDetailController.linkUrl = self.HotVideoItems[sender.view!.tag].link
         self.navigationController?.pushViewController(videoDetailController, animated: true)
-    }
-    
-    func Bind56HotVideosSubView() {
-        for oldView in self.hotVideoView.subviews {
-            oldView.removeFromSuperview()
-        }
-        
-        var index : Int = 0
-        for item in self.HotVideoItems56 {
-            if(index < 4) {
-                let myGesture : UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "singleTagFromSearchVC:")
-                let img = GetImageViewBasedOnLinkImg(item.img)
-                let photoV : UIImageView = UIImageView(image: img)
-                photoV.userInteractionEnabled = true
-                photoV.contentMode = UIViewContentMode.ScaleAspectFill
-                photoV.clipsToBounds = true
-                photoV.tag = index
-                photoV.userInteractionEnabled = true
-                photoV.addGestureRecognizer(myGesture)
-                self.hotVideoView.addSubview(photoV)
-                
-                let title : UILabel = UILabel()
-                title.text = item.title
-                self.hotVideoView.addSubview(title)
-            }
-            
-            index++
-        }
     }
     
     ///Splite title by comma, then use the head part as the wanted short title
@@ -133,15 +76,11 @@ class SearchController: UITableViewController, UISearchBarDelegate {
     }
     
     
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 1
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.HotVideoItems.count;
     }
     
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.HotVideoItems.count
-    }
-    
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let hotCell:HotVideoTabCell = self.myTableView!.dequeueReusableCellWithIdentifier("HotVideoCell") as! HotVideoTabCell
         hotCell.hotVideoIndex.text = String(indexPath.row + 1)
         hotCell.hotVideoTitle.text = self.HotVideoItems[indexPath.row].title

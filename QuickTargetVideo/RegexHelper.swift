@@ -82,7 +82,7 @@ class RegexHelper
                 range: NSMakeRange(0, (pText as NSString).length))
             
             if(results.count>0) {
-                let p : String = NSString(CString: pText as! String, encoding: NSUTF8StringEncoding) as! String
+                let p : String = NSString(CString: pText, encoding: NSUTF8StringEncoding) as! String
                 
                 //Filter both the beginning and end "
                 if  isFilterQuote {
@@ -125,7 +125,7 @@ class RegexHelper
         var movies: [MovieItem] = []
         self.bodyTexts = self.GetBodyContent()
         for c in self.bodyTexts{
-            var item:MovieItem = self.GetSingleMovieItem(c, titleP: nil, linkP: nil)
+            let item:MovieItem = self.GetSingleMovieItem(c, titleP: nil, linkP: nil)
             
 //            if(item.link != "" && item.link != "###" && item.img != "" && item.title != "") {
             if(item.link != "" && item.link != "###" && item.title != "") {

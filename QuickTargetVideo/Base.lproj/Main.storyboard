@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="bvx-iG-PPL">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="bvx-iG-PPL">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
-        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -31,33 +30,33 @@
                         <viewControllerLayoutGuide type="top" id="fXf-Jd-eTc"/>
                         <viewControllerLayoutGuide type="bottom" id="EPS-s9-h4K"/>
                     </layoutGuides>
-                    <view key="view" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="ZwX-cT-FIQ" customClass="UITableView">
+                    <view key="view" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="ZwX-cT-FIQ">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" text="" placeholder="Please input video name" showsSearchResultsButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EvD-gb-sul">
+                            <searchBar contentMode="redraw" ambiguous="YES" misplaced="YES" text="" placeholder="Please input video name" showsSearchResultsButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EvD-gb-sul">
                                 <rect key="frame" x="0.0" y="65" width="600" height="44"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
                                     <outlet property="delegate" destination="S4R-Ja-viH" id="mmC-zk-dnl"/>
                                 </connections>
                             </searchBar>
-                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="热点视频（来自56视频）" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1h0-cO-nf3">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="热点视频（来自 爱奇艺）" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1h0-cO-nf3">
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="heightClass=regular" ambiguous="YES" misplaced="YES">
+                                <variation key="heightClass=regular" misplaced="YES">
                                     <rect key="frame" x="21" y="130" width="265" height="21"/>
                                 </variation>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="F2f-JR-dvG">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="mFH-6b-5dz">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="HotVideoCell" id="cet-B2-Vxn" customClass="HotVideoTabCell" customModule="QuickTargetVideo" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cet-B2-Vxn" id="XQs-U7-RrP">
                                             <rect key="frame" x="0.0" y="0.0" width="240" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
@@ -111,64 +110,57 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
-                                <variation key="heightClass=regular" ambiguous="YES" misplaced="YES">
-                                    <rect key="frame" x="41" y="159" width="518" height="621"/>
+                                <variation key="heightClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="20" y="159" width="560" height="409"/>
                                 </variation>
+                                <connections>
+                                    <outlet property="dataSource" destination="S4R-Ja-viH" id="CYP-mt-vTC"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="F2f-JR-dvG" firstAttribute="leading" secondItem="ZwX-cT-FIQ" secondAttribute="leadingMargin" constant="21" id="5de-pT-aCx"/>
-                            <constraint firstItem="EvD-gb-sul" firstAttribute="leading" secondItem="ZwX-cT-FIQ" secondAttribute="leadingMargin" constant="-20" id="6Xp-Hd-ppY"/>
-                            <constraint firstItem="F2f-JR-dvG" firstAttribute="leading" secondItem="ZwX-cT-FIQ" secondAttribute="leadingMargin" constant="21" id="A5z-NF-Zaq"/>
-                            <constraint firstItem="F2f-JR-dvG" firstAttribute="top" secondItem="1h0-cO-nf3" secondAttribute="bottom" constant="80" id="Cn6-xp-xMC"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="EvD-gb-sul" secondAttribute="trailing" constant="-20" id="WhB-9Q-tkw"/>
-                            <constraint firstItem="F2f-JR-dvG" firstAttribute="top" secondItem="1h0-cO-nf3" secondAttribute="bottom" constant="10" id="ax9-9X-rXg"/>
-                            <constraint firstItem="EvD-gb-sul" firstAttribute="top" secondItem="fXf-Jd-eTc" secondAttribute="bottom" constant="1" id="bsa-H0-JL1"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="F2f-JR-dvG" secondAttribute="trailing" constant="21" id="cm5-ps-1cG"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="F2f-JR-dvG" secondAttribute="trailing" constant="21" id="jjw-yL-QUB"/>
-                            <constraint firstItem="EPS-s9-h4K" firstAttribute="top" secondItem="F2f-JR-dvG" secondAttribute="bottom" constant="30" id="qmx-R6-NIQ">
-                                <variation key="heightClass=regular" constant="0.0"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="EvD-gb-sul" secondAttribute="trailing" constant="2" id="1W8-2O-D0k">
+                                <variation key="heightClass=regular" constant="-20"/>
                             </constraint>
-                            <constraint firstItem="EPS-s9-h4K" firstAttribute="top" secondItem="F2f-JR-dvG" secondAttribute="bottom" constant="20" id="ynZ-KX-UsD"/>
+                            <constraint firstItem="EvD-gb-sul" firstAttribute="top" secondItem="fXf-Jd-eTc" secondAttribute="bottom" constant="10" id="BVz-ee-WhV"/>
+                            <constraint firstItem="1h0-cO-nf3" firstAttribute="top" secondItem="EvD-gb-sul" secondAttribute="bottom" constant="10" id="V8P-GX-92A"/>
+                            <constraint firstItem="EvD-gb-sul" firstAttribute="leading" secondItem="ZwX-cT-FIQ" secondAttribute="leadingMargin" constant="2" id="Z7g-Mk-P9r">
+                                <variation key="heightClass=regular" constant="-20"/>
+                            </constraint>
+                            <constraint firstItem="1h0-cO-nf3" firstAttribute="leading" secondItem="ZwX-cT-FIQ" secondAttribute="leadingMargin" constant="5" id="uBq-ap-gEF"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="1h0-cO-nf3"/>
-                                <exclude reference="F2f-JR-dvG"/>
+                                <exclude reference="mFH-6b-5dz"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="5de-pT-aCx"/>
-                                <exclude reference="A5z-NF-Zaq"/>
-                                <exclude reference="Cn6-xp-xMC"/>
-                                <exclude reference="ax9-9X-rXg"/>
-                                <exclude reference="cm5-ps-1cG"/>
-                                <exclude reference="jjw-yL-QUB"/>
-                                <exclude reference="qmx-R6-NIQ"/>
-                                <exclude reference="ynZ-KX-UsD"/>
+                                <exclude reference="1W8-2O-D0k"/>
+                                <exclude reference="BVz-ee-WhV"/>
+                                <exclude reference="Z7g-Mk-P9r"/>
+                                <exclude reference="V8P-GX-92A"/>
+                                <exclude reference="uBq-ap-gEF"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular">
                             <mask key="subviews">
                                 <include reference="1h0-cO-nf3"/>
-                                <include reference="F2f-JR-dvG"/>
+                                <include reference="mFH-6b-5dz"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="5de-pT-aCx"/>
-                                <include reference="A5z-NF-Zaq"/>
-                                <include reference="Cn6-xp-xMC"/>
-                                <include reference="ax9-9X-rXg"/>
-                                <include reference="cm5-ps-1cG"/>
-                                <include reference="jjw-yL-QUB"/>
-                                <include reference="qmx-R6-NIQ"/>
-                                <include reference="ynZ-KX-UsD"/>
+                                <include reference="1W8-2O-D0k"/>
+                                <include reference="BVz-ee-WhV"/>
+                                <include reference="Z7g-Mk-P9r"/>
+                                <include reference="V8P-GX-92A"/>
+                                <include reference="uBq-ap-gEF"/>
                             </mask>
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" title="OneVideo" id="bSc-xU-kxe"/>
                     <connections>
                         <outlet property="hotVideoTag" destination="1h0-cO-nf3" id="pAT-st-B2p"/>
-                        <outlet property="myTableView" destination="F2f-JR-dvG" id="Nmk-tt-4vf"/>
+                        <outlet property="myTableView" destination="mFH-6b-5dz" id="wqx-1L-A1a"/>
                         <outlet property="searchBar" destination="EvD-gb-sul" id="RW8-Oy-9KK"/>
                     </connections>
                 </viewController>
