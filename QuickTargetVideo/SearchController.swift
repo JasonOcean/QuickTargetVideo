@@ -16,6 +16,7 @@ class SearchController: UIViewController, UITableViewDataSource, UISearchBarDele
     @IBOutlet weak var myTableView: UITableView!
     var HotVideoItems : [MovieItem] = []
     
+    //just a test
     override func viewDidLoad() {
         super.viewDidLoad()
         
