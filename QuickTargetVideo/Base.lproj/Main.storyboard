@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -46,9 +47,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="heightClass=regular" misplaced="YES">
-                                    <rect key="frame" x="21" y="130" width="265" height="21"/>
-                                </variation>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="mFH-6b-5dz">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
@@ -76,16 +74,7 @@
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                     <variation key="heightClass=regular" fixedFrame="YES">
-                                                        <rect key="frame" x="83" y="10" width="405" height="21"/>
-                                                    </variation>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="id" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M6B-Zd-v3W">
-                                                    <rect key="frame" x="-42" y="-21" width="42" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                    <variation key="heightClass=regular" fixedFrame="YES">
-                                                        <rect key="frame" x="15" y="11" width="42" height="21"/>
+                                                        <rect key="frame" x="16" y="10" width="472" height="21"/>
                                                     </variation>
                                                 </label>
                                             </subviews>
@@ -93,19 +82,16 @@
                                                 <mask key="subviews">
                                                     <exclude reference="Qv9-fy-hta"/>
                                                     <exclude reference="TxX-Qq-RcB"/>
-                                                    <exclude reference="M6B-Zd-v3W"/>
                                                 </mask>
                                             </variation>
                                             <variation key="heightClass=regular">
                                                 <mask key="subviews">
                                                     <include reference="Qv9-fy-hta"/>
                                                     <include reference="TxX-Qq-RcB"/>
-                                                    <include reference="M6B-Zd-v3W"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="hotVideoIndex" destination="M6B-Zd-v3W" id="cTi-lc-20v"/>
                                             <outlet property="hotVideoTitle" destination="TxX-Qq-RcB" id="VW3-Ye-3TN"/>
                                         </connections>
                                     </tableViewCell>
@@ -136,11 +122,11 @@
                                 <exclude reference="mFH-6b-5dz"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="V8P-GX-92A"/>
+                                <exclude reference="uBq-ap-gEF"/>
                                 <exclude reference="1W8-2O-D0k"/>
                                 <exclude reference="BVz-ee-WhV"/>
                                 <exclude reference="Z7g-Mk-P9r"/>
-                                <exclude reference="V8P-GX-92A"/>
-                                <exclude reference="uBq-ap-gEF"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular">
@@ -149,11 +135,11 @@
                                 <include reference="mFH-6b-5dz"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="V8P-GX-92A"/>
+                                <include reference="uBq-ap-gEF"/>
                                 <include reference="1W8-2O-D0k"/>
                                 <include reference="BVz-ee-WhV"/>
                                 <include reference="Z7g-Mk-P9r"/>
-                                <include reference="V8P-GX-92A"/>
-                                <include reference="uBq-ap-gEF"/>
                             </mask>
                         </variation>
                     </view>

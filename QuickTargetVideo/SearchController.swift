@@ -83,7 +83,7 @@ class SearchController: UIViewController, UITableViewDataSource, UISearchBarDele
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let hotCell:HotVideoTabCell = self.myTableView!.dequeueReusableCellWithIdentifier("HotVideoCell") as! HotVideoTabCell
-        hotCell.hotVideoIndex.text = String(indexPath.row + 1)
+//        hotCell.hotVideoIndex.text = String(indexPath.row + 1)
         hotCell.hotVideoTitle.text = self.HotVideoItems[indexPath.row].title
         
         let singleTapGesture = UITapGestureRecognizer.init(target: self, action:"singleTagFromSearchVC:")
@@ -104,7 +104,8 @@ class SearchController: UIViewController, UITableViewDataSource, UISearchBarDele
         }
         catch {}
         
-        self.HotVideoItems = self.UpgradeToShortTitle(HotVideosPage(source: source).FindAllMovies())
+        //self.HotVideoItems = self.UpgradeToShortTitle(HotVideosPage(source: source).FindAllMovies())
+        self.HotVideoItems = HotVideosPage(source: source).FindAllMovies()
     }
 }
 
