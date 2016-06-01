@@ -42,13 +42,16 @@
                                     <outlet property="delegate" destination="S4R-Ja-viH" id="mmC-zk-dnl"/>
                                 </connections>
                             </searchBar>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="热点视频（来自 爱奇艺）" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1h0-cO-nf3">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="热点视频" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1h0-cO-nf3">
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <color key="textColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="heightClass=regular" misplaced="YES">
-                                    <rect key="frame" x="25" y="128" width="300.5" height="33"/>
+                                    <rect key="frame" x="38" y="128" width="88.5" height="33"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="25" y="128" width="91.5" height="29"/>
                                 </variation>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="mFH-6b-5dz">
@@ -77,20 +80,28 @@
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                     <variation key="heightClass=regular" fixedFrame="YES">
-                                                        <rect key="frame" x="16" y="10" width="472" height="21"/>
+                                                        <rect key="frame" x="67" y="11" width="472" height="30"/>
                                                     </variation>
                                                 </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="apple-touch-icon-57x57.png" translatesAutoresizingMaskIntoConstraints="NO" id="9vV-rj-f0S">
+                                                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                                    <variation key="heightClass=regular" fixedFrame="YES">
+                                                        <rect key="frame" x="22" y="11" width="30" height="24.5"/>
+                                                    </variation>
+                                                </imageView>
                                             </subviews>
                                             <variation key="default">
                                                 <mask key="subviews">
                                                     <exclude reference="Qv9-fy-hta"/>
                                                     <exclude reference="TxX-Qq-RcB"/>
+                                                    <exclude reference="9vV-rj-f0S"/>
                                                 </mask>
                                             </variation>
                                             <variation key="heightClass=regular">
                                                 <mask key="subviews">
                                                     <include reference="Qv9-fy-hta"/>
                                                     <include reference="TxX-Qq-RcB"/>
+                                                    <include reference="9vV-rj-f0S"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
@@ -100,12 +111,24 @@
                                     </tableViewCell>
                                 </prototypes>
                                 <variation key="heightClass=regular" fixedFrame="YES">
-                                    <rect key="frame" x="20" y="159" width="560" height="409"/>
+                                    <rect key="frame" x="6" y="157" width="585" height="369"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="20" y="159" width="360" height="520"/>
                                 </variation>
                                 <connections>
                                     <outlet property="dataSource" destination="S4R-Ja-viH" id="CYP-mt-vTC"/>
                                 </connections>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="（来自 爱奇艺）" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c5Q-me-f7y">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="97" y="128" width="270.5" height="29"/>
+                                </variation>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -123,6 +146,7 @@
                             <mask key="subviews">
                                 <exclude reference="1h0-cO-nf3"/>
                                 <exclude reference="mFH-6b-5dz"/>
+                                <exclude reference="c5Q-me-f7y"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="V8P-GX-92A"/>
@@ -145,6 +169,11 @@
                                 <include reference="Z7g-Mk-P9r"/>
                             </mask>
                         </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="c5Q-me-f7y"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" title="OneVideo" id="bSc-xU-kxe"/>
                     <connections>
@@ -155,7 +184,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GmD-Rr-ZGN" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="644" y="-261"/>
+            <point key="canvasLocation" x="643" y="-261"/>
         </scene>
         <!--All Videos-->
         <scene sceneID="WPu-CD-FXy">
@@ -276,4 +305,7 @@
             <point key="canvasLocation" x="2597" y="-280.5"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="apple-touch-icon-57x57.png" width="57" height="57"/>
+    </resources>
 </document>
