@@ -191,7 +191,13 @@ class MovieTableViewController: UITableViewController {
         
         let sectionName = self.moviesGroupArray[indexPath.section]
         let movieItem = self.movieItemsDictionary[sectionName]?[indexPath.row]
-        cell.movieTitle?.text = movieItem?.title
+        var t : NSString = (movieItem?.title)! as NSString
+        if t.length > 15 {
+            t = t.substringToIndex(15)
+            t = NSString.init(format: "%@%@", t, "...")
+        }
+        
+        cell.movieTitle?.text = t as String
         
         cell.movieImageView.contentMode = .ScaleAspectFit
         downloadImage(NSURL(string:(movieItem?.img)!)!, imageView: cell.movieImageView!)
