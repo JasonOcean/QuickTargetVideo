@@ -47,9 +47,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <color key="textColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="heightClass=regular" misplaced="YES">
-                                    <rect key="frame" x="38" y="128" width="88.5" height="33"/>
-                                </variation>
                                 <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
                                     <rect key="frame" x="25" y="128" width="91.5" height="29"/>
                                 </variation>
@@ -111,7 +108,7 @@
                                     </tableViewCell>
                                 </prototypes>
                                 <variation key="heightClass=regular" fixedFrame="YES">
-                                    <rect key="frame" x="6" y="157" width="585" height="369"/>
+                                    <rect key="frame" x="6" y="157" width="585" height="253"/>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="20" y="159" width="360" height="520"/>

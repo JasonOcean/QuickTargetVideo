@@ -30,8 +30,8 @@ class MovieTableViewController: UITableViewController {
         let taskiQiYi = session.dataTaskWithURL(urliQiYi!) {(data, response, error) in
             let sourceContent:String = NSString(data:data!, encoding:NSUTF8StringEncoding)! as String
             let iQiYi = iQiYiSite(source: sourceContent)
-            self.moviesGroupArray.append("iQiYi")
-            self.movieItemsDictionary["iQiYi"] = Array(iQiYi.FindAllMovies().prefix(self.TopItemsCount))
+            self.moviesGroupArray.append("爱奇艺")
+            self.movieItemsDictionary["爱奇艺"] = Array(iQiYi.FindAllMovies().prefix(self.TopItemsCount))
             
             dispatch_async(dispatch_get_main_queue(), {
                     self.RefreshTableView()
@@ -43,8 +43,8 @@ class MovieTableViewController: UITableViewController {
         let taskTuDou = session.dataTaskWithURL(urlTuDou!) {(data, response, error) in
             let sourceContent:String = NSString(data:data!, encoding:NSUTF8StringEncoding)! as String
             let tuDou = TuDouSite(source: sourceContent)
-            self.moviesGroupArray.append("TuDou")
-            self.movieItemsDictionary["TuDou"] = Array(tuDou.FindAllMovies().prefix(self.TopItemsCount))
+            self.moviesGroupArray.append("土豆")
+            self.movieItemsDictionary["土豆"] = Array(tuDou.FindAllMovies().prefix(self.TopItemsCount))
             
             dispatch_async(dispatch_get_main_queue(), {
                 self.RefreshTableView()
@@ -56,8 +56,8 @@ class MovieTableViewController: UITableViewController {
         let taskSohu = session.dataTaskWithURL(urlSohu!) {(data, response, error) in
             let sourceContent:String = NSString(data:data!, encoding:NSUTF8StringEncoding)! as String
             let sohu = SohuSite(source: sourceContent)
-            self.moviesGroupArray.append("SoHu")
-            self.movieItemsDictionary["SoHu"] = Array(sohu.FindAllMovies().prefix(self.TopItemsCount))
+            self.moviesGroupArray.append("搜狐视频")
+            self.movieItemsDictionary["搜狐视频"] = Array(sohu.FindAllMovies().prefix(self.TopItemsCount))
             
             dispatch_async(dispatch_get_main_queue(), {
                 self.RefreshTableView()
@@ -69,8 +69,8 @@ class MovieTableViewController: UITableViewController {
         let taskYouKu = session.dataTaskWithURL(urlYouKu!) {(data, response, error) in
             let sourceContent:String = NSString(data:data!, encoding:NSUTF8StringEncoding)! as String
             let youku = YouKuSite(source: sourceContent)
-            self.moviesGroupArray.append("YouKu")
-            self.movieItemsDictionary["YouKu"] = Array(youku.FindAllMovies().prefix(self.TopItemsCount))
+            self.moviesGroupArray.append("优酷")
+            self.movieItemsDictionary["优酷"] = Array(youku.FindAllMovies().prefix(self.TopItemsCount))
             
             dispatch_async(dispatch_get_main_queue(), {
                 self.RefreshTableView()
@@ -82,8 +82,8 @@ class MovieTableViewController: UITableViewController {
         let taskLetv = session.dataTaskWithURL(urlLetv!) {(data, response, error) in
             let sourceContent:String = NSString(data:data!, encoding:NSUTF8StringEncoding)! as String
             let letv = LetvSite(source: sourceContent)
-            self.moviesGroupArray.append("Letv")
-            self.movieItemsDictionary["Letv"] = Array(letv.FindAllMovies().prefix(self.TopItemsCount))
+            self.moviesGroupArray.append("乐视TV")
+            self.movieItemsDictionary["乐视TV"] = Array(letv.FindAllMovies().prefix(self.TopItemsCount))
             
             dispatch_async(dispatch_get_main_queue(), {
                 self.RefreshTableView()
@@ -95,8 +95,8 @@ class MovieTableViewController: UITableViewController {
         let taskPPTV = session.dataTaskWithURL(urlPPTV!) {(data, response, error) in
             let sourceContent:String = NSString(data:data!, encoding:NSUTF8StringEncoding)! as String
             let pptv = PPTVSite(source: sourceContent)
-            self.moviesGroupArray.append("PPTV")
-            self.movieItemsDictionary["PPTV"] = Array(pptv.FindAllMovies().prefix(self.TopItemsCount))
+            self.moviesGroupArray.append("PPTV聚力")
+            self.movieItemsDictionary["PPTV聚力"] = Array(pptv.FindAllMovies().prefix(self.TopItemsCount))
             
             dispatch_async(dispatch_get_main_queue(), {
                 self.RefreshTableView()
@@ -108,8 +108,8 @@ class MovieTableViewController: UITableViewController {
         let task56 = session.dataTaskWithURL(url56!) {(data, response, error) in
             let sourceContent:String = NSString(data:data!, encoding:NSUTF8StringEncoding)! as String
             let fivesix = FiveSixSite(source: sourceContent)
-            self.moviesGroupArray.append("56")
-            self.movieItemsDictionary["56"] = Array(fivesix.FindAllMovies().prefix(self.TopItemsCount))
+            self.moviesGroupArray.append("56视频")
+            self.movieItemsDictionary["56视频"] = Array(fivesix.FindAllMovies().prefix(self.TopItemsCount))
             
             dispatch_async(dispatch_get_main_queue(), {
                 self.RefreshTableView()
