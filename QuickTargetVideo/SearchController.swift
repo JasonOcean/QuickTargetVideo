@@ -9,7 +9,7 @@
 import UIKit
 
 
-class SearchController: UIViewController, UITableViewDataSource, UISearchBarDelegate{
+class SearchController: UIViewController, UITableViewDataSource, UISearchBarDelegate, UITableViewDelegate{
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var hotVideoTag: UILabel!
     
@@ -80,6 +80,12 @@ class SearchController: UIViewController, UITableViewDataSource, UISearchBarDele
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.HotVideoItems.count;
     }
+    
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 150
+    }
+    
+    
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let hotCell:HotVideoTabCell = self.myTableView!.dequeueReusableCellWithIdentifier("HotVideoCell") as! HotVideoTabCell

@@ -71,34 +71,34 @@
                                                         <rect key="frame" x="83" y="11" width="405" height="21"/>
                                                     </variation>
                                                 </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="OneVideo.png" translatesAutoresizingMaskIntoConstraints="NO" id="9vV-rj-f0S">
+                                                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                                    <variation key="heightClass=regular" fixedFrame="YES">
+                                                        <rect key="frame" x="22" y="15" width="20" height="20"/>
+                                                    </variation>
+                                                </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TxX-Qq-RcB">
                                                     <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                     <variation key="heightClass=regular" fixedFrame="YES">
-                                                        <rect key="frame" x="67" y="11" width="472" height="30"/>
+                                                        <rect key="frame" x="44" y="11" width="472" height="30"/>
                                                     </variation>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="apple-touch-icon-57x57.png" translatesAutoresizingMaskIntoConstraints="NO" id="9vV-rj-f0S">
-                                                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                                    <variation key="heightClass=regular" fixedFrame="YES">
-                                                        <rect key="frame" x="22" y="11" width="30" height="24.5"/>
-                                                    </variation>
-                                                </imageView>
                                             </subviews>
                                             <variation key="default">
                                                 <mask key="subviews">
                                                     <exclude reference="Qv9-fy-hta"/>
-                                                    <exclude reference="TxX-Qq-RcB"/>
                                                     <exclude reference="9vV-rj-f0S"/>
+                                                    <exclude reference="TxX-Qq-RcB"/>
                                                 </mask>
                                             </variation>
                                             <variation key="heightClass=regular">
                                                 <mask key="subviews">
                                                     <include reference="Qv9-fy-hta"/>
-                                                    <include reference="TxX-Qq-RcB"/>
                                                     <include reference="9vV-rj-f0S"/>
+                                                    <include reference="TxX-Qq-RcB"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
@@ -303,6 +303,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="apple-touch-icon-57x57.png" width="57" height="57"/>
+        <image name="OneVideo.png" width="57" height="57"/>
     </resources>
 </document>

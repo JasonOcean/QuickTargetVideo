@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		960CD2831CA9916400EF02DB /* HotVideoTabCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960CD2821CA9916400EF02DB /* HotVideoTabCell.swift */; };
-		961A11CD1CFECF24006B42B6 /* apple-touch-icon-57x57.png in Resources */ = {isa = PBXBuildFile; fileRef = 961A11CC1CFECF24006B42B6 /* apple-touch-icon-57x57.png */; };
+		961A11D11D07E66F006B42B6 /* OneVideo.png in Resources */ = {isa = PBXBuildFile; fileRef = 961A11D01D07E66F006B42B6 /* OneVideo.png */; };
 		965814891C4FD79E0094AE36 /* KVNProgressView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 965814881C4FD79E0094AE36 /* KVNProgressView.xib */; };
 		9658148C1C4FD7AD0094AE36 /* KVNProgress.m in Sources */ = {isa = PBXBuildFile; fileRef = 9658148B1C4FD7AD0094AE36 /* KVNProgress.m */; };
 		965814911C4FD7BD0094AE36 /* UIImage+KVNEmpty.m in Sources */ = {isa = PBXBuildFile; fileRef = 9658148E1C4FD7BD0094AE36 /* UIImage+KVNEmpty.m */; };
@@ -47,7 +47,7 @@
 
 /* Begin PBXFileReference section */
 		960CD2821CA9916400EF02DB /* HotVideoTabCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HotVideoTabCell.swift; sourceTree = "<group>"; };
-		961A11CC1CFECF24006B42B6 /* apple-touch-icon-57x57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "apple-touch-icon-57x57.png"; sourceTree = "<group>"; };
+		961A11D01D07E66F006B42B6 /* OneVideo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = OneVideo.png; sourceTree = "<group>"; };
 		963E5F871C4F7F39004A2DB5 /* QuickTargetVideo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "QuickTargetVideo-Bridging-Header.h"; sourceTree = "<group>"; };
 		965814881C4FD79E0094AE36 /* KVNProgressView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = KVNProgressView.xib; path = KVNProgress/Resources/KVNProgressView.xib; sourceTree = "<group>"; };
 		9658148A1C4FD7AD0094AE36 /* KVNProgress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KVNProgress.h; path = KVNProgress/Classes/KVNProgress.h; sourceTree = "<group>"; };
@@ -141,7 +141,7 @@
 		965900331C8F44E80003F3CC /* Img */ = {
 			isa = PBXGroup;
 			children = (
-				961A11CC1CFECF24006B42B6 /* apple-touch-icon-57x57.png */,
+				961A11D01D07E66F006B42B6 /* OneVideo.png */,
 				965900341C9000070003F3CC /* 1.png */,
 				965900351C9000070003F3CC /* 2.png */,
 				965900361C9000070003F3CC /* 3.png */,
@@ -307,7 +307,6 @@
 				965900431C9000070003F3CC /* 7.png in Resources */,
 				9659003E1C9000070003F3CC /* 2.png in Resources */,
 				965814891C4FD79E0094AE36 /* KVNProgressView.xib in Resources */,
-				961A11CD1CFECF24006B42B6 /* apple-touch-icon-57x57.png in Resources */,
 				965900451C9000070003F3CC /* 9.png in Resources */,
 				96D5D8A61BE8974E00781EC9 /* Main.storyboard in Resources */,
 				96D5D8AB1BE8974F00781EC9 /* LaunchScreen.xib in Resources */,
@@ -316,6 +315,7 @@
 				96D5D8A81BE8974E00781EC9 /* Images.xcassets in Resources */,
 				965900411C9000070003F3CC /* 5.png in Resources */,
 				9659003F1C9000070003F3CC /* 3.png in Resources */,
+				961A11D11D07E66F006B42B6 /* OneVideo.png in Resources */,
 				9659003D1C9000070003F3CC /* 1.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
