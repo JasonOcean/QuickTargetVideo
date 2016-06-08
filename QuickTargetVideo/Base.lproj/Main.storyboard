@@ -3,7 +3,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
-        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -47,8 +46,23 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <color key="textColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular" misplaced="YES">
+                                    <rect key="frame" x="25" y="128" width="81" height="23"/>
+                                </variation>
                                 <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
                                     <rect key="frame" x="25" y="128" width="91.5" height="29"/>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="（来自 爱奇艺）" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c5Q-me-f7y">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular" misplaced="YES">
+                                    <rect key="frame" x="100" y="128" width="94" height="21"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="97" y="128" width="270.5" height="29"/>
                                 </variation>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="50" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="mFH-6b-5dz">
@@ -59,7 +73,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cet-B2-Vxn" id="XQs-U7-RrP">
-                                            <rect key="frame" x="0.0" y="0.0" width="240" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="240" height="49.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qv9-fy-hta">
@@ -117,58 +131,55 @@
                                     <outlet property="dataSource" destination="S4R-Ja-viH" id="CYP-mt-vTC"/>
                                 </connections>
                             </tableView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="（来自 爱奇艺）" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c5Q-me-f7y">
-                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <color key="textColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="97" y="128" width="270.5" height="29"/>
-                                </variation>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="EvD-gb-sul" secondAttribute="trailing" constant="2" id="1W8-2O-D0k">
                                 <variation key="heightClass=regular" constant="-20"/>
                             </constraint>
+                            <constraint firstItem="c5Q-me-f7y" firstAttribute="top" secondItem="EvD-gb-sul" secondAttribute="bottom" constant="15" id="AJR-Dx-M5u"/>
                             <constraint firstItem="EvD-gb-sul" firstAttribute="top" secondItem="fXf-Jd-eTc" secondAttribute="bottom" constant="10" id="BVz-ee-WhV"/>
                             <constraint firstItem="1h0-cO-nf3" firstAttribute="top" secondItem="EvD-gb-sul" secondAttribute="bottom" constant="10" id="V8P-GX-92A"/>
                             <constraint firstItem="EvD-gb-sul" firstAttribute="leading" secondItem="ZwX-cT-FIQ" secondAttribute="leadingMargin" constant="2" id="Z7g-Mk-P9r">
                                 <variation key="heightClass=regular" constant="-20"/>
                             </constraint>
-                            <constraint firstItem="1h0-cO-nf3" firstAttribute="leading" secondItem="ZwX-cT-FIQ" secondAttribute="leadingMargin" constant="5" id="uBq-ap-gEF"/>
+                            <constraint firstItem="c5Q-me-f7y" firstAttribute="leading" secondItem="ZwX-cT-FIQ" secondAttribute="leadingMargin" constant="130" id="e2P-qF-yv4">
+                                <variation key="heightClass=regular" constant="95"/>
+                            </constraint>
+                            <constraint firstItem="1h0-cO-nf3" firstAttribute="leading" secondItem="ZwX-cT-FIQ" secondAttribute="leadingMargin" constant="5" id="uBq-ap-gEF">
+                                <variation key="heightClass=regular" constant="23"/>
+                            </constraint>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="1h0-cO-nf3"/>
-                                <exclude reference="mFH-6b-5dz"/>
                                 <exclude reference="c5Q-me-f7y"/>
+                                <exclude reference="mFH-6b-5dz"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="V8P-GX-92A"/>
-                                <exclude reference="uBq-ap-gEF"/>
                                 <exclude reference="1W8-2O-D0k"/>
                                 <exclude reference="BVz-ee-WhV"/>
                                 <exclude reference="Z7g-Mk-P9r"/>
+                                <exclude reference="V8P-GX-92A"/>
+                                <exclude reference="uBq-ap-gEF"/>
+                                <exclude reference="AJR-Dx-M5u"/>
+                                <exclude reference="e2P-qF-yv4"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular">
                             <mask key="subviews">
                                 <include reference="1h0-cO-nf3"/>
+                                <include reference="c5Q-me-f7y"/>
                                 <include reference="mFH-6b-5dz"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="V8P-GX-92A"/>
-                                <include reference="uBq-ap-gEF"/>
                                 <include reference="1W8-2O-D0k"/>
                                 <include reference="BVz-ee-WhV"/>
                                 <include reference="Z7g-Mk-P9r"/>
-                            </mask>
-                        </variation>
-                        <variation key="heightClass=regular-widthClass=compact">
-                            <mask key="subviews">
-                                <include reference="c5Q-me-f7y"/>
+                                <include reference="V8P-GX-92A"/>
+                                <include reference="uBq-ap-gEF"/>
+                                <include reference="AJR-Dx-M5u"/>
+                                <include reference="e2P-qF-yv4"/>
                             </mask>
                         </variation>
                     </view>
