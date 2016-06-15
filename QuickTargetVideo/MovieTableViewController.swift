@@ -182,7 +182,27 @@ class MovieTableViewController: UITableViewController {
             return self.movieItemsDictionary[sectionName]!.count
         }
     }
-
+    
+    func ClipTextUnderASCII(text: String, targetLength: Int) -> String {
+        var flag:Int=0
+        var lenASCII=0
+        for v in text.unicodeScalars {
+            flag++
+            if v.isASCII() {
+                lenASCII+=1
+            }
+            else {
+                lenASCII+=2
+            }
+            
+            if lenASCII>=targetLength {
+              return  (NSString.init(format: "%@%@", (text as NSString).substringToIndex(flag), "...")) as String
+            }
+        }
+        
+        return text;
+    }
+    
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
     {
@@ -191,13 +211,8 @@ class MovieTableViewController: UITableViewController {
         
         let sectionName = self.moviesGroupArray[indexPath.section]
         let movieItem = self.movieItemsDictionary[sectionName]?[indexPath.row]
-        var t : NSString = (movieItem?.title)! as NSString
-        if t.length > 15 {
-            t = t.substringToIndex(15)
-            t = NSString.init(format: "%@%@", t, "...")
-        }
-        
-        cell.movieTitle?.text = t as String
+        let maxLength: Int = 30
+        cell.movieTitle?.text = ClipTextUnderASCII((movieItem?.title)!, targetLength: maxLength)
         
         cell.movieImageView.contentMode = .ScaleAspectFit
         downloadImage(NSURL(string:(movieItem?.img)!)!, imageView: cell.movieImageView!)
