@@ -220,11 +220,14 @@
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                             <variation key="heightClass=regular" fixedFrame="YES">
-                                                <rect key="frame" x="24" y="0.0" width="535" height="50"/>
+                                                <rect key="frame" x="110" y="22" width="446" height="53"/>
                                             </variation>
                                         </label>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sdr-to-UX6">
                                             <rect key="frame" x="16" y="-1" width="82" height="100"/>
+                                            <variation key="heightClass=regular" fixedFrame="YES">
+                                                <rect key="frame" x="16" y="4" width="74" height="90"/>
+                                            </variation>
                                         </imageView>
                                     </subviews>
                                 </tableViewCellContentView>
@@ -248,7 +251,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4EE-9A-9y5" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationItem title="All Videos" id="ltD-wC-2yE"/>
             </objects>
-            <point key="canvasLocation" x="1920" y="-281"/>
+            <point key="canvasLocation" x="1920" y="-281.25"/>
         </scene>
         <!--Video Detail-->
         <scene sceneID="wFT-P3-fff">
