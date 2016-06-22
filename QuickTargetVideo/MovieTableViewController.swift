@@ -204,19 +204,8 @@ class MovieTableViewController: UITableViewController {
         
         let iconRaw : UIImage = UIImage(named: iconName)!
         let icon = self.ResizeImage(iconRaw, targetSize: CGSizeMake(130, 130))
-//        let sectionIcon:UIImageView = UIImageView(image: icon)
-//        sectionIcon.contentMode = UIViewContentMode.ScaleAspectFill
-//        sectionIcon.transform = CGAffineTransformMakeScale(0.5, 0.5)
-        
-        //return sectionIcon
-        
-//        var headerView: UIView = UIView.init(frame: CGRectMake(0, 0, tableView.bounds.size.width, icon.size.height/3 + 20))
-        var headerView: UIView = UIView.init(frame: CGRectMake(0, 0, tableView.bounds.size.width, icon.size.height+20))
+        let headerView: UIView = UIView.init(frame: CGRectMake(0, 0, tableView.bounds.size.width, icon.size.height+20))
         let sectionHeaderBG: UIImageView = UIImageView.init(image: icon)
-//        sectionHeaderBG.center = CGPointMake(headerView.bounds.size.width/10, headerView.bounds.size.height/10)
-//        sectionHeaderBG.contentMode = UIViewContentMode.ScaleAspectFit
-//        sectionHeaderBG.clipsToBounds = true
-        
         headerView.addSubview(sectionHeaderBG)
         
         return headerView
@@ -253,7 +242,7 @@ class MovieTableViewController: UITableViewController {
         var flag:Int=0
         var lenASCII=0
         for v in text.unicodeScalars {
-            flag++
+            flag += 1
             if v.isASCII() {
                 lenASCII+=1
             }
