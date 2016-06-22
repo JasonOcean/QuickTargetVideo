@@ -266,7 +266,7 @@ class MovieTableViewController: UITableViewController {
         
         let sectionName = self.moviesGroupArray[indexPath.section]
         let movieItem = self.movieItemsDictionary[sectionName]?[indexPath.row]
-        let maxLength: Int = 30
+        let maxLength: Int = 25
         cell.movieTitle?.text = ClipTextUnderASCII((movieItem?.title)!, targetLength: maxLength)
         
         cell.movieImageView.contentMode = .ScaleAspectFit
