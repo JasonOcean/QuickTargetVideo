@@ -152,8 +152,74 @@ class MovieTableViewController: UITableViewController {
         }
     }
     
-    override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return self.moviesGroupArray[section]
+//    override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+//        return self.moviesGroupArray[section]
+//    }
+    
+    func ResizeImage(image: UIImage, targetSize: CGSize) -> UIImage {
+        let size = image.size
+        let widthRatio = targetSize.width / image.size.width
+        let heightRatio = targetSize.height / image.size.height
+        
+        var newSize: CGSize
+        if widthRatio>heightRatio {
+            newSize = CGSizeMake(size.width*heightRatio, size.height*heightRatio)
+        }
+        else {
+            newSize = CGSizeMake(size.width*widthRatio, size.height*widthRatio)
+        }
+        
+        let rect = CGRectMake(0, 0, newSize.width, newSize.height)
+        
+        UIGraphicsBeginImageContextWithOptions(newSize, false, 1.0)
+        image.drawInRect(rect)
+        
+        let newImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        return newImage
+    }
+    
+    override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        var iconName: String
+        
+        switch self.moviesGroupArray[section] {
+        case "爱奇艺":
+            iconName = "iqiyi.png"
+        case "土豆":
+            iconName = "tudou.png"
+        case "搜狐视频":
+            iconName = "sohu.png"
+        case "优酷":
+            iconName = "youku.png"
+        case "乐视TV":
+            iconName = "letv.png"
+        case "PPTV聚力":
+            iconName = "pptv.png"
+        case "56视频":
+            iconName = "56.png"
+        default:
+            iconName = "iqiyi.jpg"
+        }
+        
+        let iconRaw : UIImage = UIImage(named: iconName)!
+        let icon = self.ResizeImage(iconRaw, targetSize: CGSizeMake(130, 130))
+//        let sectionIcon:UIImageView = UIImageView(image: icon)
+//        sectionIcon.contentMode = UIViewContentMode.ScaleAspectFill
+//        sectionIcon.transform = CGAffineTransformMakeScale(0.5, 0.5)
+        
+        //return sectionIcon
+        
+//        var headerView: UIView = UIView.init(frame: CGRectMake(0, 0, tableView.bounds.size.width, icon.size.height/3 + 20))
+        var headerView: UIView = UIView.init(frame: CGRectMake(0, 0, tableView.bounds.size.width, icon.size.height+20))
+        let sectionHeaderBG: UIImageView = UIImageView.init(image: icon)
+//        sectionHeaderBG.center = CGPointMake(headerView.bounds.size.width/10, headerView.bounds.size.height/10)
+//        sectionHeaderBG.contentMode = UIViewContentMode.ScaleAspectFit
+//        sectionHeaderBG.clipsToBounds = true
+        
+        headerView.addSubview(sectionHeaderBG)
+        
+        return headerView
     }
     
     override func viewDidLoad() {
