@@ -24,6 +24,7 @@
 		965AD71A1C054C5C00D9D9E6 /* RegexHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965AD7191C054C5C00D9D9E6 /* RegexHelper.swift */; };
 		9661BFB51C1984470004B65A /* VideoDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9661BFB41C1984470004B65A /* VideoDetail.swift */; };
 		96902F721C8F2B1F00D0CA47 /* PhotosContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96902F711C8F2B1F00D0CA47 /* PhotosContainerView.swift */; };
+		96A589B91D2A543700036EF4 /* OneVideoIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 96A589B81D2A543700036EF4 /* OneVideoIcon.png */; };
 		96CF67871BF1E8C5009B4BB4 /* MovieTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96CF67861BF1E8C5009B4BB4 /* MovieTableViewController.swift */; };
 		96D5D89D1BE8974E00781EC9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D5D89C1BE8974E00781EC9 /* AppDelegate.swift */; };
 		96D5D8A11BE8974E00781EC9 /* SearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D5D8A01BE8974E00781EC9 /* SearchController.swift */; };
@@ -65,6 +66,7 @@
 		965AD7191C054C5C00D9D9E6 /* RegexHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegexHelper.swift; sourceTree = "<group>"; };
 		9661BFB41C1984470004B65A /* VideoDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoDetail.swift; sourceTree = "<group>"; };
 		96902F711C8F2B1F00D0CA47 /* PhotosContainerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotosContainerView.swift; sourceTree = "<group>"; };
+		96A589B81D2A543700036EF4 /* OneVideoIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = OneVideoIcon.png; path = img/OneVideoIcon.png; sourceTree = "<group>"; };
 		96CF67861BF1E8C5009B4BB4 /* MovieTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieTableViewController.swift; sourceTree = "<group>"; };
 		96D5D8971BE8974E00781EC9 /* QuickTargetVideo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuickTargetVideo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		96D5D89B1BE8974E00781EC9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -137,6 +139,7 @@
 		965900331C8F44E80003F3CC /* Img */ = {
 			isa = PBXGroup;
 			children = (
+				96A589B81D2A543700036EF4 /* OneVideoIcon.png */,
 				962CB5C61D1A743B00A2CFA0 /* 56.png */,
 				962CB5C71D1A743B00A2CFA0 /* iqiyi.png */,
 				962CB5C81D1A743B00A2CFA0 /* letv.png */,
@@ -301,6 +304,7 @@
 				962CB5D01D1A743B00A2CFA0 /* pptv.png in Resources */,
 				962CB5CE1D1A743B00A2CFA0 /* iqiyi.png in Resources */,
 				962CB5CF1D1A743B00A2CFA0 /* letv.png in Resources */,
+				96A589B91D2A543700036EF4 /* OneVideoIcon.png in Resources */,
 				965814891C4FD79E0094AE36 /* KVNProgressView.xib in Resources */,
 				962CB5D21D1A743B00A2CFA0 /* tudou.png in Resources */,
 				96D5D8A61BE8974E00781EC9 /* Main.storyboard in Resources */,
