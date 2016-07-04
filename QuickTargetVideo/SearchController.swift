@@ -21,6 +21,11 @@ class SearchController: UIViewController, UITableViewDataSource, UISearchBarDele
         super.viewDidLoad()
         
         self.LoadHotVedios()
+        
+        let logo = UIImage(named: "tRe.png")
+        let logoNew = CommonHelper.ResizeImage(logo!, targetSize: CGSizeMake(600, 43))
+        let logoView = UIImageView(image: logoNew)
+        self.navigationItem.titleView = logoView
     }
     
     override func didReceiveMemoryWarning() {

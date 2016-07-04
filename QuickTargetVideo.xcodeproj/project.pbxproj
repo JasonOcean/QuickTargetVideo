@@ -25,6 +25,9 @@
 		9661BFB51C1984470004B65A /* VideoDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9661BFB41C1984470004B65A /* VideoDetail.swift */; };
 		96902F721C8F2B1F00D0CA47 /* PhotosContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96902F711C8F2B1F00D0CA47 /* PhotosContainerView.swift */; };
 		96A589B91D2A543700036EF4 /* OneVideoIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 96A589B81D2A543700036EF4 /* OneVideoIcon.png */; };
+		96A589BB1D2A57E200036EF4 /* OnVideo_Title.png in Resources */ = {isa = PBXBuildFile; fileRef = 96A589BA1D2A57E200036EF4 /* OnVideo_Title.png */; };
+		96A589BD1D2A62B300036EF4 /* tRe.png in Resources */ = {isa = PBXBuildFile; fileRef = 96A589BC1D2A62B300036EF4 /* tRe.png */; };
+		96A589BF1D2A691F00036EF4 /* CommonHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A589BE1D2A691F00036EF4 /* CommonHelper.swift */; };
 		96CF67871BF1E8C5009B4BB4 /* MovieTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96CF67861BF1E8C5009B4BB4 /* MovieTableViewController.swift */; };
 		96D5D89D1BE8974E00781EC9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D5D89C1BE8974E00781EC9 /* AppDelegate.swift */; };
 		96D5D8A11BE8974E00781EC9 /* SearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D5D8A01BE8974E00781EC9 /* SearchController.swift */; };
@@ -67,6 +70,9 @@
 		9661BFB41C1984470004B65A /* VideoDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoDetail.swift; sourceTree = "<group>"; };
 		96902F711C8F2B1F00D0CA47 /* PhotosContainerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotosContainerView.swift; sourceTree = "<group>"; };
 		96A589B81D2A543700036EF4 /* OneVideoIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = OneVideoIcon.png; path = img/OneVideoIcon.png; sourceTree = "<group>"; };
+		96A589BA1D2A57E200036EF4 /* OnVideo_Title.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = OnVideo_Title.png; path = img/OnVideo_Title.png; sourceTree = "<group>"; };
+		96A589BC1D2A62B300036EF4 /* tRe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tRe.png; path = img/tRe.png; sourceTree = "<group>"; };
+		96A589BE1D2A691F00036EF4 /* CommonHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonHelper.swift; sourceTree = "<group>"; };
 		96CF67861BF1E8C5009B4BB4 /* MovieTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieTableViewController.swift; sourceTree = "<group>"; };
 		96D5D8971BE8974E00781EC9 /* QuickTargetVideo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuickTargetVideo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		96D5D89B1BE8974E00781EC9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -139,6 +145,8 @@
 		965900331C8F44E80003F3CC /* Img */ = {
 			isa = PBXGroup;
 			children = (
+				96A589BC1D2A62B300036EF4 /* tRe.png */,
+				96A589BA1D2A57E200036EF4 /* OnVideo_Title.png */,
 				96A589B81D2A543700036EF4 /* OneVideoIcon.png */,
 				962CB5C61D1A743B00A2CFA0 /* 56.png */,
 				962CB5C71D1A743B00A2CFA0 /* iqiyi.png */,
@@ -188,6 +196,7 @@
 				965AD7191C054C5C00D9D9E6 /* RegexHelper.swift */,
 				96902F711C8F2B1F00D0CA47 /* PhotosContainerView.swift */,
 				960CD2821CA9916400EF02DB /* HotVideoTabCell.swift */,
+				96A589BE1D2A691F00036EF4 /* CommonHelper.swift */,
 			);
 			path = QuickTargetVideo;
 			sourceTree = "<group>";
@@ -301,6 +310,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				962CB5CD1D1A743B00A2CFA0 /* 56.png in Resources */,
+				96A589BB1D2A57E200036EF4 /* OnVideo_Title.png in Resources */,
 				962CB5D01D1A743B00A2CFA0 /* pptv.png in Resources */,
 				962CB5CE1D1A743B00A2CFA0 /* iqiyi.png in Resources */,
 				962CB5CF1D1A743B00A2CFA0 /* letv.png in Resources */,
@@ -311,6 +321,7 @@
 				96D5D8AB1BE8974F00781EC9 /* LaunchScreen.xib in Resources */,
 				962CB5D11D1A743B00A2CFA0 /* sohu.png in Resources */,
 				962CB5D31D1A743B00A2CFA0 /* youku.png in Resources */,
+				96A589BD1D2A62B300036EF4 /* tRe.png in Resources */,
 				96D5D8A81BE8974E00781EC9 /* Images.xcassets in Resources */,
 				961A11D11D07E66F006B42B6 /* OneVideo.png in Resources */,
 			);
@@ -332,6 +343,7 @@
 			files = (
 				965AD7181BF3338A00D9D9E6 /* MovieTableViewCell.swift in Sources */,
 				96CF67871BF1E8C5009B4BB4 /* MovieTableViewController.swift in Sources */,
+				96A589BF1D2A691F00036EF4 /* CommonHelper.swift in Sources */,
 				96D5D8A11BE8974E00781EC9 /* SearchController.swift in Sources */,
 				965814921C4FD7BD0094AE36 /* UIImage+KVNImageEffects.m in Sources */,
 				9658148C1C4FD7AD0094AE36 /* KVNProgress.m in Sources */,

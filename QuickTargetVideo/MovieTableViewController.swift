@@ -156,30 +156,6 @@ class MovieTableViewController: UITableViewController {
 //        return self.moviesGroupArray[section]
 //    }
     
-    func ResizeImage(image: UIImage, targetSize: CGSize) -> UIImage {
-        let size = image.size
-        let widthRatio = targetSize.width / image.size.width
-        let heightRatio = targetSize.height / image.size.height
-        
-        var newSize: CGSize
-        if widthRatio>heightRatio {
-            newSize = CGSizeMake(size.width*heightRatio, size.height*heightRatio)
-        }
-        else {
-            newSize = CGSizeMake(size.width*widthRatio, size.height*widthRatio)
-        }
-        
-        let rect = CGRectMake(0, 0, newSize.width, newSize.height)
-        
-        UIGraphicsBeginImageContextWithOptions(newSize, false, 1.0)
-        image.drawInRect(rect)
-        
-        let newImage = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
-        
-        return newImage
-    }
-    
     override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         var iconName: String
         
@@ -203,7 +179,7 @@ class MovieTableViewController: UITableViewController {
         }
         
         let iconRaw : UIImage = UIImage(named: iconName)!
-        let icon = self.ResizeImage(iconRaw, targetSize: CGSizeMake(130, 130))
+        let icon = CommonHelper.ResizeImage(iconRaw, targetSize: CGSizeMake(130, 130))
         let headerView: UIView = UIView.init(frame: CGRectMake(0, 0, tableView.bounds.size.width, icon.size.height+20))
         let sectionHeaderBG: UIImageView = UIImageView.init(image: icon)
         headerView.addSubview(sectionHeaderBG)
@@ -214,6 +190,11 @@ class MovieTableViewController: UITableViewController {
     override func viewDidLoad() {
         self.ResetmoviesArray()
         super.viewDidLoad()
+        
+        let logo = UIImage(named: "tRe.png")
+        let logoNew = CommonHelper.ResizeImage(logo!, targetSize: CGSizeMake(600, 43))
+        let logoView = UIImageView(image: logoNew)
+        self.navigationItem.titleView = logoView
     }
 
     override func didReceiveMemoryWarning() {
