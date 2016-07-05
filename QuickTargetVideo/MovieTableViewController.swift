@@ -191,7 +191,7 @@ class MovieTableViewController: UITableViewController {
         self.ResetmoviesArray()
         super.viewDidLoad()
         
-        let logo = UIImage(named: "tRe.png")
+        let logo = UIImage(named: "ttt.png")
         let logoNew = CommonHelper.ResizeImage(logo!, targetSize: CGSizeMake(600, 43))
         let logoView = UIImageView(image: logoNew)
         self.navigationItem.titleView = logoView

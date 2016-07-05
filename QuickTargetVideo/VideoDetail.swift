@@ -19,7 +19,7 @@ class VideoDetail : UIViewController
         let request = NSURLRequest(URL: url!)
         currentWebView.loadRequest(request)
         
-        let logo = UIImage(named: "tRe.png")
+        let logo = UIImage(named: "ttt.png")
         let logoNew = CommonHelper.ResizeImage(logo!, targetSize: CGSizeMake(600, 43))
         let logoView = UIImageView(image: logoNew)
         self.navigationItem.titleView = logoView

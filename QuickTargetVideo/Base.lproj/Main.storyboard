@@ -86,7 +86,7 @@
                                                         <rect key="frame" x="83" y="11" width="405" height="21"/>
                                                     </variation>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="OneVideo.png" translatesAutoresizingMaskIntoConstraints="NO" id="9vV-rj-f0S">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="OneVideoIcon.png" translatesAutoresizingMaskIntoConstraints="NO" id="9vV-rj-f0S">
                                                     <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                                     <variation key="heightClass=regular" fixedFrame="YES">
                                                         <rect key="frame" x="22" y="15" width="20" height="20"/>
@@ -322,6 +322,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="OneVideo.png" width="57" height="57"/>
+        <image name="OneVideoIcon.png" width="120" height="120"/>
     </resources>
 </document>
