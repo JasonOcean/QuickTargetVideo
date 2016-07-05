@@ -28,6 +28,7 @@
 		96A589BB1D2A57E200036EF4 /* OnVideo_Title.png in Resources */ = {isa = PBXBuildFile; fileRef = 96A589BA1D2A57E200036EF4 /* OnVideo_Title.png */; };
 		96A589BF1D2A691F00036EF4 /* CommonHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A589BE1D2A691F00036EF4 /* CommonHelper.swift */; };
 		96A589C11D2A706C00036EF4 /* tRe.png in Resources */ = {isa = PBXBuildFile; fileRef = 96A589C01D2A706C00036EF4 /* tRe.png */; };
+		96A589C71D2BBC0200036EF4 /* ttt.png in Resources */ = {isa = PBXBuildFile; fileRef = 96A589C61D2BBC0200036EF4 /* ttt.png */; };
 		96CF67871BF1E8C5009B4BB4 /* MovieTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96CF67861BF1E8C5009B4BB4 /* MovieTableViewController.swift */; };
 		96D5D89D1BE8974E00781EC9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D5D89C1BE8974E00781EC9 /* AppDelegate.swift */; };
 		96D5D8A11BE8974E00781EC9 /* SearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D5D8A01BE8974E00781EC9 /* SearchController.swift */; };
@@ -73,6 +74,7 @@
 		96A589BA1D2A57E200036EF4 /* OnVideo_Title.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = OnVideo_Title.png; path = img/OnVideo_Title.png; sourceTree = "<group>"; };
 		96A589BE1D2A691F00036EF4 /* CommonHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonHelper.swift; sourceTree = "<group>"; };
 		96A589C01D2A706C00036EF4 /* tRe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tRe.png; path = img/tRe.png; sourceTree = "<group>"; };
+		96A589C61D2BBC0200036EF4 /* ttt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ttt.png; path = img/ttt.png; sourceTree = "<group>"; };
 		96CF67861BF1E8C5009B4BB4 /* MovieTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieTableViewController.swift; sourceTree = "<group>"; };
 		96D5D8971BE8974E00781EC9 /* QuickTargetVideo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuickTargetVideo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		96D5D89B1BE8974E00781EC9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -145,6 +147,7 @@
 		965900331C8F44E80003F3CC /* Img */ = {
 			isa = PBXGroup;
 			children = (
+				96A589C61D2BBC0200036EF4 /* ttt.png */,
 				96A589C01D2A706C00036EF4 /* tRe.png */,
 				96A589BA1D2A57E200036EF4 /* OnVideo_Title.png */,
 				96A589B81D2A543700036EF4 /* OneVideoIcon.png */,
@@ -315,6 +318,7 @@
 				962CB5CE1D1A743B00A2CFA0 /* iqiyi.png in Resources */,
 				962CB5CF1D1A743B00A2CFA0 /* letv.png in Resources */,
 				96A589B91D2A543700036EF4 /* OneVideoIcon.png in Resources */,
+				96A589C71D2BBC0200036EF4 /* ttt.png in Resources */,
 				965814891C4FD79E0094AE36 /* KVNProgressView.xib in Resources */,
 				962CB5D21D1A743B00A2CFA0 /* tudou.png in Resources */,
 				96D5D8A61BE8974E00781EC9 /* Main.storyboard in Resources */,
