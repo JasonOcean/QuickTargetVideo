@@ -22,9 +22,11 @@ class SearchController: UIViewController, UITableViewDataSource, UISearchBarDele
         
         self.LoadHotVedios()
         
-        let logo = UIImage(named: "ttt.png")
-        let logoNew = CommonHelper.ResizeImage(logo!, targetSize: CGSizeMake(600, 43))
+        let logo = UIImage(named: "transparentversion30.png")
+        let logoNew = CommonHelper.ResizeImage(logo!, targetSize: CGSizeMake(400, 80))
         let logoView = UIImageView(image: logoNew)
+//        logoView.backgroundColor = UIColor.redColor()
+//        logoView.contentMode =
         self.navigationItem.titleView = logoView
     }
     

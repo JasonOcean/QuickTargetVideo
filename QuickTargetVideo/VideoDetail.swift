@@ -18,11 +18,6 @@ class VideoDetail : UIViewController
         let url = NSURL(string: linkUrl)
         let request = NSURLRequest(URL: url!)
         currentWebView.loadRequest(request)
-        
-        let logo = UIImage(named: "ttt.png")
-        let logoNew = CommonHelper.ResizeImage(logo!, targetSize: CGSizeMake(600, 43))
-        let logoView = UIImageView(image: logoNew)
-        self.navigationItem.titleView = logoView
     }
     
     override func didReceiveMemoryWarning() {

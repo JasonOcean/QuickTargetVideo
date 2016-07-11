@@ -16,6 +16,10 @@
 		962CB5D11D1A743B00A2CFA0 /* sohu.png in Resources */ = {isa = PBXBuildFile; fileRef = 962CB5CA1D1A743B00A2CFA0 /* sohu.png */; };
 		962CB5D21D1A743B00A2CFA0 /* tudou.png in Resources */ = {isa = PBXBuildFile; fileRef = 962CB5CB1D1A743B00A2CFA0 /* tudou.png */; };
 		962CB5D31D1A743B00A2CFA0 /* youku.png in Resources */ = {isa = PBXBuildFile; fileRef = 962CB5CC1D1A743B00A2CFA0 /* youku.png */; };
+		96466DD11D3381EA004D4301 /* lasttransparentversion8.png in Resources */ = {isa = PBXBuildFile; fileRef = 96466DCD1D3381EA004D4301 /* lasttransparentversion8.png */; };
+		96466DD21D3381EA004D4301 /* transparentversion30.png in Resources */ = {isa = PBXBuildFile; fileRef = 96466DCE1D3381EA004D4301 /* transparentversion30.png */; };
+		96466DD31D3381EA004D4301 /* whiteversionbig27.png in Resources */ = {isa = PBXBuildFile; fileRef = 96466DCF1D3381EA004D4301 /* whiteversionbig27.png */; };
+		96466DD41D3381EA004D4301 /* whiteversionsmall8.png in Resources */ = {isa = PBXBuildFile; fileRef = 96466DD01D3381EA004D4301 /* whiteversionsmall8.png */; };
 		965814891C4FD79E0094AE36 /* KVNProgressView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 965814881C4FD79E0094AE36 /* KVNProgressView.xib */; };
 		9658148C1C4FD7AD0094AE36 /* KVNProgress.m in Sources */ = {isa = PBXBuildFile; fileRef = 9658148B1C4FD7AD0094AE36 /* KVNProgress.m */; };
 		965814911C4FD7BD0094AE36 /* UIImage+KVNEmpty.m in Sources */ = {isa = PBXBuildFile; fileRef = 9658148E1C4FD7BD0094AE36 /* UIImage+KVNEmpty.m */; };
@@ -27,7 +31,6 @@
 		96A589B91D2A543700036EF4 /* OneVideoIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 96A589B81D2A543700036EF4 /* OneVideoIcon.png */; };
 		96A589BB1D2A57E200036EF4 /* OnVideo_Title.png in Resources */ = {isa = PBXBuildFile; fileRef = 96A589BA1D2A57E200036EF4 /* OnVideo_Title.png */; };
 		96A589BF1D2A691F00036EF4 /* CommonHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A589BE1D2A691F00036EF4 /* CommonHelper.swift */; };
-		96A589C11D2A706C00036EF4 /* tRe.png in Resources */ = {isa = PBXBuildFile; fileRef = 96A589C01D2A706C00036EF4 /* tRe.png */; };
 		96A589C71D2BBC0200036EF4 /* ttt.png in Resources */ = {isa = PBXBuildFile; fileRef = 96A589C61D2BBC0200036EF4 /* ttt.png */; };
 		96CF67871BF1E8C5009B4BB4 /* MovieTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96CF67861BF1E8C5009B4BB4 /* MovieTableViewController.swift */; };
 		96D5D89D1BE8974E00781EC9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D5D89C1BE8974E00781EC9 /* AppDelegate.swift */; };
@@ -59,6 +62,10 @@
 		962CB5CB1D1A743B00A2CFA0 /* tudou.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tudou.png; path = img/tudou.png; sourceTree = "<group>"; };
 		962CB5CC1D1A743B00A2CFA0 /* youku.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = youku.png; path = img/youku.png; sourceTree = "<group>"; };
 		963E5F871C4F7F39004A2DB5 /* QuickTargetVideo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "QuickTargetVideo-Bridging-Header.h"; sourceTree = "<group>"; };
+		96466DCD1D3381EA004D4301 /* lasttransparentversion8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = lasttransparentversion8.png; path = img/lasttransparentversion8.png; sourceTree = "<group>"; };
+		96466DCE1D3381EA004D4301 /* transparentversion30.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = transparentversion30.png; path = img/transparentversion30.png; sourceTree = "<group>"; };
+		96466DCF1D3381EA004D4301 /* whiteversionbig27.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = whiteversionbig27.png; path = img/whiteversionbig27.png; sourceTree = "<group>"; };
+		96466DD01D3381EA004D4301 /* whiteversionsmall8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = whiteversionsmall8.png; path = img/whiteversionsmall8.png; sourceTree = "<group>"; };
 		965814881C4FD79E0094AE36 /* KVNProgressView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = KVNProgressView.xib; path = KVNProgress/Resources/KVNProgressView.xib; sourceTree = "<group>"; };
 		9658148A1C4FD7AD0094AE36 /* KVNProgress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KVNProgress.h; path = KVNProgress/Classes/KVNProgress.h; sourceTree = "<group>"; };
 		9658148B1C4FD7AD0094AE36 /* KVNProgress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KVNProgress.m; path = KVNProgress/Classes/KVNProgress.m; sourceTree = "<group>"; };
@@ -73,7 +80,6 @@
 		96A589B81D2A543700036EF4 /* OneVideoIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = OneVideoIcon.png; path = img/OneVideoIcon.png; sourceTree = "<group>"; };
 		96A589BA1D2A57E200036EF4 /* OnVideo_Title.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = OnVideo_Title.png; path = img/OnVideo_Title.png; sourceTree = "<group>"; };
 		96A589BE1D2A691F00036EF4 /* CommonHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonHelper.swift; sourceTree = "<group>"; };
-		96A589C01D2A706C00036EF4 /* tRe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tRe.png; path = img/tRe.png; sourceTree = "<group>"; };
 		96A589C61D2BBC0200036EF4 /* ttt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ttt.png; path = img/ttt.png; sourceTree = "<group>"; };
 		96CF67861BF1E8C5009B4BB4 /* MovieTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieTableViewController.swift; sourceTree = "<group>"; };
 		96D5D8971BE8974E00781EC9 /* QuickTargetVideo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuickTargetVideo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -147,8 +153,11 @@
 		965900331C8F44E80003F3CC /* Img */ = {
 			isa = PBXGroup;
 			children = (
+				96466DCD1D3381EA004D4301 /* lasttransparentversion8.png */,
+				96466DCE1D3381EA004D4301 /* transparentversion30.png */,
+				96466DCF1D3381EA004D4301 /* whiteversionbig27.png */,
+				96466DD01D3381EA004D4301 /* whiteversionsmall8.png */,
 				96A589C61D2BBC0200036EF4 /* ttt.png */,
-				96A589C01D2A706C00036EF4 /* tRe.png */,
 				96A589BA1D2A57E200036EF4 /* OnVideo_Title.png */,
 				96A589B81D2A543700036EF4 /* OneVideoIcon.png */,
 				962CB5C61D1A743B00A2CFA0 /* 56.png */,
@@ -314,19 +323,22 @@
 			files = (
 				962CB5CD1D1A743B00A2CFA0 /* 56.png in Resources */,
 				96A589BB1D2A57E200036EF4 /* OnVideo_Title.png in Resources */,
+				96466DD11D3381EA004D4301 /* lasttransparentversion8.png in Resources */,
 				962CB5D01D1A743B00A2CFA0 /* pptv.png in Resources */,
 				962CB5CE1D1A743B00A2CFA0 /* iqiyi.png in Resources */,
 				962CB5CF1D1A743B00A2CFA0 /* letv.png in Resources */,
 				96A589B91D2A543700036EF4 /* OneVideoIcon.png in Resources */,
 				96A589C71D2BBC0200036EF4 /* ttt.png in Resources */,
 				965814891C4FD79E0094AE36 /* KVNProgressView.xib in Resources */,
+				96466DD21D3381EA004D4301 /* transparentversion30.png in Resources */,
 				962CB5D21D1A743B00A2CFA0 /* tudou.png in Resources */,
 				96D5D8A61BE8974E00781EC9 /* Main.storyboard in Resources */,
 				96D5D8AB1BE8974F00781EC9 /* LaunchScreen.xib in Resources */,
 				962CB5D11D1A743B00A2CFA0 /* sohu.png in Resources */,
 				962CB5D31D1A743B00A2CFA0 /* youku.png in Resources */,
-				96A589C11D2A706C00036EF4 /* tRe.png in Resources */,
 				96D5D8A81BE8974E00781EC9 /* Images.xcassets in Resources */,
+				96466DD41D3381EA004D4301 /* whiteversionsmall8.png in Resources */,
+				96466DD31D3381EA004D4301 /* whiteversionbig27.png in Resources */,
 				961A11D11D07E66F006B42B6 /* OneVideo.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
