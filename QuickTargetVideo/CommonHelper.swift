@@ -34,4 +34,6 @@ class CommonHelper {
         return newImage
     }
     
+    static var oBackgroundColor = UIColor(red: 1, green: 0.977016, blue: 0.547414, alpha: 1)
+    
 }
