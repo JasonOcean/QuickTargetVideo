@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="bvx-iG-PPL">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="bvx-iG-PPL">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -64,13 +64,15 @@
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="50" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="mFH-6b-5dz">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="1" green="0.96694995210000001" blue="0.91297727200000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="separatorColor" red="1" green="0.96694995210000001" blue="0.91297727200000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="sectionIndexBackgroundColor" red="1" green="0.96694995210000001" blue="0.91297727200000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="HotVideoCell" id="cet-B2-Vxn" customClass="HotVideoTabCell" customModule="QuickTargetVideo" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cet-B2-Vxn" id="XQs-U7-RrP">
-                                            <rect key="frame" x="0.0" y="0.0" width="240" height="49"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="240" height="49.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qv9-fy-hta">
@@ -98,6 +100,7 @@
                                                     </variation>
                                                 </label>
                                             </subviews>
+                                            <color key="backgroundColor" red="1" green="0.96694995210000001" blue="0.91297727200000001" alpha="1" colorSpace="calibratedRGB"/>
                                             <variation key="default">
                                                 <mask key="subviews">
                                                     <exclude reference="Qv9-fy-hta"/>
@@ -113,6 +116,7 @@
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="1" green="0.96694995210000001" blue="0.91297727200000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <outlet property="hotVideoTitle" destination="TxX-Qq-RcB" id="VW3-Ye-3TN"/>
                                         </connections>
@@ -129,7 +133,7 @@
                                 </connections>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="1" green="0.9669499520819691" blue="0.91297727203055157" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="EvD-gb-sul" secondAttribute="trailing" constant="2" id="1W8-2O-D0k">
                                 <variation key="heightClass=regular" constant="-20"/>
@@ -210,7 +214,7 @@
                                 <rect key="frame" x="0.0" y="22" width="600" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="GtT-zr-ZE1" id="xxX-B0-YBy">
-                                    <rect key="frame" x="0.0" y="0.0" width="567" height="99"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="567" height="99.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pt2-f8-fKu">
