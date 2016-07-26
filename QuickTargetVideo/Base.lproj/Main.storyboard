@@ -132,6 +132,12 @@
                                     <outlet property="dataSource" destination="S4R-Ja-viH" id="CYP-mt-vTC"/>
                                 </connections>
                             </tableView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="12.png" translatesAutoresizingMaskIntoConstraints="NO" id="zEl-uY-w4q">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <variation key="heightClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="328" y="617" width="100" height="100"/>
+                                </variation>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.9669499520819691" blue="0.91297727203055157" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -162,15 +168,16 @@
                                 <exclude reference="1h0-cO-nf3"/>
                                 <exclude reference="c5Q-me-f7y"/>
                                 <exclude reference="mFH-6b-5dz"/>
+                                <exclude reference="zEl-uY-w4q"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="1W8-2O-D0k"/>
+                                <exclude reference="BVz-ee-WhV"/>
+                                <exclude reference="Z7g-Mk-P9r"/>
                                 <exclude reference="V8P-GX-92A"/>
                                 <exclude reference="uBq-ap-gEF"/>
                                 <exclude reference="AJR-Dx-M5u"/>
                                 <exclude reference="e2P-qF-yv4"/>
-                                <exclude reference="1W8-2O-D0k"/>
-                                <exclude reference="BVz-ee-WhV"/>
-                                <exclude reference="Z7g-Mk-P9r"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular">
@@ -178,15 +185,16 @@
                                 <include reference="1h0-cO-nf3"/>
                                 <include reference="c5Q-me-f7y"/>
                                 <include reference="mFH-6b-5dz"/>
+                                <include reference="zEl-uY-w4q"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="1W8-2O-D0k"/>
+                                <include reference="BVz-ee-WhV"/>
+                                <include reference="Z7g-Mk-P9r"/>
                                 <include reference="V8P-GX-92A"/>
                                 <include reference="uBq-ap-gEF"/>
                                 <include reference="AJR-Dx-M5u"/>
                                 <include reference="e2P-qF-yv4"/>
-                                <include reference="1W8-2O-D0k"/>
-                                <include reference="BVz-ee-WhV"/>
-                                <include reference="Z7g-Mk-P9r"/>
                             </mask>
                         </variation>
                     </view>
@@ -208,7 +216,11 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="106" sectionHeaderHeight="22" sectionFooterHeight="22" id="Ntg-bO-Whi">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="0.96694995210000001" blue="0.91297727200000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="separatorColor" red="1" green="0.96694995210000001" blue="0.91297727200000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="sectionIndexColor" red="1" green="0.96694995210000001" blue="0.91297727200000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="sectionIndexBackgroundColor" red="1" green="0.96694995210000001" blue="0.91297727200000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="sectionIndexTrackingBackgroundColor" red="1" green="0.96694995210000001" blue="0.91297727200000001" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" restorationIdentifier="MovieTableViewCell" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="MovieTableViewCell" rowHeight="100" id="GtT-zr-ZE1" customClass="MovieTableViewCell" customModule="QuickTargetVideo" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="22" width="600" height="100"/>
@@ -234,6 +246,7 @@
                                         </imageView>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" red="1" green="0.96694995210000001" blue="0.91297727200000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <outlet property="movieImageView" destination="sdr-to-UX6" id="hu3-pc-I5M"/>
                                     <outlet property="movieTitle" destination="Pt2-f8-fKu" id="7l4-Cc-KLr"/>
@@ -324,6 +337,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="12.png" width="3024" height="4032"/>
         <image name="OneVideoIcon.png" width="120" height="120"/>
     </resources>
 </document>

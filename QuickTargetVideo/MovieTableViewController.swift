@@ -183,6 +183,7 @@ class MovieTableViewController: UITableViewController {
         let headerView: UIView = UIView.init(frame: CGRectMake(0, 0, tableView.bounds.size.width, icon.size.height+20))
         let sectionHeaderBG: UIImageView = UIImageView.init(image: icon)
         headerView.addSubview(sectionHeaderBG)
+        headerView.backgroundColor = UIColor.whiteColor()
         
         return headerView
     }
