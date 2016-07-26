@@ -132,10 +132,10 @@
                                     <outlet property="dataSource" destination="S4R-Ja-viH" id="CYP-mt-vTC"/>
                                 </connections>
                             </tableView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="12.png" translatesAutoresizingMaskIntoConstraints="NO" id="zEl-uY-w4q">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="OnevideoTV" image="OnvideoTV.png" translatesAutoresizingMaskIntoConstraints="NO" id="zJ5-E7-hcO">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <variation key="heightClass=regular" fixedFrame="YES">
-                                    <rect key="frame" x="328" y="617" width="100" height="100"/>
+                                    <rect key="frame" x="255" y="544" width="135" height="116"/>
                                 </variation>
                             </imageView>
                         </subviews>
@@ -168,7 +168,7 @@
                                 <exclude reference="1h0-cO-nf3"/>
                                 <exclude reference="c5Q-me-f7y"/>
                                 <exclude reference="mFH-6b-5dz"/>
-                                <exclude reference="zEl-uY-w4q"/>
+                                <exclude reference="zJ5-E7-hcO"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="1W8-2O-D0k"/>
@@ -185,7 +185,7 @@
                                 <include reference="1h0-cO-nf3"/>
                                 <include reference="c5Q-me-f7y"/>
                                 <include reference="mFH-6b-5dz"/>
-                                <include reference="zEl-uY-w4q"/>
+                                <include reference="zJ5-E7-hcO"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="1W8-2O-D0k"/>
@@ -337,7 +337,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="12.png" width="3024" height="4032"/>
         <image name="OneVideoIcon.png" width="120" height="120"/>
+        <image name="OnvideoTV.png" width="3024" height="4032"/>
     </resources>
 </document>
