@@ -24,7 +24,7 @@
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="OnVideo_Title.png" translatesAutoresizingMaskIntoConstraints="NO" id="rH5-4g-pVl">
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Onevideo_Title.png" translatesAutoresizingMaskIntoConstraints="NO" id="rH5-4g-pVl">
                     <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="128" id="Hrq-uR-HO0"/>
@@ -83,6 +83,6 @@
         </view>
     </objects>
     <resources>
-        <image name="OnVideo_Title.png" width="3968" height="1270"/>
+        <image name="Onevideo_Title.png" width="1024" height="284"/>
     </resources>
 </document>
