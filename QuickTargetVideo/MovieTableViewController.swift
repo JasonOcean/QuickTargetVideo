@@ -179,7 +179,7 @@ class MovieTableViewController: UITableViewController {
         }
         
         let iconRaw : UIImage = UIImage(named: iconName)!
-        let icon = CommonHelper.ResizeImage(iconRaw, targetSize: CGSizeMake(130, 130))
+        let icon = CommonHelper.ResizeImage(iconRaw, targetSize: CGSizeMake(110, 110))
         let headerView: UIView = UIView.init(frame: CGRectMake(0, 0, tableView.bounds.size.width, icon.size.height+20))
         let sectionHeaderBG: UIImageView = UIImageView.init(image: icon)
         headerView.addSubview(sectionHeaderBG)
