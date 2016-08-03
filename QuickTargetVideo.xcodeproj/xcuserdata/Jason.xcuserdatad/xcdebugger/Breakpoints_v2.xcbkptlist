@@ -343,11 +343,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "QuickTargetVideo/MovieTableViewController.swift"
-            timestampString = "491305365.763054"
+            timestampString = "491885678.871053"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "38"
-            endingLineNumber = "38"
+            startingLineNumber = "40"
+            endingLineNumber = "40"
             landmarkName = "ResetmoviesArray()"
             landmarkType = "5">
          </BreakpointContent>
@@ -359,7 +359,23 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "QuickTargetVideo/MovieTableViewController.swift"
-            timestampString = "491305365.763054"
+            timestampString = "491885678.871053"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "214"
+            endingLineNumber = "214"
+            landmarkName = "tableView(_:viewForHeaderInSection:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "QuickTargetVideo/MovieTableViewController.swift"
+            timestampString = "491885678.871053"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "200"
@@ -375,27 +391,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "QuickTargetVideo/MovieTableViewController.swift"
-            timestampString = "491305365.763054"
+            timestampString = "491885678.871053"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "186"
-            endingLineNumber = "186"
-            landmarkName = "tableView(_:viewForHeaderInSection:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "QuickTargetVideo/MovieTableViewController.swift"
-            timestampString = "491305365.763054"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "232"
-            endingLineNumber = "232"
+            startingLineNumber = "246"
+            endingLineNumber = "246"
             landmarkName = "numberOfSectionsInTableView(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -407,11 +407,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "QuickTargetVideo/MovieTableViewController.swift"
-            timestampString = "491305365.763054"
+            timestampString = "491885678.871053"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "82"
-            endingLineNumber = "82"
+            startingLineNumber = "90"
+            endingLineNumber = "90"
             landmarkName = "ResetmoviesArray()"
             landmarkType = "5">
          </BreakpointContent>
@@ -423,11 +423,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "QuickTargetVideo/MovieTableViewController.swift"
-            timestampString = "491305365.763054"
+            timestampString = "491885678.871053"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "79"
-            endingLineNumber = "79"
+            startingLineNumber = "86"
+            endingLineNumber = "86"
             landmarkName = "ResetmoviesArray()"
             landmarkType = "5">
             <Locations>
@@ -471,11 +471,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "QuickTargetVideo/MovieTableViewController.swift"
-            timestampString = "491305365.763054"
+            timestampString = "491885678.871053"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "97"
-            endingLineNumber = "97"
+            startingLineNumber = "107"
+            endingLineNumber = "107"
             landmarkName = "ResetmoviesArray()"
             landmarkType = "5">
          </BreakpointContent>
@@ -487,11 +487,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "QuickTargetVideo/MovieTableViewController.swift"
-            timestampString = "491305365.763054"
+            timestampString = "491885678.871053"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "114"
-            endingLineNumber = "114"
+            startingLineNumber = "126"
+            endingLineNumber = "126"
             landmarkName = "ResetmoviesArray()"
             landmarkType = "5">
          </BreakpointContent>

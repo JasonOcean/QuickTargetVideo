@@ -28,6 +28,8 @@ class MovieTableViewController: UITableViewController {
         
         let urliQiYi = NSURL(string: "http://so.iqiyi.com/so/q_" + searchKey!)
         let taskiQiYi = session.dataTaskWithURL(urliQiYi!) {(data, response, error) in
+            if(data==nil) {return}
+            
             let sourceContent:String = NSString(data:data!, encoding:NSUTF8StringEncoding)! as String
             let iQiYi = iQiYiSite(source: sourceContent)
             var result = Array(iQiYi.FindAllMovies().prefix(self.TopItemsCount))
@@ -44,6 +46,8 @@ class MovieTableViewController: UITableViewController {
         
         let urlTuDou = NSURL(string: "http://www.soku.com/t/nisearch.do?kw=" + searchKey!)
         let taskTuDou = session.dataTaskWithURL(urlTuDou!) {(data, response, error) in
+            if(data==nil) {return}
+            
             let sourceContent:String = NSString(data:data!, encoding:NSUTF8StringEncoding)! as String
             let tuDou = TuDouSite(source: sourceContent)
             
@@ -61,6 +65,8 @@ class MovieTableViewController: UITableViewController {
         
         let urlSohu = NSURL(string: "http://so.tv.sohu.com/mts?wd=" + searchKey!)
         let taskSohu = session.dataTaskWithURL(urlSohu!) {(data, response, error) in
+            if(data==nil) {return}
+            
             let sourceContent:String = NSString(data:data!, encoding:NSUTF8StringEncoding)! as String
             let sohu = SohuSite(source: sourceContent)
             var result = Array(sohu.FindAllMovies().prefix(self.TopItemsCount))
@@ -77,6 +83,8 @@ class MovieTableViewController: UITableViewController {
         
         let urlYouKu = NSURL(string: "http://www.soku.com/search_video/q_" + searchKey!)
         let taskYouKu = session.dataTaskWithURL(urlYouKu!) {(data, response, error) in
+            if(data==nil) {return}
+            
             let sourceContent:String = NSString(data:data!, encoding:NSUTF8StringEncoding)! as String
             let youku = YouKuSite(source: sourceContent)
             
@@ -94,6 +102,8 @@ class MovieTableViewController: UITableViewController {
         
         let urlLetv = NSURL(string: "http://so.letv.com/s?wd=" + searchKey!)
         let taskLetv = session.dataTaskWithURL(urlLetv!) {(data, response, error) in
+            if(data==nil) {return}
+            
             let sourceContent:String = NSString(data:data!, encoding:NSUTF8StringEncoding)! as String
             let letv = LetvSite(source: sourceContent)
             var r=Array(letv.FindAllMovies().prefix(self.TopItemsCount))
@@ -110,6 +120,8 @@ class MovieTableViewController: UITableViewController {
         
         let urlPPTV = NSURL(string: "http://search.pptv.com/s_video?kw=" + searchKey!)
         let taskPPTV = session.dataTaskWithURL(urlPPTV!) {(data, response, error) in
+            if(data==nil) {return}
+            
             let sourceContent:String = NSString(data:data!, encoding:NSUTF8StringEncoding)! as String
             let pptv = PPTVSite(source: sourceContent)
             var r = Array(pptv.FindAllMovies().prefix(self.TopItemsCount))
@@ -126,6 +138,8 @@ class MovieTableViewController: UITableViewController {
         
         let url56 = NSURL(string: "http://so.56.com/all/" + searchKey! + "/")
         let task56 = session.dataTaskWithURL(url56!) {(data, response, error) in
+            if(data==nil) {return}
+            
             let sourceContent:String = NSString(data:data!, encoding:NSUTF8StringEncoding)! as String
             let fivesix = FiveSixSite(source: sourceContent)
             var r = Array(fivesix.FindAllMovies().prefix(self.TopItemsCount))
