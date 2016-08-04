@@ -16,7 +16,7 @@ class VideoDetail : UIViewController
         super.viewDidLoad()
 
         if !CommonHelper.isConnectedToNetwork() {
-            CommonHelper.ShowAlert("网络异常", content: "网络不给力，请稍后重试2")
+            CommonHelper.ShowAlert("网络异常", content: "网络不给力，请稍后重试")
             return
         }
         

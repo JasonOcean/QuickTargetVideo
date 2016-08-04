@@ -77,7 +77,7 @@ class SearchController: UIViewController, UITableViewDataSource, UISearchBarDele
     
     func GetImageViewBasedOnLinkImg(imgUrl : String) -> UIImage {
         if !CommonHelper.isConnectedToNetwork() {
-            CommonHelper.ShowAlert("网络异常", content: "网络不给力，请稍后重试2")
+            CommonHelper.ShowAlert("网络异常", content: "网络不给力，请稍后重试")
             return UIImage()
         }
         
@@ -115,7 +115,7 @@ class SearchController: UIViewController, UITableViewDataSource, UISearchBarDele
     
     func LoadHotVedios() {
         if !CommonHelper.isConnectedToNetwork() {
-            CommonHelper.ShowAlert("网络异常", content: "网络不给力，请稍后重试2")
+            CommonHelper.ShowAlert("网络异常", content: "网络不给力，请稍后重试")
             return
         }
         
