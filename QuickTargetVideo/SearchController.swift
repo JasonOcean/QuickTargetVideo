@@ -76,6 +76,11 @@ class SearchController: UIViewController, UITableViewDataSource, UISearchBarDele
     }
     
     func GetImageViewBasedOnLinkImg(imgUrl : String) -> UIImage {
+        if !CommonHelper.isConnectedToNetwork() {
+            CommonHelper.ShowAlert("网络异常", content: "网络不给力，请稍后重试2")
+            return UIImage()
+        }
+        
         let url = NSURL(string: imgUrl)
         let data : NSData = NSData(contentsOfURL: url!)!
         let image : UIImage = UIImage(data: data)!
@@ -109,16 +114,23 @@ class SearchController: UIViewController, UITableViewDataSource, UISearchBarDele
     }
     
     func LoadHotVedios() {
+        if !CommonHelper.isConnectedToNetwork() {
+            CommonHelper.ShowAlert("网络异常", content: "网络不给力，请稍后重试2")
+            return
+        }
+        
         var source: String!
         let url = NSURL(string: "http://www.iqiyi.com/")
         do {
             let abc = try NSString(contentsOfURL: url!, encoding:NSUTF8StringEncoding)
             source = abc.stringByReplacingOccurrencesOfString("\\", withString: "")
+            
+            //self.HotVideoItems = self.UpgradeToShortTitle(HotVideosPage(source: source).FindAllMovies())
+            self.HotVideoItems = HotVideosPage(source: source).FindAllMovies()
         }
-        catch {}
-        
-        //self.HotVideoItems = self.UpgradeToShortTitle(HotVideosPage(source: source).FindAllMovies())
-        self.HotVideoItems = HotVideosPage(source: source).FindAllMovies()
+        catch {
+            CommonHelper.ShowAlert("网络异常", content: "网络不给力，请稍后重试")
+        }
     }
 }
 

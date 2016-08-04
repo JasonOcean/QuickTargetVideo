@@ -18,6 +18,11 @@ class MovieTableViewController: UITableViewController {
    
     func ResetmoviesArray()
     {
+        if !CommonHelper.isConnectedToNetwork() {
+            CommonHelper.ShowAlert("网络异常", content: "网络不给力，请稍后重试")
+            return
+        }
+        
         ///Show loading animation
         let para: NSDictionary = [KVNProgressViewParameterStatus: "Loading...",
             KVNProgressViewParameterBackgroundType: 1,

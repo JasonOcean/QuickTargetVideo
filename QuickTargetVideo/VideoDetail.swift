@@ -15,6 +15,11 @@ class VideoDetail : UIViewController
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        if !CommonHelper.isConnectedToNetwork() {
+            CommonHelper.ShowAlert("网络异常", content: "网络不给力，请稍后重试2")
+            return
+        }
+        
         let url = NSURL(string: linkUrl)
         let request = NSURLRequest(URL: url!)
         currentWebView.loadRequest(request)
