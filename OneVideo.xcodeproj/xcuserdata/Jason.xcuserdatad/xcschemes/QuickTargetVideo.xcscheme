@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "96D5D8961BE8974E00781EC9"
-               BuildableName = "QuickTargetVideo.app"
-               BlueprintName = "QuickTargetVideo"
-               ReferencedContainer = "container:QuickTargetVideo.xcodeproj">
+               BuildableName = "OneVideo.app"
+               BlueprintName = "OneVideo"
+               ReferencedContainer = "container:OneVideo.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -29,9 +29,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "96D5D8AF1BE8974F00781EC9"
-               BuildableName = "QuickTargetVideoTests.xctest"
-               BlueprintName = "QuickTargetVideoTests"
-               ReferencedContainer = "container:QuickTargetVideo.xcodeproj">
+               BuildableName = "OneVideo.xctest"
+               BlueprintName = "OneVideoTests"
+               ReferencedContainer = "container:OneVideo.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -47,9 +47,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "96D5D8AF1BE8974F00781EC9"
-               BuildableName = "QuickTargetVideoTests.xctest"
-               BlueprintName = "QuickTargetVideoTests"
-               ReferencedContainer = "container:QuickTargetVideo.xcodeproj">
+               BuildableName = "OneVideo.xctest"
+               BlueprintName = "OneVideoTests"
+               ReferencedContainer = "container:OneVideo.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -57,9 +57,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "96D5D8961BE8974E00781EC9"
-            BuildableName = "QuickTargetVideo.app"
-            BlueprintName = "QuickTargetVideo"
-            ReferencedContainer = "container:QuickTargetVideo.xcodeproj">
+            BuildableName = "OneVideo.app"
+            BlueprintName = "OneVideo"
+            ReferencedContainer = "container:OneVideo.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -81,9 +81,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "96D5D8961BE8974E00781EC9"
-            BuildableName = "QuickTargetVideo.app"
-            BlueprintName = "QuickTargetVideo"
-            ReferencedContainer = "container:QuickTargetVideo.xcodeproj">
+            BuildableName = "OneVideo.app"
+            BlueprintName = "OneVideo"
+            ReferencedContainer = "container:OneVideo.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -100,9 +100,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "96D5D8961BE8974E00781EC9"
-            BuildableName = "QuickTargetVideo.app"
-            BlueprintName = "QuickTargetVideo"
-            ReferencedContainer = "container:QuickTargetVideo.xcodeproj">
+            BuildableName = "OneVideo.app"
+            BlueprintName = "OneVideo"
+            ReferencedContainer = "container:OneVideo.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

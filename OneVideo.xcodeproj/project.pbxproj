@@ -79,14 +79,14 @@
 		96A589B81D2A543700036EF4 /* OneVideoIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = OneVideoIcon.png; path = img/OneVideoIcon.png; sourceTree = "<group>"; };
 		96A589BE1D2A691F00036EF4 /* CommonHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonHelper.swift; sourceTree = "<group>"; };
 		96CF67861BF1E8C5009B4BB4 /* MovieTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieTableViewController.swift; sourceTree = "<group>"; };
-		96D5D8971BE8974E00781EC9 /* QuickTargetVideo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuickTargetVideo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		96D5D8971BE8974E00781EC9 /* OneVideo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OneVideo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		96D5D89B1BE8974E00781EC9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		96D5D89C1BE8974E00781EC9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		96D5D8A01BE8974E00781EC9 /* SearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchController.swift; sourceTree = "<group>"; };
 		96D5D8A51BE8974E00781EC9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		96D5D8A71BE8974E00781EC9 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		96D5D8AA1BE8974F00781EC9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		96D5D8B01BE8974F00781EC9 /* QuickTargetVideoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QuickTargetVideoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		96D5D8B01BE8974F00781EC9 /* OneVideo.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OneVideo.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		96D5D8B51BE8974F00781EC9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		96D5D8B61BE8974F00781EC9 /* QuickTargetVideoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickTargetVideoTests.swift; sourceTree = "<group>"; };
 		96DA25F01D408810007B632E /* OnvideoTV.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = OnvideoTV.png; path = img/OnvideoTV.png; sourceTree = "<group>"; };
@@ -181,8 +181,8 @@
 		96D5D8981BE8974E00781EC9 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				96D5D8971BE8974E00781EC9 /* QuickTargetVideo.app */,
-				96D5D8B01BE8974F00781EC9 /* QuickTargetVideoTests.xctest */,
+				96D5D8971BE8974E00781EC9 /* OneVideo.app */,
+				96D5D8B01BE8974F00781EC9 /* OneVideo.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -238,9 +238,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		96D5D8961BE8974E00781EC9 /* QuickTargetVideo */ = {
+		96D5D8961BE8974E00781EC9 /* OneVideo */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 96D5D8BA1BE8974F00781EC9 /* Build configuration list for PBXNativeTarget "QuickTargetVideo" */;
+			buildConfigurationList = 96D5D8BA1BE8974F00781EC9 /* Build configuration list for PBXNativeTarget "OneVideo" */;
 			buildPhases = (
 				96D5D8931BE8974E00781EC9 /* Sources */,
 				96D5D8941BE8974E00781EC9 /* Frameworks */,
@@ -250,14 +250,14 @@
 			);
 			dependencies = (
 			);
-			name = QuickTargetVideo;
+			name = OneVideo;
 			productName = QuickTargetVideo;
-			productReference = 96D5D8971BE8974E00781EC9 /* QuickTargetVideo.app */;
+			productReference = 96D5D8971BE8974E00781EC9 /* OneVideo.app */;
 			productType = "com.apple.product-type.application";
 		};
-		96D5D8AF1BE8974F00781EC9 /* QuickTargetVideoTests */ = {
+		96D5D8AF1BE8974F00781EC9 /* OneVideoTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 96D5D8BD1BE8974F00781EC9 /* Build configuration list for PBXNativeTarget "QuickTargetVideoTests" */;
+			buildConfigurationList = 96D5D8BD1BE8974F00781EC9 /* Build configuration list for PBXNativeTarget "OneVideoTests" */;
 			buildPhases = (
 				96D5D8AC1BE8974F00781EC9 /* Sources */,
 				96D5D8AD1BE8974F00781EC9 /* Frameworks */,
@@ -268,9 +268,9 @@
 			dependencies = (
 				96D5D8B21BE8974F00781EC9 /* PBXTargetDependency */,
 			);
-			name = QuickTargetVideoTests;
+			name = OneVideoTests;
 			productName = QuickTargetVideoTests;
-			productReference = 96D5D8B01BE8974F00781EC9 /* QuickTargetVideoTests.xctest */;
+			productReference = 96D5D8B01BE8974F00781EC9 /* OneVideo.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -295,7 +295,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 96D5D8921BE8974E00781EC9 /* Build configuration list for PBXProject "QuickTargetVideo" */;
+			buildConfigurationList = 96D5D8921BE8974E00781EC9 /* Build configuration list for PBXProject "OneVideo" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -308,8 +308,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				96D5D8961BE8974E00781EC9 /* QuickTargetVideo */,
-				96D5D8AF1BE8974F00781EC9 /* QuickTargetVideoTests */,
+				96D5D8961BE8974E00781EC9 /* OneVideo */,
+				96D5D8AF1BE8974F00781EC9 /* OneVideoTests */,
 			);
 		};
 /* End PBXProject section */
@@ -382,7 +382,7 @@
 /* Begin PBXTargetDependency section */
 		96D5D8B21BE8974F00781EC9 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 96D5D8961BE8974E00781EC9 /* QuickTargetVideo */;
+			target = 96D5D8961BE8974E00781EC9 /* OneVideo */;
 			targetProxy = 96D5D8B11BE8974F00781EC9 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -497,7 +497,7 @@
 				INFOPLIST_FILE = QuickTargetVideo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Unisys.com.QuickTargetVideo;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = OneVideo;
 				PROVISIONING_PROFILE = "3401559c-3154-4417-8053-d454056ef4e8";
 				SWIFT_OBJC_BRIDGING_HEADER = "QuickTargetVideo/QuickTargetVideo-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -514,7 +514,7 @@
 				INFOPLIST_FILE = QuickTargetVideo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Unisys.com.QuickTargetVideo;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = OneVideo;
 				PROVISIONING_PROFILE = "3401559c-3154-4417-8053-d454056ef4e8";
 				SWIFT_OBJC_BRIDGING_HEADER = "QuickTargetVideo/QuickTargetVideo-Bridging-Header.h";
 			};
@@ -537,9 +537,9 @@
 				INFOPLIST_FILE = QuickTargetVideoTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Unisys.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = OneVideo;
 				PROVISIONING_PROFILE = "";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/QuickTargetVideo.app/QuickTargetVideo";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OneVideo.app/OneVideo";
 			};
 			name = Debug;
 		};
@@ -556,16 +556,16 @@
 				INFOPLIST_FILE = QuickTargetVideoTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Unisys.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = OneVideo;
 				PROVISIONING_PROFILE = "";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/QuickTargetVideo.app/QuickTargetVideo";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OneVideo.app/OneVideo";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		96D5D8921BE8974E00781EC9 /* Build configuration list for PBXProject "QuickTargetVideo" */ = {
+		96D5D8921BE8974E00781EC9 /* Build configuration list for PBXProject "OneVideo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				96D5D8B81BE8974F00781EC9 /* Debug */,
@@ -574,7 +574,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		96D5D8BA1BE8974F00781EC9 /* Build configuration list for PBXNativeTarget "QuickTargetVideo" */ = {
+		96D5D8BA1BE8974F00781EC9 /* Build configuration list for PBXNativeTarget "OneVideo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				96D5D8BB1BE8974F00781EC9 /* Debug */,
@@ -583,7 +583,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		96D5D8BD1BE8974F00781EC9 /* Build configuration list for PBXNativeTarget "QuickTargetVideoTests" */ = {
+		96D5D8BD1BE8974F00781EC9 /* Build configuration list for PBXNativeTarget "OneVideoTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				96D5D8BE1BE8974F00781EC9 /* Debug */,
