@@ -15,19 +15,30 @@ class SearchController: UIViewController, UITableViewDataSource, UISearchBarDele
     
     @IBOutlet weak var myTableView: UITableView!
     var HotVideoItems : [MovieItem] = []
-    
+    var IsViewLoaded = false
+    var IsWarned = false
+
     //just a test
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        IsViewLoaded = false
+        IsWarned = false
+    
         self.LoadHotVedios()
         
         let logo = UIImage(named: "Onevideo_Title.png")
         let logoNew = CommonHelper.ResizeImage(logo!, targetSize: CGSizeMake(400, 50))
         let logoView = UIImageView(image: logoNew)
-//        logoView.backgroundColor = UIColor.redColor()
-//        logoView.contentMode =
         self.navigationItem.titleView = logoView
+        
+        NSTimer.scheduledTimerWithTimeInterval(0.5, target: self, selector: "AutoRefresh", userInfo: nil, repeats: true)
+    }
+    
+    func AutoRefresh() {
+        if !IsViewLoaded {
+            self.LoadHotVedios()
+            dispatch_async(dispatch_get_main_queue()) { self.myTableView.reloadData()}
+        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -114,8 +125,9 @@ class SearchController: UIViewController, UITableViewDataSource, UISearchBarDele
     }
     
     func LoadHotVedios() {
-        if !CommonHelper.isConnectedToNetwork() {
+        if !(IsWarned || CommonHelper.isConnectedToNetwork()) {
             CommonHelper.ShowAlert("网络异常", content: "网络不给力，请稍后重试")
+            IsWarned=true
             return
         }
         
@@ -127,9 +139,15 @@ class SearchController: UIViewController, UITableViewDataSource, UISearchBarDele
             
             //self.HotVideoItems = self.UpgradeToShortTitle(HotVideosPage(source: source).FindAllMovies())
             self.HotVideoItems = HotVideosPage(source: source).FindAllMovies()
+            
+            IsViewLoaded = true
         }
         catch {
-            CommonHelper.ShowAlert("网络异常", content: "网络不给力，请稍后重试")
+            
+            if !IsWarned {
+                CommonHelper.ShowAlert("网络异常", content: "网络不给力，请稍后重试")
+                IsWarned = true
+            }
         }
     }
 }
