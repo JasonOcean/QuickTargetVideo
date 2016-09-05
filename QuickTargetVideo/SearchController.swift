@@ -108,8 +108,6 @@ class SearchController: UIViewController, UITableViewDataSource, UISearchBarDele
         return 150
     }
     
-    
-    
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let hotCell:HotVideoTabCell = self.myTableView!.dequeueReusableCellWithIdentifier("HotVideoCell") as! HotVideoTabCell
 //        hotCell.hotVideoIndex.text = String(indexPath.row + 1)

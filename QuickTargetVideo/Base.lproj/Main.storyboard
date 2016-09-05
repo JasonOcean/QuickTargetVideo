@@ -26,7 +26,7 @@
         <!--OneVideo-->
         <scene sceneID="snT-py-3hH">
             <objects>
-                <viewController storyboardIdentifier="SearchController" id="S4R-Ja-viH" customClass="SearchController" customModule="QuickTargetVideo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SearchController" id="S4R-Ja-viH" customClass="SearchController" customModule="OneVideo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="fXf-Jd-eTc"/>
                         <viewControllerLayoutGuide type="bottom" id="EPS-s9-h4K"/>
@@ -69,7 +69,7 @@
                                 <color key="separatorColor" red="1" green="0.96694995210000001" blue="0.91297727200000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="sectionIndexBackgroundColor" red="1" green="0.96694995210000001" blue="0.91297727200000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="HotVideoCell" id="cet-B2-Vxn" customClass="HotVideoTabCell" customModule="QuickTargetVideo" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="HotVideoCell" id="cet-B2-Vxn" customClass="HotVideoTabCell" customModule="OneVideo" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cet-B2-Vxn" id="XQs-U7-RrP">
@@ -275,7 +275,7 @@
         <!--All Videos-->
         <scene sceneID="WPu-CD-FXy">
             <objects>
-                <tableViewController storyboardIdentifier="MovieList" id="7PP-xG-RAY" customClass="MovieTableViewController" customModule="QuickTargetVideo" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="MovieList" id="7PP-xG-RAY" customClass="MovieTableViewController" customModule="OneVideo" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="106" sectionHeaderHeight="22" sectionFooterHeight="22" id="Ntg-bO-Whi">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -285,7 +285,7 @@
                         <color key="sectionIndexBackgroundColor" red="1" green="0.96694995210000001" blue="0.91297727200000001" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="sectionIndexTrackingBackgroundColor" red="1" green="0.96694995210000001" blue="0.91297727200000001" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" restorationIdentifier="MovieTableViewCell" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="MovieTableViewCell" rowHeight="100" id="GtT-zr-ZE1" customClass="MovieTableViewCell" customModule="QuickTargetVideo" customModuleProvider="target">
+                            <tableViewCell contentMode="scaleToFill" restorationIdentifier="MovieTableViewCell" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="MovieTableViewCell" rowHeight="100" id="GtT-zr-ZE1" customClass="MovieTableViewCell" customModule="OneVideo" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="22" width="600" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="GtT-zr-ZE1" id="xxX-B0-YBy">
@@ -330,12 +330,12 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4EE-9A-9y5" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationItem title="All Videos" id="ltD-wC-2yE"/>
             </objects>
-            <point key="canvasLocation" x="1920" y="-281.25"/>
+            <point key="canvasLocation" x="1920" y="-282"/>
         </scene>
         <!--Video Detail-->
         <scene sceneID="wFT-P3-fff">
             <objects>
-                <viewController storyboardIdentifier="VideoDetail" id="OAP-u4-xuO" customClass="VideoDetail" customModule="QuickTargetVideo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="VideoDetail" id="OAP-u4-xuO" customClass="VideoDetail" customModule="OneVideo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Bcp-1O-nLY"/>
                         <viewControllerLayoutGuide type="bottom" id="mX7-Qp-Z7C"/>

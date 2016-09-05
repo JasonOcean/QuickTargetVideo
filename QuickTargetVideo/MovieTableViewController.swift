@@ -15,9 +15,39 @@ class MovieTableViewController: UITableViewController {
     let TopItemsCount = 3
     
     @IBOutlet var CurrentTableView: UITableView!
+
+//        @IBOutlet weak var NotFoundTableView: UITableViewCell!
+    
+
+//    @IBOutlet weak var NotFoundTableView: UILabel!
+    
+    var notFoundSites : Int32 = 0
+    let allProviderSites : Int32 = 7
    
+    func ResetNotFoundWarning(isShow: Bool) {
+//        self.NotFoundTableView.hidden = isShow
+        
+        if !isShow {
+            notFoundSites = 0
+        }
+        else  {
+            KVNProgress.dismiss()
+            CommonHelper.ShowAlert("搜索结果", content: "抱歉，没有找到相关视频。")
+        }
+    }
+    
+    func MissingSiteCount() {
+        notFoundSites += 1
+        
+        if (notFoundSites == allProviderSites) {
+            self.ResetNotFoundWarning(true)
+        }
+    }
+    
     func ResetmoviesArray()
     {
+        ResetNotFoundWarning(false)
+        
         if !CommonHelper.isConnectedToNetwork() {
             CommonHelper.ShowAlert("网络异常", content: "网络不给力，请稍后重试")
             return
@@ -44,8 +74,15 @@ class MovieTableViewController: UITableViewController {
             }
             
             dispatch_async(dispatch_get_main_queue(), {
+                
+                if result.count>0 {
                     self.RefreshTableView()
-                });
+                }
+                else {
+                    self.MissingSiteCount()
+                }
+            });
+            
         }
         taskiQiYi.resume()
         
@@ -63,7 +100,13 @@ class MovieTableViewController: UITableViewController {
             }
             
             dispatch_async(dispatch_get_main_queue(), {
-                self.RefreshTableView()
+                
+                if result.count>0 {
+                    self.RefreshTableView()
+                }
+                else {
+                    self.MissingSiteCount()
+                }
             });
         }
         taskTuDou.resume()
@@ -81,7 +124,13 @@ class MovieTableViewController: UITableViewController {
             }
             
             dispatch_async(dispatch_get_main_queue(), {
-                self.RefreshTableView()
+                
+                if result.count>0 {
+                    self.RefreshTableView()
+                }
+                else {
+                    self.MissingSiteCount()
+                }
             });
         }
         taskSohu.resume()
@@ -100,7 +149,12 @@ class MovieTableViewController: UITableViewController {
             }
             
             dispatch_async(dispatch_get_main_queue(), {
-                self.RefreshTableView()
+                if r.count>0 {
+                    self.RefreshTableView()
+                }
+                else {
+                    self.MissingSiteCount()
+                }
             });
         }
         taskYouKu.resume()
@@ -118,7 +172,12 @@ class MovieTableViewController: UITableViewController {
             }
             
             dispatch_async(dispatch_get_main_queue(), {
-                self.RefreshTableView()
+                if r.count>0 {
+                    self.RefreshTableView()
+                }
+                else {
+                    self.MissingSiteCount()
+                }
             });
         }
         taskLetv.resume()
@@ -136,7 +195,12 @@ class MovieTableViewController: UITableViewController {
             }
             
             dispatch_async(dispatch_get_main_queue(), {
-                self.RefreshTableView()
+                if r.count>0 {
+                    self.RefreshTableView()
+                }
+                else {
+                    self.MissingSiteCount()
+                }
             });
         }
         taskPPTV.resume()
@@ -154,7 +218,12 @@ class MovieTableViewController: UITableViewController {
             }
             
             dispatch_async(dispatch_get_main_queue(), {
-                self.RefreshTableView()
+                if r.count>0 {
+                    self.RefreshTableView()
+                }
+                else {
+                    self.MissingSiteCount()
+                }
             });
         }
         task56.resume()
