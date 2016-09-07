@@ -24,7 +24,13 @@ class SearchController: UIViewController, UITableViewDataSource, UISearchBarDele
         IsViewLoaded = false
         IsWarned = false
     
-        self.LoadHotVedios()
+        ///Show loading animation
+        let para: NSDictionary = [KVNProgressViewParameterStatus: "Loading...",
+                                  KVNProgressViewParameterBackgroundType: 1,
+                                  KVNProgressViewParameterFullScreen: true]
+        KVNProgress.showWithParameters(para as [NSObject : AnyObject])
+        
+        //self.LoadHotVedios()
         
         let logo = UIImage(named: "Onevideo_Title.png")
         let logoNew = CommonHelper.ResizeImage(logo!, targetSize: CGSizeMake(400, 50))
@@ -37,7 +43,10 @@ class SearchController: UIViewController, UITableViewDataSource, UISearchBarDele
     func AutoRefresh() {
         if !IsViewLoaded {
             self.LoadHotVedios()
-            dispatch_async(dispatch_get_main_queue()) { self.myTableView.reloadData()}
+            dispatch_async(dispatch_get_main_queue()) {
+                self.myTableView.reloadData()
+                KVNProgress.dismiss()
+            }
         }
     }
     
