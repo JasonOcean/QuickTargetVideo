@@ -37,7 +37,7 @@ class SearchController: UIViewController, UITableViewDataSource, UISearchBarDele
         let logoView = UIImageView(image: logoNew)
         self.navigationItem.titleView = logoView
         
-        NSTimer.scheduledTimerWithTimeInterval(0.5, target: self, selector: "AutoRefresh", userInfo: nil, repeats: true)
+        NSTimer.scheduledTimerWithTimeInterval(0.2, target: self, selector: "AutoRefresh", userInfo: nil, repeats: true)
     }
     
     func AutoRefresh() {
