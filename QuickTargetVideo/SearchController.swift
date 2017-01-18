@@ -24,20 +24,29 @@ class SearchController: UIViewController, UITableViewDataSource, UISearchBarDele
         IsViewLoaded = false
         IsWarned = false
     
-        self.LoadHotVedios()
+        ///Show loading animation
+        let para: NSDictionary = [KVNProgressViewParameterStatus: "Loading...",
+                                  KVNProgressViewParameterBackgroundType: 1,
+                                  KVNProgressViewParameterFullScreen: true]
+        KVNProgress.showWithParameters(para as [NSObject : AnyObject])
+        
+        //self.LoadHotVedios()
         
         let logo = UIImage(named: "Onevideo_Title.png")
         let logoNew = CommonHelper.ResizeImage(logo!, targetSize: CGSizeMake(400, 50))
         let logoView = UIImageView(image: logoNew)
         self.navigationItem.titleView = logoView
         
-        NSTimer.scheduledTimerWithTimeInterval(0.5, target: self, selector: "AutoRefresh", userInfo: nil, repeats: true)
+        NSTimer.scheduledTimerWithTimeInterval(0.2, target: self, selector: "AutoRefresh", userInfo: nil, repeats: true)
     }
     
     func AutoRefresh() {
         if !IsViewLoaded {
             self.LoadHotVedios()
-            dispatch_async(dispatch_get_main_queue()) { self.myTableView.reloadData()}
+            dispatch_async(dispatch_get_main_queue()) {
+                self.myTableView.reloadData()
+                KVNProgress.dismiss()
+            }
         }
     }
     
@@ -107,8 +116,6 @@ class SearchController: UIViewController, UITableViewDataSource, UISearchBarDele
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return 150
     }
-    
-    
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let hotCell:HotVideoTabCell = self.myTableView!.dequeueReusableCellWithIdentifier("HotVideoCell") as! HotVideoTabCell
